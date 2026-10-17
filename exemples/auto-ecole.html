@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+  <!-- Exemple de design : l'Auto-école Virage n'existe pas (adresse et prix inventés pour l'exemple).
+       Illustration dessinée par Bab Digital (img/auto-ecole.svg).
+       Page créée par Bab Digital pour montrer son travail. Textes français et arabes : ../js/main.js. -->
+  <title data-i18n="ecole.meta.title">Auto-école Virage, Agadir (exemple de design) | Bab Digital</title>
+  <meta name="description" data-i18n-attr="content:ecole.meta.description" content="Exemple de page web pour une auto-école, créé par Bab Digital : forfaits, étapes du permis, horaires et inscription sur WhatsApp.">
+  <meta name="robots" content="noindex, follow">
+  <meta name="theme-color" content="#F6F8FB">
+  <meta property="og:type" content="website">
+  <meta property="og:title" data-i18n-attr="content:ecole.meta.title" content="Auto-école Virage, Agadir (exemple de design) | Bab Digital">
+  <meta property="og:description" data-i18n-attr="content:ecole.meta.description" content="Exemple de page web pour une auto-école, créé par Bab Digital : forfaits, étapes du permis, horaires et inscription sur WhatsApp.">
+  <meta property="og:image" content="https://babdigital.vercel.app/og-image.png"><!-- ADRESSE -->
+  <link rel="icon" href="../logo-icon.svg" type="image/svg+xml">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Inter:wght@400;500;600;700&family=Tajawal:wght@400;500;700;800&display=swap">
+  <link rel="stylesheet" href="../css/exemples.css">
+  <script>
+    (function () {
+      var d = document.documentElement;
+      d.classList.add("js");
+      try {
+        var l = new URLSearchParams(location.search).get("lang") || localStorage.getItem("bab-lang");
+        if (l === "ar") { d.lang = "ar"; d.dir = "rtl"; d.classList.add("i18n-wait"); setTimeout(function () { d.classList.remove("i18n-wait"); }, 1500); }
+      } catch (e) {}
+    })();
+  </script>
+  <script src="../js/main.js" defer></script>
+</head>
+<body class="ex ex-ecole">
+
+  <a class="skip-link" href="#contenu" data-i18n="a11y.skip">Aller au contenu</a>
+
+  <svg class="sprite" aria-hidden="true" focusable="false">
+    <symbol id="i-wa" viewBox="0 0 24 24"><path fill="currentColor" stroke="none" fill-rule="evenodd" d="M12 2.6a9.4 9.4 0 0 0-8.1 14.2L2.6 21.4l4.7-1.3A9.4 9.4 0 1 0 12 2.6Zm0 1.7a7.7 7.7 0 1 1-3.9 14.3l-.3-.2-2.8.8.8-2.7-.2-.3A7.7 7.7 0 0 1 12 4.3Z"/><path fill="currentColor" stroke="none" d="M9.1 7.6c-.2-.4-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.3.3-.9.9-.9 2.2s.9 2.5 1 2.7c.1.2 1.8 2.9 4.5 3.9 2.2.9 2.7.7 3.1.7.5 0 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.2-.2-.5-.3l-1.7-.8c-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1-.3-.1-1.1-.4-2-1.3-.8-.7-1.3-1.5-1.4-1.8-.1-.3 0-.4.1-.5l.4-.4.3-.4c.1-.2 0-.3 0-.5l-.8-1.9Z"/></symbol>
+    <symbol id="i-back" viewBox="0 0 24 24"><path d="M19 12H5M11 18l-6-6 6-6"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11Z"/><circle cx="12" cy="10" r="2.3"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.2 4.2L19 7"/></symbol>
+    <symbol id="i-arch" viewBox="0 0 24 24"><path d="M7.085 21V13.441A6 6 0 1 1 16.915 13.441V21"/></symbol>
+    <symbol id="i-wheel" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="2.2"/><path d="M3.8 10.5c2.6.6 5.4.9 8.2.9s5.6-.3 8.2-.9M10 13.8 7.2 19.6M14 13.8l2.8 5.8"/></symbol>
+    <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15.5" rx="2.5"/><path d="M3.5 9.5h17M8 3v4M16 3v4"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3.5l7 2.6v5.6c0 4.4-3 7.6-7 8.8-4-1.2-7-4.4-7-8.8V6.1z"/><path d="M9 12l2.2 2.2L15.5 10"/></symbol>
+  </svg>
+
+  <!-- Bandeau Bab Digital : rappelle que c'est un exemple -->
+  <div class="ex-bar">
+    <div class="wrap ex-bar-in">
+      <a class="ex-back" href="../index.html#realisations"><svg class="ic ic-dir" aria-hidden="true"><use href="#i-back"/></svg><span data-i18n="ex.bar.back">Retour à Bab Digital</span></a>
+      <span class="ex-pill" data-i18n="ex.bar.pill">Exemple de design</span>
+      <span class="ex-bar-text" data-i18n="ex.bar.text">Entreprise imaginaire, créée par Bab Digital pour montrer son travail.</span>
+      <div class="lang" role="group" data-i18n-attr="aria-label:lang.label" aria-label="Langue">
+        <button type="button" data-lang="fr" lang="fr" aria-pressed="true">FR</button>
+        <button type="button" data-lang="ar" lang="ar" aria-pressed="false">عربي</button>
+      </div>
+    </div>
+  </div>
+
+  <header class="ex-header">
+    <div class="wrap ex-header-in">
+      <a class="ex-logo" href="#contenu"><span class="ex-logo-mark"><svg class="ic" aria-hidden="true"><use href="#i-wheel"/></svg></span><span data-i18n="ecole.name">Auto-école Virage</span></a>
+      <nav class="ex-nav" data-i18n-attr="aria-label:ex.nav.label" aria-label="Sur cette page">
+        <a href="#forfaits" data-i18n="ecole.nav.1">Forfaits</a>
+        <a href="#etapes" data-i18n="ecole.nav.2">Étapes</a>
+        <a href="#horaires" data-i18n="ecole.nav.3">Horaires</a>
+      </nav>
+      <a class="ex-btn ex-btn-sm" data-wa="ecole.wa" href="https://wa.me/212720215184?text=Bonjour%20Bab%20Digital%2C%20j&#x27;ai%20vu%20l&#x27;exemple%20Auto-%C3%A9cole%20Virage%20et%20je%20veux%20une%20page%20pour%20mon%20entreprise."><svg class="ic" aria-hidden="true"><use href="#i-wa"/></svg><span data-i18n="ecole.header.cta">S'inscrire</span></a>
+    </div>
+  </header>
+
+  <main id="contenu">
+    <section class="ex-hero" aria-labelledby="hero-title">
+      <div class="wrap ex-hero-grid">
+        <div class="ex-hero-copy">
+          <p class="ex-kicker"><svg class="ic" aria-hidden="true"><use href="#i-pin"/></svg><span data-i18n="ecole.kicker">Auto-école, Talborjt, Agadir</span></p>
+          <h1 id="hero-title" data-i18n="ecole.title">Votre permis, étape par étape.</h1>
+          <p class="ex-sub" data-i18n="ecole.sub">Code de la route et leçons de conduite pour le permis B, avec des moniteurs patients et des horaires souples.</p>
+          <div class="ex-actions">
+            <a class="ex-btn" data-wa="ecole.wa" href="https://wa.me/212720215184?text=Bonjour%20Bab%20Digital%2C%20j&#x27;ai%20vu%20l&#x27;exemple%20Auto-%C3%A9cole%20Virage%20et%20je%20veux%20une%20page%20pour%20mon%20entreprise."><svg class="ic" aria-hidden="true"><use href="#i-wa"/></svg><span data-i18n="ecole.cta">S'inscrire sur WhatsApp</span></a>
+            <a class="ex-btn ex-btn-line" href="#forfaits" data-i18n="ecole.cta2">Voir les forfaits</a>
+          </div>
+          <ul class="ex-chips">
+            <li class="ex-chip"><svg class="ic" aria-hidden="true"><use href="#i-wheel"/></svg><span data-i18n="ecole.chip1">Permis B</span></li>
+            <li class="ex-chip"><svg class="ic" aria-hidden="true"><use href="#i-calendar"/></svg><span data-i18n="ecole.chip2">Horaires souples</span></li>
+          </ul>
+        </div>
+        <div class="ex-hero-media">
+          <div class="ex-frame">
+            <img src="img/auto-ecole.svg" width="800" height="1000" fetchpriority="high" decoding="async" data-i18n-attr="alt:ecole.img.hero" alt="Illustration : voiture d&#x27;auto-école sur une route en virage, près d&#x27;Agadir">
+          </div>
+          <p class="ex-float ex-float-a" aria-hidden="true"><span class="dot"><svg class="ic"><use href="#i-shield"/></svg></span><span data-i18n="ecole.float1">Voiture à double commande</span></p>
+          <p class="ex-float ex-float-b" aria-hidden="true"><span class="dot"><svg class="ic"><use href="#i-check"/></svg></span><span data-i18n="ecole.float2">Tests de code en ligne</span></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="ex-section alt" id="forfaits" aria-labelledby="forfaits-title">
+      <div class="wrap">
+        <div class="ex-head reveal">
+          <h2 id="forfaits-title" data-i18n="ecole.menu.title">Nos forfaits</h2>
+          <p data-i18n="ecole.menu.sub">Des prix clairs, sans frais cachés.</p>
+        </div>
+        <div class="ex-menu">
+          <div class="ex-card reveal">
+            <h3 data-i18n="ecole.cat1">Permis B</h3>
+            <ul class="ex-items">
+              <li><span class="name"><span data-i18n="ecole.i1">Code de la route</span><small data-i18n="ecole.i1.note">Cours et tests blancs</small></span><span class="price" data-i18n="ecole.p1">800 DH</span></li>
+              <li><span class="name"><span data-i18n="ecole.i2">Permis B complet</span><small data-i18n="ecole.i2.note">Code et 20 heures de conduite</small></span><span class="price" data-i18n="ecole.p2">3200 DH</span></li>
+              <li><span class="name" data-i18n="ecole.i3">Heure de conduite en plus</span><span class="price" data-i18n="ecole.p3">150 DH</span></li>
+            </ul>
+          </div>
+          <div class="ex-card reveal" style="--d:1">
+            <h3 data-i18n="ecole.cat2">Options</h3>
+            <ul class="ex-items">
+              <li><span class="name" data-i18n="ecole.i4">Préparation à l'examen pratique</span><span class="price" data-i18n="ecole.p4">300 DH</span></li>
+              <li><span class="name" data-i18n="ecole.i5">Paiement en plusieurs fois</span><span class="price" data-i18n="ecole.p5">sans frais</span></li>
+            </ul>
+          </div>
+        </div>
+        <p class="ex-note" data-i18n="ex.prices.note">Prix d'exemple : cette page est un exemple de design.</p>
+      </div>
+    </section>
+
+    <section class="ex-section" id="etapes" aria-labelledby="etapes-title">
+      <div class="wrap">
+        <div class="ex-head reveal">
+          <h2 id="etapes-title" data-i18n="ecole.steps.title">Les étapes du permis</h2>
+          <p data-i18n="ecole.steps.sub">Nous vous accompagnons de l'inscription jusqu'à l'examen.</p>
+        </div>
+        <ol class="ex-points four">
+          <li class="ex-point reveal">
+            <span class="ex-point-ic" aria-hidden="true">1</span>
+            <h3 data-i18n="ecole.st1.title">Inscription</h3>
+            <p data-i18n="ecole.st1.text">Pièce d'identité, photos et certificat médical.</p>
+          </li>
+          <li class="ex-point reveal" style="--d:1">
+            <span class="ex-point-ic" aria-hidden="true">2</span>
+            <h3 data-i18n="ecole.st2.title">Code de la route</h3>
+            <p data-i18n="ecole.st2.text">Cours et tests blancs jusqu'à l'examen théorique.</p>
+          </li>
+          <li class="ex-point reveal" style="--d:2">
+            <span class="ex-point-ic" aria-hidden="true">3</span>
+            <h3 data-i18n="ecole.st3.title">Conduite</h3>
+            <p data-i18n="ecole.st3.text">Leçons en ville et sur route, à votre rythme.</p>
+          </li>
+          <li class="ex-point reveal" style="--d:3">
+            <span class="ex-point-ic" aria-hidden="true">4</span>
+            <h3 data-i18n="ecole.st4.title">Examen pratique</h3>
+            <p data-i18n="ecole.st4.text">Nous vous accompagnons le jour de l'examen.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="ex-section alt" id="horaires" aria-labelledby="horaires-title">
+      <div class="wrap">
+        <div class="ex-head reveal">
+          <h2 id="horaires-title" data-i18n="ex.info.title">Horaires et accès</h2>
+        </div>
+        <div class="ex-info">
+          <div class="ex-panel reveal">
+            <h3><svg class="ic" aria-hidden="true"><use href="#i-clock"/></svg><span data-i18n="ex.hours.title">Horaires</span></h3>
+            <table class="ex-hours">
+              <tr data-days="1,2,3,4,5"><th scope="row" data-i18n="ecole.h1.days">Lundi - Vendredi</th><td dir="ltr">8:30 - 19:00</td></tr>
+              <tr data-days="6"><th scope="row" data-i18n="ecole.h2.days">Samedi</th><td dir="ltr">8:30 - 13:00</td></tr>
+              <tr data-days="0"><th scope="row" data-i18n="ecole.h3.days">Dimanche</th><td data-i18n="ex.closed">Fermé</td></tr>
+            </table>
+            <div class="ex-address">
+              <h3><svg class="ic" aria-hidden="true"><use href="#i-pin"/></svg><span data-i18n="ex.address.title">Adresse</span></h3>
+              <p data-i18n="ecole.address">5, boulevard de l'Exemple, Talborjt, Agadir</p>
+            </div>
+          </div>
+          <div class="ex-map reveal" style="--d:1" role="img" data-i18n-attr="aria-label:ex.map.label" aria-label="Plan d&#x27;accès (exemple)">
+            <span class="ex-pin"><svg class="ic" aria-hidden="true"><use href="#i-wheel"/></svg></span>
+            <p class="ex-map-note"><b data-i18n="ecole.name">Auto-école Virage</b><span data-i18n="ex.map.note">Sur votre page : votre emplacement Google Maps.</span></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="ex-cta" aria-labelledby="cta-title">
+      <div class="wrap">
+        <div class="ex-cta-box reveal">
+          <h2 id="cta-title" data-i18n="ecole.cta.title">Prêt à prendre le volant ?</h2>
+          <p data-i18n="ecole.cta.text">Inscrivez-vous sur WhatsApp : nous vous rappelons pour fixer votre première leçon.</p>
+          <div class="ex-actions">
+            <a class="ex-btn" data-wa="ecole.wa" href="https://wa.me/212720215184?text=Bonjour%20Bab%20Digital%2C%20j&#x27;ai%20vu%20l&#x27;exemple%20Auto-%C3%A9cole%20Virage%20et%20je%20veux%20une%20page%20pour%20mon%20entreprise."><svg class="ic" aria-hidden="true"><use href="#i-wa"/></svg><span data-i18n="ecole.cta">S'inscrire sur WhatsApp</span></a>
+          </div>
+          <p class="ex-hint" data-i18n="ex.cta.hint">Sur votre page, ce bouton ouvre votre WhatsApp. Ici, il écrit à Bab Digital.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="ex-footer">
+    <div class="wrap ex-footer-in">
+      <div>
+        <p class="ex-footer-name" data-i18n="ecole.name">Auto-école Virage</p>
+        <p data-i18n="ecole.address">5, boulevard de l'Exemple, Talborjt, Agadir</p>
+        <p class="ex-demo-note"><span data-i18n="ex.footer.demo">Exemple de design : cette entreprise n'existe pas.</span> <span data-i18n="ex.footer.illus">Illustrations : Bab Digital.</span></p>
+      </div>
+      <p class="ex-credit"><a data-wa="wa.default" href="https://wa.me/212720215184?text=Bonjour%20Bab%20Digital%2C%20je%20veux%20une%20page%20pour%20mon%20entreprise."><svg class="ic bab-mark" aria-hidden="true"><use href="#i-arch"/></svg><span data-i18n="ex.footer.credit">Site créé par Bab Digital</span></a></p>
+    </div>
+  </footer>
+
+  <a class="wa-float" data-wa="ecole.wa" href="https://wa.me/212720215184?text=Bonjour%20Bab%20Digital%2C%20j&#x27;ai%20vu%20l&#x27;exemple%20Auto-%C3%A9cole%20Virage%20et%20je%20veux%20une%20page%20pour%20mon%20entreprise." data-i18n-attr="aria-label:ecole.float.label" aria-label="S&#x27;inscrire sur WhatsApp"><svg class="ic" aria-hidden="true"><use href="#i-wa"/></svg></a>
+
+</body>
+</html>

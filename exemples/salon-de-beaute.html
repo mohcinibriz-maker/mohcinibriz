@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+  <!-- Exemple de design : le Salon Safran n'existe pas (adresse et prix inventés pour l'exemple).
+       Illustration dessinée par Bab Digital (img/salon.svg).
+       Page créée par Bab Digital pour montrer son travail. Textes français et arabes : ../js/main.js. -->
+  <title data-i18n="salon.meta.title">Salon Safran, Rabat (exemple de design) | Bab Digital</title>
+  <meta name="description" data-i18n-attr="content:salon.meta.description" content="Exemple de page web pour un salon de beauté, créé par Bab Digital : prestations, prix, horaires et prise de rendez-vous sur WhatsApp.">
+  <meta name="robots" content="noindex, follow">
+  <meta name="theme-color" content="#FAF6F2">
+  <meta property="og:type" content="website">
+  <meta property="og:title" data-i18n-attr="content:salon.meta.title" content="Salon Safran, Rabat (exemple de design) | Bab Digital">
+  <meta property="og:description" data-i18n-attr="content:salon.meta.description" content="Exemple de page web pour un salon de beauté, créé par Bab Digital : prestations, prix, horaires et prise de rendez-vous sur WhatsApp.">
+  <meta property="og:image" content="https://babdigital.vercel.app/og-image.png"><!-- ADRESSE -->
+  <link rel="icon" href="../logo-icon.svg" type="image/svg+xml">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&family=Tajawal:wght@400;500;700;800&display=swap">
+  <link rel="stylesheet" href="../css/exemples.css">
+  <script>
+    (function () {
+      var d = document.documentElement;
+      d.classList.add("js");
+      try {
+        var l = new URLSearchParams(location.search).get("lang") || localStorage.getItem("bab-lang");
+        if (l === "ar") { d.lang = "ar"; d.dir = "rtl"; d.classList.add("i18n-wait"); setTimeout(function () { d.classList.remove("i18n-wait"); }, 1500); }
+      } catch (e) {}
+    })();
+  </script>
+  <script src="../js/main.js" defer></script>
+</head>
+<body class="ex ex-salon">
+
+  <a class="skip-link" href="#contenu" data-i18n="a11y.skip">Aller au contenu</a>
+
+  <svg class="sprite" aria-hidden="true" focusable="false">
+    <symbol id="i-wa" viewBox="0 0 24 24"><path fill="currentColor" stroke="none" fill-rule="evenodd" d="M12 2.6a9.4 9.4 0 0 0-8.1 14.2L2.6 21.4l4.7-1.3A9.4 9.4 0 1 0 12 2.6Zm0 1.7a7.7 7.7 0 1 1-3.9 14.3l-.3-.2-2.8.8.8-2.7-.2-.3A7.7 7.7 0 0 1 12 4.3Z"/><path fill="currentColor" stroke="none" d="M9.1 7.6c-.2-.4-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.3.3-.9.9-.9 2.2s.9 2.5 1 2.7c.1.2 1.8 2.9 4.5 3.9 2.2.9 2.7.7 3.1.7.5 0 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.2-.2-.5-.3l-1.7-.8c-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1-.3-.1-1.1-.4-2-1.3-.8-.7-1.3-1.5-1.4-1.8-.1-.3 0-.4.1-.5l.4-.4.3-.4c.1-.2 0-.3 0-.5l-.8-1.9Z"/></symbol>
+    <symbol id="i-back" viewBox="0 0 24 24"><path d="M19 12H5M11 18l-6-6 6-6"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11Z"/><circle cx="12" cy="10" r="2.3"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.2 4.2L19 7"/></symbol>
+    <symbol id="i-arch" viewBox="0 0 24 24"><path d="M7.085 21V13.441A6 6 0 1 1 16.915 13.441V21"/></symbol>
+    <symbol id="i-flower" viewBox="0 0 24 24"><path d="M12 21v-7"/><path d="M12 14c-3 0-5-2.5-5-6 2 0 4 1 5 3 1-2 3-3 5-3 0 3.5-2 6-5 6Z"/><path d="M12 17c-1.5-1.5-3.5-2-5-1.5M12 18c1.5-1.5 3.5-2 5-1.5"/></symbol>
+    <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15.5" rx="2.5"/><path d="M3.5 9.5h17M8 3v4M16 3v4"/></symbol>
+    <symbol id="i-sparkle" viewBox="0 0 24 24"><path d="M12 3.5l1.8 5.2 5.2 1.8-5.2 1.8L12 17.5l-1.8-5.2L5 10.5l5.2-1.8Z"/><path d="M18.5 15.5l.7 1.8 1.8.7-1.8.7-.7 1.8-.7-1.8-1.8-.7 1.8-.7Z"/></symbol>
+    <symbol id="i-drop" viewBox="0 0 24 24"><path d="M12 3.5s-5.5 6-5.5 10a5.5 5.5 0 0 0 11 0c0-4-5.5-10-5.5-10Z"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3.5l7 2.6v5.6c0 4.4-3 7.6-7 8.8-4-1.2-7-4.4-7-8.8V6.1z"/><path d="M9 12l2.2 2.2L15.5 10"/></symbol>
+  </svg>
+
+  <!-- Bandeau Bab Digital : rappelle que c'est un exemple -->
+  <div class="ex-bar">
+    <div class="wrap ex-bar-in">
+      <a class="ex-back" href="../index.html#realisations"><svg class="ic ic-dir" aria-hidden="true"><use href="#i-back"/></svg><span data-i18n="ex.bar.back">Retour à Bab Digital</span></a>
+      <span class="ex-pill" data-i18n="ex.bar.pill">Exemple de design</span>
+      <span class="ex-bar-text" data-i18n="ex.bar.text">Entreprise imaginaire, créée par Bab Digital pour montrer son travail.</span>
+      <div class="lang" role="group" data-i18n-attr="aria-label:lang.label" aria-label="Langue">
+        <button type="button" data-lang="fr" lang="fr" aria-pressed="true">FR</button>
+        <button type="button" data-lang="ar" lang="ar" aria-pressed="false">عربي</button>
+      </div>
+    </div>
+  </div>
+
+  <header class="ex-header">
+    <div class="wrap ex-header-in">
+      <a class="ex-logo" href="#contenu"><span class="ex-logo-mark"><svg class="ic" aria-hidden="true"><use href="#i-flower"/></svg></span><span data-i18n="salon.name">Salon Safran</span></a>
+      <nav class="ex-nav" data-i18n-attr="aria-label:ex.nav.label" aria-label="Sur cette page">
+        <a href="#prestations" data-i18n="salon.nav.1">Prestations</a>
+        <a href="#salon" data-i18n="salon.nav.2">Le salon</a>
+        <a href="#horaires" data-i18n="salon.nav.3">Horaires</a>
+      </nav>
+      <a class="ex-btn ex-btn-sm" data-wa="salon.wa" href="https://wa.me/212720215184?text=Bonjour%20Bab%20Digital%2C%20j&#x27;ai%20vu%20l&#x27;exemple%20Salon%20Safran%20et%20je%20veux%20une%20page%20pour%20mon%20entreprise."><svg class="ic" aria-hidden="true"><use href="#i-wa"/></svg><span data-i18n="salon.header.cta">Rendez-vous</span></a>
+    </div>
+  </header>
+
+  <main id="contenu">
+    <section class="ex-hero" aria-labelledby="hero-title">
+      <div class="wrap ex-hero-grid">
+        <div class="ex-hero-copy">
+          <p class="ex-kicker"><svg class="ic" aria-hidden="true"><use href="#i-pin"/></svg><span data-i18n="salon.kicker">Salon de beauté, Agdal, Rabat</span></p>
+          <h1 id="hero-title" data-i18n="salon.title">Prenez le temps de prendre soin de vous.</h1>
+          <p class="ex-sub" data-i18n="salon.sub">Coiffure, soins du visage, manucure et hammam, dans un salon calme et lumineux.</p>
+          <div class="ex-actions">
+            <a class="ex-btn" data-wa="salon.wa" href="https://wa.me/212720215184?text=Bonjour%20Bab%20Digital%2C%20j&#x27;ai%20vu%20l&#x27;exemple%20Salon%20Safran%20et%20je%20veux%20une%20page%20pour%20mon%20entreprise."><svg class="ic" aria-hidden="true"><use href="#i-wa"/></svg><span data-i18n="salon.cta">Prendre rendez-vous</span></a>
+            <a class="ex-btn ex-btn-line" href="#prestations" data-i18n="salon.cta2">Voir les prestations</a>
+          </div>
+          <ul class="ex-chips">
+            <li class="ex-chip"><svg class="ic" aria-hidden="true"><use href="#i-calendar"/></svg><span data-i18n="salon.chip1">Du mardi au dimanche</span></li>
+            <li class="ex-chip"><svg class="ic" aria-hidden="true"><use href="#i-clock"/></svg><span data-i18n="salon.chip2">Sur rendez-vous</span></li>
+          </ul>
+        </div>
+        <div class="ex-hero-media">
+          <div class="ex-frame">
+            <img src="img/salon.svg" width="750" height="1000" fetchpriority="high" decoding="async" data-i18n-attr="alt:salon.img.hero" alt="Illustration : miroir doré, flacons de soin et bouquet de crocus de safran">
+          </div>
+          <p class="ex-float ex-float-a" aria-hidden="true"><span class="dot"><svg class="ic"><use href="#i-sparkle"/></svg></span><span data-i18n="salon.float1">Produits professionnels</span></p>
+          <p class="ex-float ex-float-b" aria-hidden="true"><span class="dot"><svg class="ic"><use href="#i-drop"/></svg></span><span data-i18n="salon.float2">Hammam et soins sur rendez-vous</span></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="ex-section alt" id="prestations" aria-labelledby="prestations-title">
+      <div class="wrap">
+        <div class="ex-head reveal">
+          <h2 id="prestations-title" data-i18n="salon.menu.title">Nos prestations</h2>
+          <p data-i18n="salon.menu.sub">Des soins doux, réalisés avec des produits de qualité.</p>
+        </div>
+        <div class="ex-menu">
+          <div class="ex-card reveal">
+            <h3 data-i18n="salon.cat1">Coiffure</h3>
+            <ul class="ex-items">
+              <li><span class="name" data-i18n="salon.i1">Brushing</span><span class="price" data-i18n="salon.p1">80 DH</span></li>
+              <li><span class="name" data-i18n="salon.i2">Coupe et brushing</span><span class="price" data-i18n="salon.p2">150 DH</span></li>
+              <li><span class="name" data-i18n="salon.i3">Coloration</span><span class="price" data-i18n="salon.p3">dès 250 DH</span></li>
+            </ul>
+          </div>
+          <div class="ex-card reveal" style="--d:1">
+            <h3 data-i18n="salon.cat2">Soins</h3>
+            <ul class="ex-items">
+              <li><span class="name" data-i18n="salon.i4">Soin du visage</span><span class="price" data-i18n="salon.p4">200 DH</span></li>
+              <li><span class="name" data-i18n="salon.i5">Manucure</span><span class="price" data-i18n="salon.p5">80 DH</span></li>
+              <li><span class="name" data-i18n="salon.i6">Pédicure</span><span class="price" data-i18n="salon.p6">100 DH</span></li>
+            </ul>
+          </div>
+          <div class="ex-card reveal" style="--d:2">
+            <h3 data-i18n="salon.cat3">Hammam</h3>
+            <ul class="ex-items">
+              <li><span class="name" data-i18n="salon.i7">Hammam et gommage</span><span class="price" data-i18n="salon.p7">150 DH</span></li>
+              <li><span class="name" data-i18n="salon.i8">Hammam, gommage et massage</span><span class="price" data-i18n="salon.p8">300 DH</span></li>
+            </ul>
+          </div>
+        </div>
+        <p class="ex-note" data-i18n="ex.prices.note">Prix d'exemple : cette page est un exemple de design.</p>
+      </div>
+    </section>
+
+    <section class="ex-section" id="salon" aria-labelledby="salon-title">
+      <div class="wrap">
+        <div class="ex-head reveal">
+          <h2 id="salon-title" data-i18n="salon.place.title">Un moment pour vous</h2>
+          <p data-i18n="salon.place.sub">Un salon pensé pour se détendre, du premier thé au dernier coup de brosse.</p>
+        </div>
+        <ul class="ex-points">
+          <li class="ex-point reveal">
+            <span class="ex-point-ic"><svg class="ic" aria-hidden="true"><use href="#i-sparkle"/></svg></span>
+            <h3 data-i18n="salon.pt1.title">Produits choisis</h3>
+            <p data-i18n="salon.pt1.text">Des marques professionnelles, adaptées à chaque type de peau et de cheveux.</p>
+          </li>
+          <li class="ex-point reveal" style="--d:1">
+            <span class="ex-point-ic"><svg class="ic" aria-hidden="true"><use href="#i-shield"/></svg></span>
+            <h3 data-i18n="salon.pt2.title">Hygiène soignée</h3>
+            <p data-i18n="salon.pt2.text">Serviettes propres et outils désinfectés pour chaque cliente.</p>
+          </li>
+          <li class="ex-point reveal" style="--d:2">
+            <span class="ex-point-ic"><svg class="ic" aria-hidden="true"><use href="#i-calendar"/></svg></span>
+            <h3 data-i18n="salon.pt3.title">Sans attente</h3>
+            <p data-i18n="salon.pt3.text">Votre créneau est réservé : vous êtes accueillie à l'heure.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="ex-section alt" id="horaires" aria-labelledby="horaires-title">
+      <div class="wrap">
+        <div class="ex-head reveal">
+          <h2 id="horaires-title" data-i18n="ex.info.title">Horaires et accès</h2>
+        </div>
+        <div class="ex-info">
+          <div class="ex-panel reveal">
+            <h3><svg class="ic" aria-hidden="true"><use href="#i-clock"/></svg><span data-i18n="ex.hours.title">Horaires</span></h3>
+            <table class="ex-hours">
+              <tr data-days="0,2,3,4,5,6"><th scope="row" data-i18n="salon.h1.days">Mardi - Dimanche</th><td dir="ltr">10:00 - 20:00</td></tr>
+              <tr data-days="1"><th scope="row" data-i18n="salon.h2.days">Lundi</th><td data-i18n="ex.closed">Fermé</td></tr>
+            </table>
+            <div class="ex-address">
+              <h3><svg class="ic" aria-hidden="true"><use href="#i-pin"/></svg><span data-i18n="ex.address.title">Adresse</span></h3>
+              <p data-i18n="salon.address">8, avenue de l'Exemple, Agdal, Rabat</p>
+            </div>
+          </div>
+          <div class="ex-map reveal" style="--d:1" role="img" data-i18n-attr="aria-label:ex.map.label" aria-label="Plan d&#x27;accès (exemple)">
+            <span class="ex-pin"><svg class="ic" aria-hidden="true"><use href="#i-flower"/></svg></span>
+            <p class="ex-map-note"><b data-i18n="salon.name">Salon Safran</b><span data-i18n="ex.map.note">Sur votre page : votre emplacement Google Maps.</span></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="ex-cta" aria-labelledby="cta-title">
+      <div class="wrap">
+        <div class="ex-cta-box reveal">
+          <h2 id="cta-title" data-i18n="salon.cta.title">Réservez votre moment.</h2>
+          <p data-i18n="salon.cta.text">Choisissez votre prestation et votre horaire sur WhatsApp.</p>
+          <div class="ex-actions">
+            <a class="ex-btn" data-wa="salon.wa" href="https://wa.me/212720215184?text=Bonjour%20Bab%20Digital%2C%20j&#x27;ai%20vu%20l&#x27;exemple%20Salon%20Safran%20et%20je%20veux%20une%20page%20pour%20mon%20entreprise."><svg class="ic" aria-hidden="true"><use href="#i-wa"/></svg><span data-i18n="salon.cta">Prendre rendez-vous</span></a>
+          </div>
+          <p class="ex-hint" data-i18n="ex.cta.hint">Sur votre page, ce bouton ouvre votre WhatsApp. Ici, il écrit à Bab Digital.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="ex-footer">
+    <div class="wrap ex-footer-in">
+      <div>
+        <p class="ex-footer-name" data-i18n="salon.name">Salon Safran</p>
+        <p data-i18n="salon.address">8, avenue de l'Exemple, Agdal, Rabat</p>
+        <p class="ex-demo-note"><span data-i18n="ex.footer.demo">Exemple de design : cette entreprise n'existe pas.</span> <span data-i18n="ex.footer.illus">Illustrations : Bab Digital.</span></p>
+      </div>
+      <p class="ex-credit"><a data-wa="wa.default" href="https://wa.me/212720215184?text=Bonjour%20Bab%20Digital%2C%20je%20veux%20une%20page%20pour%20mon%20entreprise."><svg class="ic bab-mark" aria-hidden="true"><use href="#i-arch"/></svg><span data-i18n="ex.footer.credit">Site créé par Bab Digital</span></a></p>
+    </div>
+  </footer>
+
+  <a class="wa-float" data-wa="salon.wa" href="https://wa.me/212720215184?text=Bonjour%20Bab%20Digital%2C%20j&#x27;ai%20vu%20l&#x27;exemple%20Salon%20Safran%20et%20je%20veux%20une%20page%20pour%20mon%20entreprise." data-i18n-attr="aria-label:salon.float.label" aria-label="Prendre rendez-vous sur WhatsApp"><svg class="ic" aria-hidden="true"><use href="#i-wa"/></svg></a>
+
+</body>
+</html>

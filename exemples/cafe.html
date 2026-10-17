@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+  <!-- Exemple de design : le Café Nakhla n'existe pas (adresse et prix inventés pour l'exemple).
+       Illustration dessinée par Bab Digital (img/cafe.svg).
+       Page créée par Bab Digital pour montrer son travail. Textes français et arabes : ../js/main.js. -->
+  <title data-i18n="cafe.meta.title">Café Nakhla, Marrakech (exemple de design) | Bab Digital</title>
+  <meta name="description" data-i18n-attr="content:cafe.meta.description" content="Exemple de page web pour un café, créé par Bab Digital : la carte, les prix, les horaires et la commande sur WhatsApp.">
+  <meta name="robots" content="noindex, follow">
+  <meta name="theme-color" content="#FBF5EC">
+  <meta property="og:type" content="website">
+  <meta property="og:title" data-i18n-attr="content:cafe.meta.title" content="Café Nakhla, Marrakech (exemple de design) | Bab Digital">
+  <meta property="og:description" data-i18n-attr="content:cafe.meta.description" content="Exemple de page web pour un café, créé par Bab Digital : la carte, les prix, les horaires et la commande sur WhatsApp.">
+  <meta property="og:image" content="https://babdigital.vercel.app/og-image.png"><!-- ADRESSE -->
+  <link rel="icon" href="../logo-icon.svg" type="image/svg+xml">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=Tajawal:wght@400;500;700;800&display=swap">
+  <link rel="stylesheet" href="../css/exemples.css">
+  <script>
+    (function () {
+      var d = document.documentElement;
+      d.classList.add("js");
+      try {
+        var l = new URLSearchParams(location.search).get("lang") || localStorage.getItem("bab-lang");
+        if (l === "ar") { d.lang = "ar"; d.dir = "rtl"; d.classList.add("i18n-wait"); setTimeout(function () { d.classList.remove("i18n-wait"); }, 1500); }
+      } catch (e) {}
+    })();
+  </script>
+  <script src="../js/main.js" defer></script>
+</head>
+<body class="ex ex-cafe">
+
+  <a class="skip-link" href="#contenu" data-i18n="a11y.skip">Aller au contenu</a>
+
+  <svg class="sprite" aria-hidden="true" focusable="false">
+    <symbol id="i-wa" viewBox="0 0 24 24"><path fill="currentColor" stroke="none" fill-rule="evenodd" d="M12 2.6a9.4 9.4 0 0 0-8.1 14.2L2.6 21.4l4.7-1.3A9.4 9.4 0 1 0 12 2.6Zm0 1.7a7.7 7.7 0 1 1-3.9 14.3l-.3-.2-2.8.8.8-2.7-.2-.3A7.7 7.7 0 0 1 12 4.3Z"/><path fill="currentColor" stroke="none" d="M9.1 7.6c-.2-.4-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.3.3-.9.9-.9 2.2s.9 2.5 1 2.7c.1.2 1.8 2.9 4.5 3.9 2.2.9 2.7.7 3.1.7.5 0 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.2-.2-.5-.3l-1.7-.8c-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1-.3-.1-1.1-.4-2-1.3-.8-.7-1.3-1.5-1.4-1.8-.1-.3 0-.4.1-.5l.4-.4.3-.4c.1-.2 0-.3 0-.5l-.8-1.9Z"/></symbol>
+    <symbol id="i-back" viewBox="0 0 24 24"><path d="M19 12H5M11 18l-6-6 6-6"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11Z"/><circle cx="12" cy="10" r="2.3"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.2 4.2L19 7"/></symbol>
+    <symbol id="i-arch" viewBox="0 0 24 24"><path d="M7.085 21V13.441A6 6 0 1 1 16.915 13.441V21"/></symbol>
+    <symbol id="i-palm" viewBox="0 0 24 24"><path d="M12 21v-8"/><path d="M12 13c-1.5-3-4.5-4.5-8-4 2.5 1 4 2.5 5 5M12 13c1.5-3 4.5-4.5 8-4-2.5 1-4 2.5-5 5M12 13c-.5-3.5-2.5-6-6-7 2 1.5 3 3.5 3.5 6M12 13c.5-3.5 2.5-6 6-7-2 1.5-3 3.5-3.5 6"/></symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 3v2M12 19v2M3 12h2M19 12h2M5.6 5.6 7 7M17 17l1.4 1.4M5.6 18.4 7 17M17 7l1.4-1.4"/></symbol>
+    <symbol id="i-cup" viewBox="0 0 24 24"><path d="M5 9h11v5a5 5 0 0 1-5 5h-1a5 5 0 0 1-5-5V9Z"/><path d="M16 10h1.5a2.5 2.5 0 0 1 0 5H16M8.5 3.5c0 1.5 1 1.5 1 3M12 3.5c0 1.5 1 1.5 1 3"/></symbol>
+    <symbol id="i-wifi" viewBox="0 0 24 24"><path d="M4.5 9.5a11 11 0 0 1 15 0M7.5 12.8a6.5 6.5 0 0 1 9 0M10.5 16a2 2 0 0 1 3 0"/><circle cx="12" cy="19" r=".8" fill="currentColor"/></symbol>
+    <symbol id="i-bag" viewBox="0 0 24 24"><path d="M6 8h12l-1 12H7L6 8Z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/></symbol>
+  </svg>
+
+  <!-- Bandeau Bab Digital : rappelle que c'est un exemple -->
+  <div class="ex-bar">
+    <div class="wrap ex-bar-in">
+      <a class="ex-back" href="../index.html#realisations"><svg class="ic ic-dir" aria-hidden="true"><use href="#i-back"/></svg><span data-i18n="ex.bar.back">Retour à Bab Digital</span></a>
+      <span class="ex-pill" data-i18n="ex.bar.pill">Exemple de design</span>
+      <span class="ex-bar-text" data-i18n="ex.bar.text">Entreprise imaginaire, créée par Bab Digital pour montrer son travail.</span>
+      <div class="lang" role="group" data-i18n-attr="aria-label:lang.label" aria-label="Langue">
+        <button type="button" data-lang="fr" lang="fr" aria-pressed="true">FR</button>
+        <button type="button" data-lang="ar" lang="ar" aria-pressed="false">عربي</button>
+      </div>
+    </div>
+  </div>
+
+  <header class="ex-header">
+    <div class="wrap ex-header-in">
+      <a class="ex-logo" href="#contenu"><span class="ex-logo-mark"><svg class="ic" aria-hidden="true"><use href="#i-palm"/></svg></span><span data-i18n="cafe.name">Café Nakhla</span></a>
+      <nav class="ex-nav" data-i18n-attr="aria-label:ex.nav.label" aria-label="Sur cette page">
+        <a href="#carte" data-i18n="cafe.nav.1">La carte</a>
+        <a href="#lieu" data-i18n="cafe.nav.2">Le lieu</a>
+        <a href="#horaires" data-i18n="cafe.nav.3">Horaires</a>
+      </nav>
+      <a class="ex-btn ex-btn-sm" data-wa="cafe.wa" href="https://wa.me/212720215184?text=Bonjour%20Bab%20Digital%2C%20j&#x27;ai%20vu%20l&#x27;exemple%20Caf%C3%A9%20Nakhla%20et%20je%20veux%20une%20page%20pour%20mon%20entreprise."><svg class="ic" aria-hidden="true"><use href="#i-wa"/></svg><span data-i18n="cafe.header.cta">Commander</span></a>
+    </div>
+  </header>
+
+  <main id="contenu">
+    <section class="ex-hero" aria-labelledby="hero-title">
+      <div class="wrap ex-hero-grid">
+        <div class="ex-hero-copy">
+          <p class="ex-kicker"><svg class="ic" aria-hidden="true"><use href="#i-pin"/></svg><span data-i18n="cafe.kicker">Café, Guéliz, Marrakech</span></p>
+          <h1 id="hero-title" data-i18n="cafe.title">Le café du quartier, du matin au soir.</h1>
+          <p class="ex-sub" data-i18n="cafe.sub">Café, thé à la menthe, jus frais et petits-déjeuners marocains, sur place ou à emporter.</p>
+          <div class="ex-actions">
+            <a class="ex-btn" data-wa="cafe.wa" href="https://wa.me/212720215184?text=Bonjour%20Bab%20Digital%2C%20j&#x27;ai%20vu%20l&#x27;exemple%20Caf%C3%A9%20Nakhla%20et%20je%20veux%20une%20page%20pour%20mon%20entreprise."><svg class="ic" aria-hidden="true"><use href="#i-wa"/></svg><span data-i18n="cafe.cta">Commander sur WhatsApp</span></a>
+            <a class="ex-btn ex-btn-line" href="#carte" data-i18n="cafe.cta2">Voir la carte</a>
+          </div>
+          <ul class="ex-chips">
+            <li class="ex-chip"><svg class="ic" aria-hidden="true"><use href="#i-clock"/></svg><span data-i18n="cafe.chip1">Ouvert tous les jours</span></li>
+            <li class="ex-chip"><svg class="ic" aria-hidden="true"><use href="#i-sun"/></svg><span data-i18n="cafe.chip2">Terrasse ombragée</span></li>
+          </ul>
+        </div>
+        <div class="ex-hero-media">
+          <div class="ex-frame">
+            <img src="img/cafe.svg" width="800" height="1000" fetchpriority="high" decoding="async" data-i18n-attr="alt:cafe.img.hero" alt="Illustration : théière marocaine, verres de thé à la menthe et cornes de gazelle">
+          </div>
+          <p class="ex-float ex-float-a" aria-hidden="true"><span class="dot"><svg class="ic"><use href="#i-cup"/></svg></span><span data-i18n="cafe.float1">Thé à la menthe, 12 DH</span></p>
+          <p class="ex-float ex-float-b" aria-hidden="true"><span class="dot"><svg class="ic"><use href="#i-clock"/></svg></span><span data-i18n="cafe.float2">Commande prête en 10 minutes</span></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="ex-section alt" id="carte" aria-labelledby="carte-title">
+      <div class="wrap">
+        <div class="ex-head reveal">
+          <h2 id="carte-title" data-i18n="cafe.menu.title">La carte</h2>
+          <p data-i18n="cafe.menu.sub">Préparé à la commande, avec des produits frais du marché.</p>
+        </div>
+        <div class="ex-menu">
+          <div class="ex-card reveal">
+            <h3 data-i18n="cafe.cat1">Cafés</h3>
+            <ul class="ex-items">
+              <li><span class="name" data-i18n="cafe.i1">Espresso</span><span class="price" data-i18n="cafe.p1">12 DH</span></li>
+              <li><span class="name" data-i18n="cafe.i2">Café crème</span><span class="price" data-i18n="cafe.p2">15 DH</span></li>
+              <li><span class="name"><span data-i18n="cafe.i3">Nouss-nouss</span><small data-i18n="cafe.i3.note">Moitié café, moitié lait</small></span><span class="price" data-i18n="cafe.p3">14 DH</span></li>
+            </ul>
+          </div>
+          <div class="ex-card reveal" style="--d:1">
+            <h3 data-i18n="cafe.cat2">Thés et jus</h3>
+            <ul class="ex-items">
+              <li><span class="name" data-i18n="cafe.i4">Thé à la menthe</span><span class="price" data-i18n="cafe.p4">12 DH</span></li>
+              <li><span class="name" data-i18n="cafe.i5">Jus d'orange pressé</span><span class="price" data-i18n="cafe.p5">15 DH</span></li>
+              <li><span class="name" data-i18n="cafe.i6">Jus d'avocat aux fruits secs</span><span class="price" data-i18n="cafe.p6">25 DH</span></li>
+            </ul>
+          </div>
+          <div class="ex-card reveal" style="--d:2">
+            <h3 data-i18n="cafe.cat3">Petit-déjeuner</h3>
+            <ul class="ex-items">
+              <li><span class="name"><span data-i18n="cafe.i7">Petit-déjeuner beldi</span><small data-i18n="cafe.i7.note">Msemen, harcha, amlou, olives et thé</small></span><span class="price" data-i18n="cafe.p7">45 DH</span></li>
+              <li><span class="name" data-i18n="cafe.i8">Msemen et amlou</span><span class="price" data-i18n="cafe.p8">18 DH</span></li>
+              <li><span class="name" data-i18n="cafe.i9">Baghrir au miel</span><span class="price" data-i18n="cafe.p9">18 DH</span></li>
+            </ul>
+          </div>
+        </div>
+        <p class="ex-note" data-i18n="ex.prices.note">Prix d'exemple : cette page est un exemple de design.</p>
+      </div>
+    </section>
+
+    <section class="ex-section" id="lieu" aria-labelledby="lieu-title">
+      <div class="wrap">
+        <div class="ex-head reveal">
+          <h2 id="lieu-title" data-i18n="cafe.place.title">Un café pour chaque moment</h2>
+          <p data-i18n="cafe.place.sub">Pour un café rapide le matin ou une longue pause l'après-midi.</p>
+        </div>
+        <ul class="ex-points">
+          <li class="ex-point reveal">
+            <span class="ex-point-ic"><svg class="ic" aria-hidden="true"><use href="#i-sun"/></svg></span>
+            <h3 data-i18n="cafe.pt1.title">Terrasse ombragée</h3>
+            <p data-i18n="cafe.pt1.text">Pour un café au calme, à l'abri du soleil.</p>
+          </li>
+          <li class="ex-point reveal" style="--d:1">
+            <span class="ex-point-ic"><svg class="ic" aria-hidden="true"><use href="#i-wifi"/></svg></span>
+            <h3 data-i18n="cafe.pt2.title">Wi-Fi gratuit</h3>
+            <p data-i18n="cafe.pt2.text">Pratique pour travailler ou réviser.</p>
+          </li>
+          <li class="ex-point reveal" style="--d:2">
+            <span class="ex-point-ic"><svg class="ic" aria-hidden="true"><use href="#i-bag"/></svg></span>
+            <h3 data-i18n="cafe.pt3.title">À emporter</h3>
+            <p data-i18n="cafe.pt3.text">Commandez sur WhatsApp, passez récupérer.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="ex-section alt" id="horaires" aria-labelledby="horaires-title">
+      <div class="wrap">
+        <div class="ex-head reveal">
+          <h2 id="horaires-title" data-i18n="ex.info.title">Horaires et accès</h2>
+        </div>
+        <div class="ex-info">
+          <div class="ex-panel reveal">
+            <h3><svg class="ic" aria-hidden="true"><use href="#i-clock"/></svg><span data-i18n="ex.hours.title">Horaires</span></h3>
+            <table class="ex-hours">
+              <tr data-days="1,2,3,4,5"><th scope="row" data-i18n="cafe.h1.days">Lundi - Vendredi</th><td dir="ltr">7:00 - 23:00</td></tr>
+              <tr data-days="0,6"><th scope="row" data-i18n="cafe.h2.days">Samedi - Dimanche</th><td dir="ltr">8:00 - 23:30</td></tr>
+            </table>
+            <div class="ex-address">
+              <h3><svg class="ic" aria-hidden="true"><use href="#i-pin"/></svg><span data-i18n="ex.address.title">Adresse</span></h3>
+              <p data-i18n="cafe.address">15, rue de l'Exemple, Guéliz, Marrakech</p>
+            </div>
+          </div>
+          <div class="ex-map reveal" style="--d:1" role="img" data-i18n-attr="aria-label:ex.map.label" aria-label="Plan d&#x27;accès (exemple)">
+            <span class="ex-pin"><svg class="ic" aria-hidden="true"><use href="#i-palm"/></svg></span>
+            <p class="ex-map-note"><b data-i18n="cafe.name">Café Nakhla</b><span data-i18n="ex.map.note">Sur votre page : votre emplacement Google Maps.</span></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="ex-cta" aria-labelledby="cta-title">
+      <div class="wrap">
+        <div class="ex-cta-box reveal">
+          <h2 id="cta-title" data-i18n="cafe.cta.title">Un café, une table, une commande à emporter ?</h2>
+          <p data-i18n="cafe.cta.text">Envoyez votre commande sur WhatsApp, elle vous attend au comptoir.</p>
+          <div class="ex-actions">
+            <a class="ex-btn" data-wa="cafe.wa" href="https://wa.me/212720215184?text=Bonjour%20Bab%20Digital%2C%20j&#x27;ai%20vu%20l&#x27;exemple%20Caf%C3%A9%20Nakhla%20et%20je%20veux%20une%20page%20pour%20mon%20entreprise."><svg class="ic" aria-hidden="true"><use href="#i-wa"/></svg><span data-i18n="cafe.cta">Commander sur WhatsApp</span></a>
+          </div>
+          <p class="ex-hint" data-i18n="ex.cta.hint">Sur votre page, ce bouton ouvre votre WhatsApp. Ici, il écrit à Bab Digital.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="ex-footer">
+    <div class="wrap ex-footer-in">
+      <div>
+        <p class="ex-footer-name" data-i18n="cafe.name">Café Nakhla</p>
+        <p data-i18n="cafe.address">15, rue de l'Exemple, Guéliz, Marrakech</p>
+        <p class="ex-demo-note"><span data-i18n="ex.footer.demo">Exemple de design : cette entreprise n'existe pas.</span> <span data-i18n="ex.footer.illus">Illustrations : Bab Digital.</span></p>
+      </div>
+      <p class="ex-credit"><a data-wa="wa.default" href="https://wa.me/212720215184?text=Bonjour%20Bab%20Digital%2C%20je%20veux%20une%20page%20pour%20mon%20entreprise."><svg class="ic bab-mark" aria-hidden="true"><use href="#i-arch"/></svg><span data-i18n="ex.footer.credit">Site créé par Bab Digital</span></a></p>
+    </div>
+  </footer>
+
+  <a class="wa-float" data-wa="cafe.wa" href="https://wa.me/212720215184?text=Bonjour%20Bab%20Digital%2C%20j&#x27;ai%20vu%20l&#x27;exemple%20Caf%C3%A9%20Nakhla%20et%20je%20veux%20une%20page%20pour%20mon%20entreprise." data-i18n-attr="aria-label:cafe.float.label" aria-label="Commander sur WhatsApp"><svg class="ic" aria-hidden="true"><use href="#i-wa"/></svg></a>
+
+</body>
+</html>
