@@ -1,0 +1,309 @@
+/* Bab Digital : pages d'exemple de design (entreprises imaginaires).
+   La structure est commune ; chaque page a son thème (couleurs, police, formes),
+   défini en bas du fichier par la classe du <body> : ex-cafe, ex-salon, ex-ecole, ex-dent. */
+
+:root {
+  --font-body: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  --font-ar: "Tajawal", "Geeza Pro", "Noto Sans Arabic", Tahoma, sans-serif;
+  --ease: cubic-bezier(.2, .7, .2, 1);
+  --arch: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 500' preserveAspectRatio='none'%3E%3Cpath d='M23.6 500V294.2A200 200 0 1 1 376.4 294.2V500Z'/%3E%3C/svg%3E");
+  color-scheme: light;
+}
+
+body.ex {
+  --bg: #FFFFFF; --surface: #FFFFFF; --surface-2: #F4F4F4;
+  --ink: #111111; --ink-soft: #444444; --muted: #5F5F5F;
+  --accent: #111111; --on-accent: #FFFFFF; --accent-2: #333333; --accent-soft: #EEEEEE; --accent-deep: #111111;
+  --line: rgba(0, 0, 0, .1);
+  --head: var(--font-body); --head-weight: 700; --head-tracking: -.02em;
+  --radius: 20px; --btn-radius: 999px; --frame: 28px;
+  --focus: var(--ink);
+  margin: 0; min-width: 320px; overflow-x: clip;
+  background: var(--bg); color: var(--ink);
+  font: 400 1.0625rem/1.65 var(--font-body);
+  -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;
+}
+html:lang(ar) body.ex { --head: var(--font-ar); --head-weight: 700; --head-tracking: 0; font-family: var(--font-ar); font-size: 1.125rem; line-height: 1.8; }
+.i18n-wait body { visibility: hidden; }
+
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; scroll-padding-top: 84px; }
+@media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+img, svg { display: block; max-width: 100%; }
+img { height: auto; }
+a { color: inherit; }
+h1, h2, h3 { margin: 0; text-wrap: balance; }
+p { margin: 0; }
+ul, ol { margin: 0; padding: 0; list-style: none; }
+:focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; border-radius: 6px; }
+.sprite { position: absolute; width: 0; height: 0; overflow: hidden; }
+.ic { width: 1.25em; height: 1.25em; flex: none; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+html[dir="rtl"] .ic-dir { transform: scaleX(-1); }
+.skip-link { position: absolute; inset-inline-start: 16px; top: -100px; z-index: 100; padding: 12px 16px; border-radius: 10px; background: #14141A; color: #fff; font-weight: 600; text-decoration: none; }
+.skip-link:focus { top: 12px; }
+.wrap { width: min(100% - 32px, 1160px); margin-inline: auto; }
+@media (min-width: 768px) { .wrap { width: min(100% - 64px, 1160px); } }
+
+/* ---------- Bandeau « exemple de design » (Bab Digital) ---------- */
+.ex-bar { background: #14141A; color: #fff; font-size: .875rem; --focus: #fff; }
+.ex-bar-in { display: flex; align-items: center; gap: 6px 14px; min-height: 56px; }
+.ex-back { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-width: 44px; min-height: 44px; color: #fff; font-weight: 600; text-decoration: none; }
+.ex-back .ic { width: 18px; height: 18px; stroke-width: 2.2; }
+.ex-back:hover span { text-decoration: underline; text-underline-offset: 3px; }
+.ex-pill { padding: 4px 10px; border-radius: 99px; background: #F6F0E6; color: #14141A; font-size: .75rem; font-weight: 700; white-space: nowrap; }
+html:lang(ar) .ex-pill { font-size: .8125rem; }
+.ex-bar-text { display: none; color: rgba(255, 255, 255, .78); }
+@media (min-width: 760px) { .ex-bar-text { display: inline; } }
+.ex-bar .lang { margin-inline-start: auto; display: inline-flex; padding: 3px; border-radius: 999px; background: rgba(255, 255, 255, .12); }
+.ex-bar .lang button {
+  min-width: 44px; min-height: 44px; padding: 0 11px; border: 0; border-radius: 999px;
+  background: transparent; color: #fff; font: 600 .8125rem/1 var(--font-body); cursor: pointer;
+}
+.ex-bar .lang button[lang="ar"] { font-family: var(--font-ar); font-size: .9375rem; font-weight: 700; }
+.ex-bar .lang button[aria-pressed="true"] { background: #fff; color: #14141A; }
+@media (max-width: 400px) { .ex-back span { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; } }
+
+/* ---------- En-tête de l'entreprise ---------- */
+.ex-header {
+  position: sticky; top: 0; z-index: 30; border-bottom: 1px solid transparent;
+  background: var(--bg); background: color-mix(in srgb, var(--bg) 90%, transparent);
+  -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px); transition: border-color .3s, box-shadow .3s;
+}
+.ex-header.is-scrolled { border-bottom-color: var(--line); box-shadow: 0 12px 30px -26px rgba(0, 0, 0, .35); }
+.ex-header-in { display: flex; align-items: center; gap: 12px; min-height: 68px; }
+.ex-logo {
+  display: inline-flex; align-items: center; gap: 10px; min-height: 44px; margin-inline-end: auto; color: var(--ink); text-decoration: none;
+  font: var(--head-weight) 1.1875rem/1.1 var(--head); letter-spacing: var(--head-tracking);
+}
+.ex-logo-mark { display: grid; place-items: center; flex: none; width: 38px; height: 38px; border-radius: 12px; background: var(--accent-soft); color: var(--accent-2); }
+.ex-logo-mark .ic { width: 22px; height: 22px; }
+.ex-nav { display: none; }
+@media (min-width: 960px) {
+  .ex-nav { display: flex; gap: 2px; }
+  .ex-nav a { display: inline-flex; align-items: center; min-height: 44px; padding: 0 14px; border-radius: 999px; color: var(--ink-soft); font-weight: 500; text-decoration: none; }
+  .ex-nav a:hover { background: var(--accent-soft); color: var(--ink); }
+}
+
+/* ---------- Boutons ---------- */
+.ex-btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: .55em;
+  min-height: 54px; padding: .75em 1.35em; border: 2px solid transparent; border-radius: var(--btn-radius);
+  background: var(--accent); color: var(--on-accent); font: 700 1.0625rem/1.2 var(--font-body);
+  text-align: center; text-decoration: none; cursor: pointer;
+  transition: background-color .25s var(--ease), color .25s var(--ease), translate .25s var(--ease), box-shadow .25s var(--ease);
+}
+html:lang(ar) .ex-btn { font-family: var(--font-ar); font-size: 1.125rem; }
+.ex-btn .ic { width: 1.15em; height: 1.15em; }
+.ex-btn-line { background: transparent; color: var(--ink); border-color: currentColor; }
+.ex-btn-sm { min-height: 44px; padding: .45em 1em; font-size: .9375rem; }
+@media (hover: hover) {
+  .ex-btn:hover { translate: 0 -1px; box-shadow: 0 14px 26px -16px var(--accent); }
+  .ex-btn-line:hover { background: var(--ink); color: var(--bg); border-color: var(--ink); box-shadow: none; }
+}
+.ex-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
+@media (max-width: 479px) { .ex-actions .ex-btn { width: 100%; } }
+
+/* ---------- Accroche ---------- */
+.ex-hero { position: relative; padding-block: 34px 72px; overflow: clip; }
+.ex-hero-grid { position: relative; display: grid; gap: 44px; align-items: center; }
+@media (min-width: 900px) {
+  .ex-hero { padding-block: 60px 104px; }
+  .ex-hero-grid { grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr); gap: 64px; }
+}
+.ex-kicker { display: inline-flex; align-items: center; gap: 8px; color: var(--accent-2); font-size: .9375rem; font-weight: 600; }
+.ex-kicker .ic { width: 18px; height: 18px; }
+.ex-hero h1 { margin-top: 16px; font: var(--head-weight) clamp(2.3rem, 1.5rem + 3.5vw, 4rem)/1.05 var(--head); letter-spacing: var(--head-tracking); }
+html:lang(ar) .ex-hero h1 { line-height: 1.32; }
+.ex-sub { max-width: 34rem; margin-top: 20px; color: var(--ink-soft); font-size: 1.1875rem; }
+.ex-chips { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 24px; }
+.ex-chip { display: inline-flex; align-items: center; gap: 8px; padding: 8px 14px; border-radius: 99px; background: var(--surface-2); color: var(--ink-soft); font-size: .9375rem; font-weight: 500; }
+.ex-chip .ic { width: 18px; height: 18px; color: var(--accent-2); }
+.ex-hero-media { position: relative; width: min(100%, 520px); margin-inline: auto; }
+.ex-frame { position: relative; aspect-ratio: 4 / 5; overflow: hidden; border-radius: var(--frame); background: var(--surface-2); }
+.ex-frame img { width: 100%; height: 100%; object-fit: cover; }
+.js .ex-frame img { animation: settle 1.6s var(--ease) both; }
+@keyframes settle { from { scale: 1.08; opacity: .4; } to { scale: 1; opacity: 1; } }
+.ex-float {
+  position: absolute; display: flex; align-items: center; gap: 10px; max-width: 250px; padding: 12px 14px;
+  border-radius: 16px; background: #fff; color: var(--ink); box-shadow: 0 0 0 1px rgba(0, 0, 0, .04), 0 22px 40px -22px rgba(0, 0, 0, .45);
+  font-size: .875rem; font-weight: 600; line-height: 1.3;
+}
+.ex-float .dot { display: grid; place-items: center; flex: none; width: 34px; height: 34px; border-radius: 50%; background: var(--accent-soft); color: var(--accent-2); }
+.ex-float .ic { width: 18px; height: 18px; stroke-width: 2.2; }
+.ex-float-a { bottom: 9%; inset-inline-start: -5%; }
+.ex-float-b { top: 8%; inset-inline-end: -4%; }
+@media (max-width: 599px) { .ex-float-a { inset-inline-start: 4%; bottom: 5%; } .ex-float-b { inset-inline-end: 4%; top: 5%; } .ex-float { max-width: 210px; padding: 10px 12px; font-size: .8125rem; } }
+.js .ex-float { animation: pop .7s var(--ease) .9s both; }
+.js .ex-float-b { animation-delay: 1.2s; }
+@keyframes pop { from { opacity: 0; scale: .88; translate: 0 10px; } to { opacity: 1; scale: 1; translate: 0 0; } }
+
+/* ---------- Sections ---------- */
+.ex-section { padding-block: 72px; }
+@media (min-width: 900px) { .ex-section { padding-block: 104px; } }
+.ex-section.alt { background: var(--surface-2); }
+.ex-head { max-width: 42rem; margin-bottom: 36px; }
+.ex-head h2 { font: var(--head-weight) clamp(1.95rem, 1.35rem + 2.4vw, 3.1rem)/1.1 var(--head); letter-spacing: var(--head-tracking); }
+html:lang(ar) .ex-head h2 { line-height: 1.4; }
+.ex-head p { margin-top: 12px; color: var(--ink-soft); font-size: 1.0625rem; }
+
+/* Carte, prestations, soins */
+.ex-menu { display: grid; gap: 18px; }
+@media (min-width: 768px) { .ex-menu { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; } }
+.ex-card { padding: 26px 24px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); }
+.ex-card h3 { margin-bottom: 8px; font: var(--head-weight) 1.4rem/1.25 var(--head); letter-spacing: var(--head-tracking); }
+.ex-items li { display: flex; align-items: baseline; gap: 12px; padding: 12px 0; border-bottom: 1px dashed var(--line); }
+.ex-items li:last-child { border-bottom: 0; }
+.ex-items .name { flex: 1; }
+.ex-items .name small { display: block; color: var(--muted); font-size: .875rem; }
+.ex-items .price { color: var(--ink); font-weight: 700; white-space: nowrap; }
+.ex-note { margin-top: 18px; color: var(--muted); font-size: .875rem; }
+
+/* Galerie */
+.ex-gallery { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.ex-gallery figure { margin: 0; overflow: hidden; aspect-ratio: 4 / 3; border-radius: var(--radius); background: var(--surface-2); }
+.ex-gallery figure:first-child { grid-column: 1 / -1; aspect-ratio: 16 / 10; }
+.ex-gallery img { width: 100%; height: 100%; object-fit: cover; transition: scale .9s var(--ease); }
+@media (hover: hover) { .ex-gallery figure:hover img { scale: 1.04; } }
+@media (min-width: 900px) {
+  .ex-gallery { grid-template-columns: 1.6fr 1fr; grid-template-rows: 1fr 1fr; gap: 18px; }
+  .ex-gallery figure:first-child { grid-column: 1; grid-row: 1 / 3; aspect-ratio: auto; }
+}
+
+/* Points forts, étapes */
+.ex-points { display: grid; gap: 16px; }
+@media (min-width: 768px) { .ex-points { grid-template-columns: repeat(3, 1fr); gap: 20px; } }
+.ex-points.four { grid-template-columns: none; }
+@media (min-width: 640px) { .ex-points.four { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1040px) { .ex-points.four { grid-template-columns: repeat(4, 1fr); } }
+.ex-point { padding: 26px 24px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); }
+.ex-point-ic { display: grid; place-items: center; width: 50px; height: 50px; margin-bottom: 16px; border-radius: 14px; background: var(--accent-soft); color: var(--accent-2); font: 800 1.25rem/1 var(--head); }
+.ex-point-ic .ic { width: 24px; height: 24px; }
+.ex-point h3 { font: var(--head-weight) 1.25rem/1.3 var(--head); letter-spacing: var(--head-tracking); }
+.ex-point p { margin-top: 8px; color: var(--ink-soft); font-size: 1rem; }
+
+/* Horaires, adresse, plan */
+.ex-info { display: grid; gap: 18px; }
+@media (min-width: 900px) { .ex-info { grid-template-columns: 1fr 1fr; gap: 20px; } }
+.ex-panel { padding: 26px 24px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); }
+.ex-panel h3 { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; font: var(--head-weight) 1.25rem/1.3 var(--head); }
+.ex-panel h3 .ic { color: var(--accent-2); }
+.ex-hours { width: 100%; border-collapse: collapse; }
+.ex-hours th, .ex-hours td { padding: 13px 0; border-bottom: 1px solid var(--line); font-weight: 400; text-align: start; vertical-align: middle; }
+.ex-hours tr:last-child th, .ex-hours tr:last-child td { border-bottom: 0; }
+.ex-hours td { font-weight: 600; text-align: end; white-space: nowrap; }
+.ex-hours tr.is-today th, .ex-hours tr.is-today td { color: var(--accent-2); font-weight: 700; }
+.today-badge { display: inline-block; margin-inline-start: 8px; padding: 2px 9px; border-radius: 99px; background: var(--accent-soft); color: var(--accent-2); font-size: .75rem; font-weight: 700; vertical-align: 2px; }
+.ex-address { margin-top: 22px; padding-top: 18px; border-top: 1px solid var(--line); }
+.ex-address p { color: var(--ink-soft); }
+.ex-map {
+  position: relative; display: grid; place-items: center; min-height: 280px; overflow: hidden; border-radius: var(--radius);
+  background-color: var(--surface-2);
+  background-image:
+    linear-gradient(28deg, transparent 47%, rgba(255, 255, 255, .9) 47.5%, rgba(255, 255, 255, .9) 52.5%, transparent 53%),
+    linear-gradient(118deg, transparent 47%, rgba(255, 255, 255, .75) 47.5%, rgba(255, 255, 255, .75) 51%, transparent 51.5%),
+    repeating-linear-gradient(0deg, transparent 0 46px, rgba(0, 0, 0, .05) 46px 48px),
+    repeating-linear-gradient(90deg, transparent 0 58px, rgba(0, 0, 0, .05) 58px 60px);
+}
+.ex-pin { position: relative; display: grid; place-items: center; width: 54px; height: 54px; border-radius: 50% 50% 50% 0; rotate: -45deg; background: var(--accent-2); box-shadow: 0 16px 26px -12px rgba(0, 0, 0, .5); }
+.ex-pin .ic { rotate: 45deg; width: 24px; height: 24px; color: #fff; }
+.js .ex-pin { animation: bob 2.6s ease-in-out infinite; }
+@keyframes bob { 50% { translate: 3px -3px; } }
+.ex-map-note { position: absolute; inset-inline: 12px; bottom: 12px; padding: 10px 14px; border-radius: 12px; background: rgba(255, 255, 255, .95); color: var(--ink-soft); font-size: .875rem; }
+.ex-map-note b { display: block; color: var(--ink); }
+
+/* Appel final */
+.ex-cta { padding-block: 8px 80px; }
+.ex-cta-box { position: relative; overflow: hidden; padding: 56px 24px; border-radius: calc(var(--radius) + 8px); background: var(--accent-deep); color: #fff; text-align: center; --focus: #fff; }
+@media (min-width: 768px) { .ex-cta-box { padding: 80px 48px; } }
+.ex-cta-box h2 { max-width: 22ch; margin: 0 auto; font: var(--head-weight) clamp(1.95rem, 1.3rem + 2.6vw, 3.2rem)/1.12 var(--head); letter-spacing: var(--head-tracking); }
+html:lang(ar) .ex-cta-box h2 { line-height: 1.4; }
+.ex-cta-box > p { max-width: 34rem; margin: 14px auto 0; color: rgba(255, 255, 255, .86); }
+.ex-cta-box .ex-actions { justify-content: center; }
+.ex-cta-box .ex-btn { background: #fff; color: var(--accent-deep); }
+.ex-cta-box p.ex-hint { margin-top: 18px; color: rgba(255, 255, 255, .8); font-size: .875rem; }
+
+/* Pied de page */
+.ex-footer { padding-block: 36px 96px; border-top: 1px solid var(--line); color: var(--ink-soft); font-size: .9375rem; }
+.ex-footer-in { display: grid; gap: 18px; }
+@media (min-width: 768px) { .ex-footer-in { grid-template-columns: 1fr auto; align-items: end; } }
+.ex-footer-name { color: var(--ink); font: var(--head-weight) 1.125rem/1.3 var(--head); }
+.ex-credit a { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; color: var(--ink); font-weight: 600; text-underline-offset: 3px; }
+.ex-credit .bab-mark { width: 22px; height: 22px; }
+.ex-demo-note { color: var(--muted); font-size: .875rem; }
+
+/* Bouton WhatsApp flottant */
+.wa-float {
+  position: fixed; z-index: 30; inset-inline-end: 16px; bottom: calc(16px + env(safe-area-inset-bottom));
+  display: grid; place-items: center; width: 58px; height: 58px; border-radius: 50%;
+  background: var(--accent); color: var(--on-accent); box-shadow: 0 16px 30px -12px rgba(0, 0, 0, .45);
+  transition: opacity .35s var(--ease), translate .35s var(--ease);
+}
+.wa-float .ic { width: 28px; height: 28px; }
+.js .wa-float { opacity: 0; translate: 0 14px; pointer-events: none; }
+.js .wa-float.is-shown { opacity: 1; translate: 0 0; pointer-events: auto; }
+
+/* Apparition au défilement */
+.reveal-on .reveal { opacity: 0; translate: 0 20px; transition: opacity .8s var(--ease), translate .8s var(--ease); transition-delay: calc(var(--d, 0) * 90ms); }
+.reveal-on .reveal.is-visible { opacity: 1; translate: 0 0; }
+.js .ex-hero-copy > * { animation: rise .9s var(--ease) both; }
+.js .ex-hero-copy > :nth-child(2) { animation-delay: .08s; }
+.js .ex-hero-copy > :nth-child(3) { animation-delay: .16s; }
+.js .ex-hero-copy > :nth-child(n+4) { animation-delay: .24s; }
+@keyframes rise { from { opacity: 0; translate: 0 18px; } to { opacity: 1; translate: 0 0; } }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .01ms !important; animation-delay: 0s !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+  .reveal-on .reveal { opacity: 1; translate: none; }
+}
+
+/* =================== Thèmes =================== */
+
+/* Café Nakhla : crème, café, vert menthe ; arc marocain */
+body.ex-cafe {
+  --bg: #FBF5EC; --surface: #FFFDF9; --surface-2: #F3E7D6;
+  --ink: #2B1D16; --ink-soft: #57423A; --muted: #6B5548;
+  --accent: #2B1D16; --on-accent: #FBF5EC; --accent-2: #2C6A4E; --accent-soft: #E2EDE3; --accent-deep: #2B1D16;
+  --line: rgba(43, 29, 22, .13);
+  --head: "Fraunces", Georgia, "Times New Roman", serif; --head-weight: 600; --head-tracking: -.015em;
+  --radius: 20px;
+}
+.ex-cafe .ex-frame { aspect-ratio: 4 / 5; border-radius: 0; -webkit-mask: var(--arch) center / 100% 100% no-repeat; mask: var(--arch) center / 100% 100% no-repeat; }
+
+/* Salon Safran : ivoire, prune, rose ; miroir ovale */
+body.ex-salon {
+  --bg: #FAF6F2; --surface: #FFFFFF; --surface-2: #F1E8E2;
+  --ink: #2E2230; --ink-soft: #55465A; --muted: #67586C;
+  --accent: #8C3D5C; --on-accent: #FFFFFF; --accent-2: #8C3D5C; --accent-soft: #F4E4EA; --accent-deep: #4A2238;
+  --line: rgba(46, 34, 48, .12);
+  --head: "Cormorant Garamond", Georgia, "Times New Roman", serif; --head-weight: 600; --head-tracking: -.01em;
+  --radius: 24px;
+}
+.ex-salon .ex-frame { border-radius: 999px; aspect-ratio: 3 / 4; }
+.ex-salon .ex-hero h1 { font-size: clamp(2.6rem, 1.7rem + 4.2vw, 5rem); line-height: .98; }
+html:lang(ar) .ex-salon .ex-hero h1 { font-size: clamp(2.35rem, 1.5rem + 3.9vw, 4.4rem); line-height: 1.32; }
+
+/* Auto-école Virage : bleu nuit, jaune signalisation ; formes franches */
+body.ex-ecole {
+  --bg: #F6F8FB; --surface: #FFFFFF; --surface-2: #E8EEF6;
+  --ink: #13233F; --ink-soft: #3C4A63; --muted: #52607A;
+  --accent: #F5B700; --on-accent: #13233F; --accent-2: #1D57B0; --accent-soft: #E2EBF9; --accent-deep: #13233F;
+  --line: rgba(19, 35, 63, .12);
+  --head: "Archivo", ui-sans-serif, system-ui, sans-serif; --head-weight: 800; --head-tracking: -.03em;
+  --radius: 16px; --btn-radius: 12px; --frame: 24px;
+}
+.ex-ecole .ex-frame { box-shadow: 14px 14px 0 var(--accent); }
+html[dir="rtl"] .ex-ecole .ex-frame { box-shadow: -14px 14px 0 var(--accent); }
+.ex-ecole .ex-cta-box .ex-btn { background: var(--accent); color: var(--on-accent); }
+
+/* Cabinet Dentaire Nacre : blanc, sarcelle ; formes douces */
+body.ex-dent {
+  --bg: #FFFFFF; --surface: #FFFFFF; --surface-2: #EEF6F5;
+  --ink: #0F2A30; --ink-soft: #3A5258; --muted: #50676D;
+  --accent: #0E6E66; --on-accent: #FFFFFF; --accent-2: #0E6E66; --accent-soft: #DCEFEB; --accent-deep: #0B4F4A;
+  --line: rgba(15, 42, 48, .1);
+  --head: "Manrope", ui-sans-serif, system-ui, sans-serif; --head-weight: 700; --head-tracking: -.03em;
+  --radius: 22px; --frame: 32px;
+}
+.ex-dent .ex-frame { aspect-ratio: 5 / 6; }
+
+.ex-gap { height: 20px; }
