@@ -1,1 +1,473 @@
+<!doctype html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 
+  <!-- Tous les textes de la page (français et arabe) se modifient dans js/main.js.
+       Le français écrit ici s'affiche quand JavaScript est désactivé : gardez-le identique. -->
+  <title data-i18n="meta.title">Bab Digital, création de sites web pour entreprises au Maroc</title>
+  <meta name="description" data-i18n-attr="content:meta.description" content="Bab Digital crée la page web de votre entreprise en quelques jours : services, photos, horaires, Google Maps et bouton WhatsApp. 1000 DH, puis 300 DH/mois.">
+  <meta name="theme-color" content="#F6F0E6">
+
+  <!-- Adresse du site : si elle change (par exemple babdigital.ma), modifiez les lignes marquées ADRESSE. -->
+  <link rel="canonical" href="https://babdigital.vercel.app/"><!-- ADRESSE -->
+  <link rel="alternate" hreflang="fr" href="https://babdigital.vercel.app/"><!-- ADRESSE -->
+  <link rel="alternate" hreflang="ar" href="https://babdigital.vercel.app/?lang=ar"><!-- ADRESSE -->
+  <link rel="alternate" hreflang="x-default" href="https://babdigital.vercel.app/"><!-- ADRESSE -->
+
+  <!-- Aperçu affiché quand le lien est partagé (WhatsApp, Instagram, Facebook...) -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Bab Digital">
+  <meta property="og:title" data-i18n-attr="content:meta.title" content="Bab Digital, création de sites web pour entreprises au Maroc">
+  <meta property="og:description" data-i18n-attr="content:meta.og" content="Ouvrez la porte à vos clients : une page web claire sur mobile, avec vos services, vos photos et un bouton WhatsApp.">
+  <meta property="og:url" content="https://babdigital.vercel.app/"><!-- ADRESSE -->
+  <meta property="og:image" content="https://babdigital.vercel.app/og-image.png"><!-- ADRESSE -->
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Logo Bab Digital et la phrase « Ouvrez la porte à vos clients »">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:locale:alternate" content="ar_MA">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="logo-icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Sora:wght@400;600;700&family=Tajawal:wght@400;500;700;800&display=swap">
+  <link rel="stylesheet" href="css/style.css">
+
+  <script>
+    // Avant l'affichage : marque la page "avec JavaScript" et prépare l'arabe si c'est la langue choisie.
+    (function () {
+      var d = document.documentElement;
+      d.classList.add("js");
+      try {
+        var l = new URLSearchParams(location.search).get("lang") || localStorage.getItem("bab-lang");
+        if (l === "ar") {
+          d.lang = "ar";
+          d.dir = "rtl";
+          d.classList.add("i18n-wait");
+          setTimeout(function () { d.classList.remove("i18n-wait"); }, 1500);
+        }
+      } catch (e) {}
+    })();
+  </script>
+  <script src="js/main.js" defer></script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Bab Digital",
+    "alternateName": "باب ديجيتال",
+    "url": "https://babdigital.vercel.app/",
+    "logo": "https://babdigital.vercel.app/logo-512.png",
+    "slogan": "Ouvrez la porte à vos clients",
+    "description": "Agence web au Maroc qui crée des pages web pour les petites entreprises : services, photos, horaires, Google Maps et bouton WhatsApp.",
+    "areaServed": { "@type": "Country", "name": "Maroc" },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+212720215184",
+      "contactType": "customer service",
+      "availableLanguage": ["French", "Arabic"]
+    }
+  }
+  </script>
+</head>
+<body>
+
+  <a class="skip-link" href="#contenu" data-i18n="a11y.skip">Aller au contenu</a>
+
+  <!-- Icônes (utilisées plus bas avec <use href="#...">) -->
+  <svg class="sprite" aria-hidden="true" focusable="false">
+    <symbol id="i-wa" viewBox="0 0 24 24"><path fill="currentColor" stroke="none" fill-rule="evenodd" d="M12 2.6a9.4 9.4 0 0 0-8.1 14.2L2.6 21.4l4.7-1.3A9.4 9.4 0 1 0 12 2.6Zm0 1.7a7.7 7.7 0 1 1-3.9 14.3l-.3-.2-2.8.8.8-2.7-.2-.3A7.7 7.7 0 0 1 12 4.3Z"/><path fill="currentColor" stroke="none" d="M9.1 7.6c-.2-.4-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.3.3-.9.9-.9 2.2s.9 2.5 1 2.7c.1.2 1.8 2.9 4.5 3.9 2.2.9 2.7.7 3.1.7.5 0 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.2-.2-.5-.3l-1.7-.8c-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1-.3-.1-1.1-.4-2-1.3-.8-.7-1.3-1.5-1.4-1.8-.1-.3 0-.4.1-.5l.4-.4.3-.4c.1-.2 0-.3 0-.5l-.8-1.9Z"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.2 4.2L19 7"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24"><path d="M6.5 6.5l11 11M17.5 6.5l-11 11"/></symbol>
+    <symbol id="i-arch" viewBox="0 0 24 24"><path d="M7.085 21V13.441A6 6 0 1 1 16.915 13.441V21"/></symbol>
+    <symbol id="i-mobile" viewBox="0 0 24 24"><rect x="7" y="2.5" width="10" height="19" rx="2.5"/><path d="M11 18.5h2"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11Z"/><circle cx="12" cy="10" r="2.3"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></symbol>
+    <symbol id="i-image" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="14" rx="2.5"/><circle cx="9" cy="10" r="1.6"/><path d="M20.5 16l-5-5-8 8"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4.5 4.5"/></symbol>
+    <symbol id="i-cloud" viewBox="0 0 24 24"><path d="M7 18.5h10a4 4 0 0 0 .6-8 5.5 5.5 0 0 0-10.6-1.2A4.5 4.5 0 0 0 7 18.5Z"/></symbol>
+    <symbol id="i-edit" viewBox="0 0 24 24"><path d="M4 20h4L18.5 9.5a2.83 2.83 0 0 0-4-4L4 16v4Z"/><path d="M13.5 6.5l4 4"/></symbol>
+    <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c2.4 2.4 3.5 5.3 3.5 8.5s-1.1 6.1-3.5 8.5c-2.4-2.4-3.5-5.3-3.5-8.5S9.6 5.9 12 3.5Z"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+    <symbol id="i-instagram" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r=".6" fill="currentColor"/></symbol>
+    <symbol id="i-tiktok" viewBox="0 0 24 24"><path d="M14.5 3.5v10.2a3.8 3.8 0 1 1-3.8-3.8"/><path d="M14.5 3.5c.4 2.6 2.2 4.4 5 4.6"/></symbol>
+  </svg>
+
+  <header class="site-header">
+    <div class="wrap header-in">
+      <a class="brand" href="#accueil" data-i18n-attr="aria-label:a11y.home" aria-label="Bab Digital, retour en haut de la page">
+        <svg class="logo" viewBox="-1 -1 245 52" aria-hidden="true" focusable="false">
+          <path d="M5.574 50V29.251A17 17 0 1 1 33.426 29.251V50" fill="none" stroke="#0F5C4D" stroke-width="5" stroke-linejoin="round"/>
+          <path d="M13.5 50V36A6 6 0 0 1 25.5 36V50Z" fill="#C8553D"/>
+          <text x="52" y="38" direction="ltr" font-size="36" letter-spacing="-0.7" fill="#14141A"><tspan font-weight="700">bab</tspan> <tspan font-weight="400">digital</tspan></text>
+        </svg>
+      </a>
+
+      <nav class="main-nav" id="menu" data-i18n-attr="aria-label:nav.label" aria-label="Navigation principale">
+        <ul>
+          <li><a href="#services" data-i18n="nav.services">Services</a></li>
+          <li><a href="#realisations" data-i18n="nav.work">Réalisations</a></li>
+          <li><a href="#tarifs" data-i18n="nav.pricing">Tarifs</a></li>
+          <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
+        </ul>
+        <a class="btn btn-wa nav-wa" data-wa="wa.default" href="https://wa.me/212720215184?text=Bonjour%20Bab%20Digital%2C%20je%20veux%20une%20page%20pour%20mon%20entreprise."><svg class="ic" aria-hidden="true"><use href="#i-wa"/></svg><span data-i18n="cta.whatsapp">Écrire sur WhatsApp</span></a>
+      </nav>
+
+      <div class="header-tools">
+        <div class="lang" role="group" data-i18n-attr="aria-label:lang.label" aria-label="Langue">
+          <button type="button" data-lang="fr" lang="fr" aria-pressed="true">FR</button>
+          <button type="button" data-lang="ar" lang="ar" aria-pressed="false">عربي</button>
+        </div>
+        <a class="btn btn-wa header-wa" data-wa="wa.default" href="https://wa.me/212720215184?text=Bonjour%20Bab%20Digital%2C%20je%20veux%20une%20page%20pour%20mon%20entreprise."><svg class="ic" aria-hidden="true"><use href="#i-wa"/></svg><span data-i18n="nav.whatsapp">WhatsApp</span></a>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu" data-i18n-attr="aria-label:nav.toggle" aria-label="Ouvrir ou fermer le menu">
+          <svg class="ic ic-menu" aria-hidden="true"><use href="#i-menu"/></svg>
+          <svg class="ic ic-close" aria-hidden="true"><use href="#i-x"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="contenu">
+
+    <!-- 1. Accueil -->
+    <section class="hero" id="accueil" aria-labelledby="hero-title">
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow"><svg class="ic" aria-hidden="true"><use href="#i-arch"/></svg><span data-i18n="hero.eyebrow">Agence web au Maroc</span></p>
+          <h1 id="hero-title"><span data-i18n="hero.title.a">Ouvrez </span><em class="hl" data-i18n="hero.title.hl">la porte</em><span data-i18n="hero.title.b"> à vos clients</span></h1>
+          <p class="lead" data-i18n="hero.sub">Nous créons la page web de votre entreprise en quelques jours : vos services, vos photos et un bouton WhatsApp pour recevoir des clients directement.</p>
+          <div class="actions">
+            <a class="btn btn-primary" href="https://babdigital-questionnaire.vercel.app"><span data-i18n="cta.start">Démarrer mon projet</span><svg class="ic ic-dir" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            <a class="btn btn-ghost" data-wa="wa.default" href="https://wa.me/212720215184?text=Bonjour%20Bab%20Digital%2C%20je%20veux%20une%20page%20pour%20mon%20entreprise."><svg class="ic" aria-hidden="true"><use href="#i-wa"/></svg><span data-i18n="cta.whatsapp">Écrire sur WhatsApp</span></a>
+          </div>
+          <p class="form-note" data-i18n="cta.formnote"></p>
+          <ul class="facts">
+            <li><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg><span data-i18n="hero.fact1">1000 DH la création</span></li>
+            <li><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg><span data-i18n="hero.fact2">puis 300 DH/mois</span></li>
+            <li><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg><span data-i18n="hero.fact3">En ligne en quelques jours</span></li>
+          </ul>
+        </div>
+
+        <!-- Illustration : une porte marocaine qui s'ouvre sur une page d'exemple (décorative) -->
+        <div class="hero-art" aria-hidden="true">
+          <div class="gate">
+            <svg class="gate-line" viewBox="0 0 400 500" preserveAspectRatio="none"><path d="M23.6 500V294.2A200 200 0 1 1 376.4 294.2V500" vector-effect="non-scaling-stroke"/></svg>
+            <div class="gate-arch">
+              <span class="gate-light"></span>
+              <span class="leaf leaf-a"><i></i></span>
+              <span class="leaf leaf-b"><i></i></span>
+            </div>
+            <div class="phone">
+              <div class="phone-screen">
+                <div class="ph-bar"><span class="ph-name" data-i18n="art.name">Café Nakhla</span><span class="ph-badge" data-i18n="art.badge">Exemple</span></div>
+                <div class="ph-hero"><span class="ph-title" data-i18n="art.title">Le café du quartier, du matin au soir.</span></div>
+                <div class="ph-body">
+                  <span class="ph-chip"><svg class="ic" aria-hidden="true"><use href="#i-clock"/></svg><span data-i18n="art.hours">Ouvert aujourd'hui, 7h - 23h</span></span>
+                  <span class="ph-btn"><svg class="ic" aria-hidden="true"><use href="#i-wa"/></svg><span data-i18n="art.btn">Commander sur WhatsApp</span></span>
+                  <ul class="ph-menu">
+                    <li><span data-i18n="art.item1">Thé à la menthe</span><b data-i18n="art.price1">12 DH</b></li>
+                    <li><span data-i18n="art.item2">Café crème</span><b data-i18n="art.price2">15 DH</b></li>
+                    <li><span data-i18n="art.item3">Msemen et amlou</span><b data-i18n="art.price3">18 DH</b></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="bubble">
+              <span class="bubble-ic"><svg class="ic" aria-hidden="true"><use href="#i-wa"/></svg></span>
+              <span class="bubble-txt"><b data-i18n="art.msg.title">Nouveau message</b><span data-i18n="art.msg.text">Bonjour, vous êtes ouverts ce soir ?</span></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. Le problème -->
+    <section class="section problem" id="probleme" aria-labelledby="problem-title">
+      <div class="wrap">
+        <p class="kicker reveal" data-i18n="problem.kicker">Le constat</p>
+        <h2 class="statement reveal" id="problem-title"><span data-i18n="problem.text1">Vos clients vous cherchent sur Google et Instagram avant de vous appeler.</span> <span class="statement-2" data-i18n="problem.text2">Sans site, ils partent chez le concurrent.</span></h2>
+        <div class="compare">
+          <div class="compare-card is-without reveal">
+            <p class="compare-label"><svg class="ic" aria-hidden="true"><use href="#i-x"/></svg><span data-i18n="problem.without.title">Sans page web</span></p>
+            <p data-i18n="problem.without.text">Le client ne trouve ni vos horaires, ni vos prix, ni votre adresse. Il appelle ailleurs.</p>
+          </div>
+          <div class="compare-card is-with reveal" style="--d:1">
+            <p class="compare-label"><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg><span data-i18n="problem.with.title">Avec Bab Digital</span></p>
+            <p data-i18n="problem.with.text">Il trouve une page claire avec vos services, vos photos et un bouton pour vous écrire sur WhatsApp.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Comment ça marche -->
+    <section class="section steps zellige" id="etapes" aria-labelledby="steps-title">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <p class="kicker" data-i18n="steps.kicker">Comment ça marche</p>
+          <h2 id="steps-title" data-i18n="steps.title">Trois étapes, et votre porte est ouverte.</h2>
+        </div>
+        <ol class="step-list">
+          <li class="step reveal">
+            <span class="step-num" aria-hidden="true">1</span>
+            <h3><span data-i18n="steps.1.title">Vous remplissez notre questionnaire</span> <span class="step-time" data-i18n="steps.1.time">(5 minutes)</span></h3>
+            <p data-i18n="steps.1.text">Votre activité, vos services, vos horaires. Vous pouvez aussi y ajouter votre logo et vos photos.</p>
+            <a class="link-arrow" href="https://babdigital-questionnaire.vercel.app"><span data-i18n="steps.1.link">Remplir le questionnaire</span><svg class="ic ic-dir" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          </li>
+          <li class="step reveal" style="--d:1">
+            <span class="step-num" aria-hidden="true">2</span>
+            <h3 data-i18n="steps.2.title">Nous créons votre page en quelques jours</h3>
+            <p data-i18n="steps.2.text">Nous écrivons les textes, mettons en valeur vos photos et préparons la version mobile.</p>
+          </li>
+          <li class="step reveal" style="--d:2">
+            <span class="step-num" aria-hidden="true">3</span>
+            <h3 data-i18n="steps.3.title">Votre page est en ligne</h3>
+            <p data-i18n="steps.3.text">Les clients vous écrivent directement sur WhatsApp.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- 4. Ce qui est inclus -->
+    <section class="section services" id="services" aria-labelledby="services-title">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <p class="kicker" data-i18n="services.kicker">Services</p>
+          <h2 id="services-title" data-i18n="services.title">Tout ce qu'il faut pour être trouvé et contacté</h2>
+          <p class="section-sub" data-i18n="services.sub">Une page complète, prête à partager sur WhatsApp, Instagram et Google.</p>
+        </div>
+        <ul class="feature-grid">
+          <li class="feature reveal">
+            <span class="feature-ic"><svg class="ic" aria-hidden="true"><use href="#i-mobile"/></svg></span>
+            <h3 data-i18n="services.1.title">Page professionnelle sur mobile</h3>
+            <p data-i18n="services.1.text">Pensée d'abord pour le téléphone, là où vos clients vous cherchent.</p>
+          </li>
+          <li class="feature reveal" style="--d:1">
+            <span class="feature-ic"><svg class="ic" aria-hidden="true"><use href="#i-wa"/></svg></span>
+            <h3 data-i18n="services.2.title">Bouton WhatsApp</h3>
+            <p data-i18n="services.2.text">Un geste, et le client vous écrit avec un message déjà préparé.</p>
+          </li>
+          <li class="feature reveal" style="--d:2">
+            <span class="feature-ic"><svg class="ic" aria-hidden="true"><use href="#i-pin"/></svg></span>
+            <h3 data-i18n="services.3.title">Google Maps et horaires</h3>
+            <p data-i18n="services.3.text">Votre adresse sur la carte et vos heures d'ouverture, faciles à trouver.</p>
+          </li>
+          <li class="feature reveal" style="--d:3">
+            <span class="feature-ic"><svg class="ic" aria-hidden="true"><use href="#i-image"/></svg></span>
+            <h3 data-i18n="services.4.title">Vos photos et votre logo</h3>
+            <p data-i18n="services.4.text">Votre lieu, vos produits, votre image : la page vous ressemble.</p>
+          </li>
+          <li class="feature reveal">
+            <span class="feature-ic"><svg class="ic" aria-hidden="true"><use href="#i-search"/></svg></span>
+            <h3 data-i18n="services.5.title">Référencement Google de base</h3>
+            <p data-i18n="services.5.text">Un titre, une description et des informations claires pour que Google comprenne votre page.</p>
+          </li>
+          <li class="feature reveal" style="--d:1">
+            <span class="feature-ic"><svg class="ic" aria-hidden="true"><use href="#i-cloud"/></svg></span>
+            <h3 data-i18n="services.6.title">Hébergement</h3>
+            <p data-i18n="services.6.text">Votre page reste en ligne, rapide et sécurisée en HTTPS.</p>
+          </li>
+          <li class="feature reveal" style="--d:2">
+            <span class="feature-ic"><svg class="ic" aria-hidden="true"><use href="#i-edit"/></svg></span>
+            <h3 data-i18n="services.7.title">Modifications</h3>
+            <p data-i18n="services.7.text">Un prix change, un horaire bouge ? Envoyez-nous le changement sur WhatsApp.</p>
+          </li>
+          <li class="feature reveal" style="--d:3">
+            <span class="feature-ic"><svg class="ic" aria-hidden="true"><use href="#i-globe"/></svg></span>
+            <h3 data-i18n="services.8.title">Nom de domaine</h3>
+            <p data-i18n="services.8.text">Une adresse web au nom de votre entreprise.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 5. Réalisations : exemples de design (entreprises imaginaires, pas des clients) -->
+    <section class="section work" id="realisations" aria-labelledby="work-title">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <p class="kicker" data-i18n="work.kicker">Réalisations</p>
+          <h2 id="work-title" data-i18n="work.title">Exemples de design</h2>
+          <p class="section-sub" data-i18n="work.sub">Des pages créées pour des entreprises imaginaires, pour vous montrer le style et la qualité. Ce ne sont pas des clients.</p>
+        </div>
+        <ul class="work-grid">
+          <li class="work-card reveal">
+            <div class="work-media">
+              <img src="exemples/img/cafe.svg" width="800" height="1000" loading="lazy" decoding="async" data-i18n-attr="alt:work.cafe.alt" alt="Illustration d'une théière marocaine et de verres de thé à la menthe">
+              <span class="work-badge" data-i18n="work.badge">Exemple de design</span>
+            </div>
+            <p class="work-type" data-i18n="work.cafe.type">Café</p>
+            <h3><a href="exemples/cafe.html" data-i18n="work.cafe.name">Café Nakhla</a></h3>
+            <p data-i18n="work.cafe.text">La carte, les horaires et la commande sur WhatsApp.</p>
+            <span class="link-arrow" aria-hidden="true"><span data-i18n="work.view">Voir l'exemple</span><svg class="ic ic-dir"><use href="#i-arrow"/></svg></span>
+          </li>
+          <li class="work-card reveal" style="--d:1">
+            <div class="work-media">
+              <img src="exemples/img/salon.svg" width="750" height="1000" loading="lazy" decoding="async" data-i18n-attr="alt:work.salon.alt" alt="Illustration d'un miroir doré et de produits de soin">
+              <span class="work-badge" data-i18n="work.badge">Exemple de design</span>
+            </div>
+            <p class="work-type" data-i18n="work.salon.type">Salon de beauté</p>
+            <h3><a href="exemples/salon-de-beaute.html" data-i18n="work.salon.name">Salon Safran</a></h3>
+            <p data-i18n="work.salon.text">Les prestations, les prix et la prise de rendez-vous.</p>
+            <span class="link-arrow" aria-hidden="true"><span data-i18n="work.view">Voir l'exemple</span><svg class="ic ic-dir"><use href="#i-arrow"/></svg></span>
+          </li>
+          <li class="work-card reveal" style="--d:2">
+            <div class="work-media">
+              <img src="exemples/img/auto-ecole.svg" width="800" height="1000" loading="lazy" decoding="async" data-i18n-attr="alt:work.ecole.alt" alt="Illustration d'une voiture d'auto-école sur une route en virage">
+              <span class="work-badge" data-i18n="work.badge">Exemple de design</span>
+            </div>
+            <p class="work-type" data-i18n="work.ecole.type">Auto-école</p>
+            <h3><a href="exemples/auto-ecole.html" data-i18n="work.ecole.name">Auto-école Virage</a></h3>
+            <p data-i18n="work.ecole.text">Les forfaits, les étapes du permis et l'inscription.</p>
+            <span class="link-arrow" aria-hidden="true"><span data-i18n="work.view">Voir l'exemple</span><svg class="ic ic-dir"><use href="#i-arrow"/></svg></span>
+          </li>
+          <li class="work-card reveal" style="--d:3">
+            <div class="work-media">
+              <img src="exemples/img/dentiste-hero-800.webp" width="800" height="600" loading="lazy" decoding="async" data-i18n-attr="alt:work.dent.alt" alt="Fauteuil dentaire dans une salle de soins claire">
+              <span class="work-badge" data-i18n="work.badge">Exemple de design</span>
+            </div>
+            <p class="work-type" data-i18n="work.dent.type">Cabinet dentaire</p>
+            <h3><a href="exemples/cabinet-dentaire.html" data-i18n="work.dent.name">Cabinet Dentaire Nacre</a></h3>
+            <p data-i18n="work.dent.text">Les soins, les horaires et la prise de rendez-vous.</p>
+            <span class="link-arrow" aria-hidden="true"><span data-i18n="work.view">Voir l'exemple</span><svg class="ic ic-dir"><use href="#i-arrow"/></svg></span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 6. Tarifs -->
+    <section class="section pricing" id="tarifs" aria-labelledby="pricing-title">
+      <div class="wrap">
+        <div class="section-head center reveal">
+          <p class="kicker" data-i18n="pricing.kicker">Tarifs</p>
+          <h2 id="pricing-title" data-i18n="pricing.title">Une offre claire, sans surprise</h2>
+        </div>
+        <div class="price-card reveal">
+          <div class="price-main">
+            <div class="price-row">
+              <div class="price-block">
+                <p class="price-label" data-i18n="pricing.setup.label">Création</p>
+                <p class="price" data-i18n="pricing.setup.price">1000 DH</p>
+                <p class="price-note" data-i18n="pricing.setup.note">une seule fois</p>
+              </div>
+              <span class="price-plus" aria-hidden="true">+</span>
+              <div class="price-block">
+                <p class="price-label" data-i18n="pricing.monthly.label">Abonnement</p>
+                <p class="price"><span data-i18n="pricing.monthly.price">300 DH</span><span class="price-per" data-i18n="pricing.monthly.per">/mois</span></p>
+                <p class="price-note" data-i18n="pricing.monthly.note">hébergement, maintenance, modifications</p>
+              </div>
+            </div>
+            <a class="btn btn-primary btn-block" href="https://babdigital-questionnaire.vercel.app"><span data-i18n="cta.start">Démarrer mon projet</span><svg class="ic ic-dir" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            <p class="price-small"><span data-i18n="pricing.question">Une question sur l'offre ?</span> <a data-wa="wa.default" href="https://wa.me/212720215184?text=Bonjour%20Bab%20Digital%2C%20je%20veux%20une%20page%20pour%20mon%20entreprise." data-i18n="pricing.question.link">Écrivez-nous sur WhatsApp</a></p>
+          </div>
+          <div class="price-list">
+            <p class="price-list-title" data-i18n="pricing.included">Tout est inclus</p>
+            <ul class="checks">
+              <li><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg><span data-i18n="pricing.inc1">Page professionnelle sur mobile</span></li>
+              <li><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg><span data-i18n="pricing.inc2">Bouton WhatsApp</span></li>
+              <li><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg><span data-i18n="pricing.inc3">Google Maps et horaires</span></li>
+              <li><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg><span data-i18n="pricing.inc4">Vos photos et votre logo</span></li>
+              <li><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg><span data-i18n="pricing.inc5">Référencement Google de base</span></li>
+              <li><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg><span data-i18n="pricing.inc6">Hébergement et maintenance</span></li>
+              <li><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg><span data-i18n="pricing.inc7">Modifications</span></li>
+              <li><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg><span data-i18n="pricing.inc8">Nom de domaine en .com (.ma sur devis)</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. Questions fréquentes -->
+    <section class="section faq" id="faq" aria-labelledby="faq-title">
+      <div class="wrap faq-wrap">
+        <div class="section-head reveal">
+          <p class="kicker" data-i18n="faq.kicker">Questions fréquentes</p>
+          <h2 id="faq-title" data-i18n="faq.title">Vos questions, nos réponses</h2>
+        </div>
+        <div class="faq-list reveal">
+          <details class="faq-item">
+            <summary><span data-i18n="faq.1.q">Combien de temps ?</span><span class="faq-ic" aria-hidden="true"></span></summary>
+            <div class="faq-a"><p data-i18n="faq.1.a">Quelques jours en général, dès que nous avons vos informations : le questionnaire rempli, vos photos et votre logo si vous en avez un.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary><span data-i18n="faq.2.q">Je n'ai pas de logo ?</span><span class="faq-ic" aria-hidden="true"></span></summary>
+            <div class="faq-a"><p data-i18n="faq.2.a">Ce n'est pas un problème. Nous écrivons le nom de votre entreprise avec une belle typographie, et vous pourrez ajouter un logo plus tard.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary><span data-i18n="faq.3.q">Je n'ai pas de photos ?</span><span class="faq-ic" aria-hidden="true"></span></summary>
+            <div class="faq-a"><p data-i18n="faq.3.a">Des photos prises avec votre téléphone, en pleine lumière, suffisent souvent. Sans photos, nous créons votre page avec des couleurs, des formes et des icônes à votre image, et nous ajoutons vos photos quand vous les avez.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary><span data-i18n="faq.4.q">Puis-je modifier ma page ?</span><span class="faq-ic" aria-hidden="true"></span></summary>
+            <div class="faq-a"><p data-i18n="faq.4.a">Oui. Envoyez-nous vos changements sur WhatsApp : textes, prix, horaires ou photos. Ils sont compris dans l'abonnement mensuel. Une nouvelle section ou une refonte se fait sur devis.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary><span data-i18n="faq.5.q">Pourquoi pas seulement Instagram ?</span><span class="faq-ic" aria-hidden="true"></span></summary>
+            <div class="faq-a"><p data-i18n="faq.5.a">Instagram est utile pour montrer votre quotidien. Mais tout le monde n'y a pas de compte, et vos horaires, vos prix et votre adresse se perdent entre les publications. Votre page rassemble l'essentiel au même endroit, s'ouvre sans application et peut apparaître sur Google. Les deux se complètent.</p></div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. Appel à l'action final -->
+    <section class="section contact" id="contact" aria-labelledby="contact-title">
+      <div class="wrap">
+        <div class="cta-door zellige reveal">
+          <svg class="cta-mark" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><path d="M18.074 57V36.251A17 17 0 1 1 45.926 36.251V57" fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round"/><path d="M26 57V43A6 6 0 0 1 38 43V57Z" fill="currentColor"/></svg>
+          <h2 id="contact-title" data-i18n="contact.title">Prêt à ouvrir la porte à vos clients ?</h2>
+          <p data-i18n="contact.text">Remplissez le questionnaire, ou posez-nous vos questions sur WhatsApp.</p>
+          <div class="actions center">
+            <a class="btn btn-primary" href="https://babdigital-questionnaire.vercel.app"><span data-i18n="cta.start">Démarrer mon projet</span><svg class="ic ic-dir" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            <a class="btn btn-light" data-wa="wa.default" href="https://wa.me/212720215184?text=Bonjour%20Bab%20Digital%2C%20je%20veux%20une%20page%20pour%20mon%20entreprise."><svg class="ic" aria-hidden="true"><use href="#i-wa"/></svg><span data-i18n="cta.whatsapp">Écrire sur WhatsApp</span></a>
+          </div>
+          <p class="cta-phone"><span data-i18n="contact.phone">WhatsApp :</span> <a data-wa="wa.default" href="https://wa.me/212720215184?text=Bonjour%20Bab%20Digital%2C%20je%20veux%20une%20page%20pour%20mon%20entreprise." dir="ltr">+212 720 215 184</a></p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <div class="footer-brand">
+        <svg class="logo" viewBox="-1 -1 245 52" role="img" aria-label="Bab Digital" focusable="false">
+          <path d="M5.574 50V29.251A17 17 0 1 1 33.426 29.251V50" fill="none" stroke="#FFFFFF" stroke-width="5" stroke-linejoin="round"/>
+          <path d="M13.5 50V36A6 6 0 0 1 25.5 36V50Z" fill="#FFFFFF"/>
+          <text x="52" y="38" direction="ltr" font-size="36" letter-spacing="-0.7" fill="#FFFFFF"><tspan font-weight="700">bab</tspan> <tspan font-weight="400">digital</tspan></text>
+        </svg>
+        <p class="footer-tagline" data-i18n="footer.tagline">Ouvrez la porte à vos clients</p>
+        <p class="footer-sub" data-i18n="footer.sub">Agence web au Maroc. Des pages web pour les cafés, les salons, les cabinets, les auto-écoles et toutes les petites entreprises.</p>
+      </div>
+      <div class="footer-col">
+        <p class="footer-title" data-i18n="footer.contact">Contact</p>
+        <ul>
+          <li><a data-wa="wa.default" href="https://wa.me/212720215184?text=Bonjour%20Bab%20Digital%2C%20je%20veux%20une%20page%20pour%20mon%20entreprise."><svg class="ic" aria-hidden="true"><use href="#i-wa"/></svg><span dir="ltr">+212 720 215 184</span></a></li>
+          <li><a href="https://babdigital-questionnaire.vercel.app"><svg class="ic" aria-hidden="true"><use href="#i-edit"/></svg><span data-i18n="footer.form">Questionnaire de projet</span></a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <p class="footer-title" data-i18n="footer.follow">Suivez-nous</p>
+        <ul>
+          <!-- TODO : remplacer # par l'adresse du compte Instagram de Bab Digital -->
+          <li><a href="#"><svg class="ic" aria-hidden="true"><use href="#i-instagram"/></svg><span>Instagram</span></a></li>
+          <!-- TODO : remplacer # par l'adresse du compte TikTok de Bab Digital -->
+          <li><a href="#"><svg class="ic" aria-hidden="true"><use href="#i-tiktok"/></svg><span>TikTok</span></a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="wrap footer-bottom">
+      <p>© Bab Digital</p>
+      <p lang="ar" dir="rtl">باب ديجيتال</p>
+    </div>
+  </footer>
+
+  <a class="wa-float" data-wa="wa.default" href="https://wa.me/212720215184?text=Bonjour%20Bab%20Digital%2C%20je%20veux%20une%20page%20pour%20mon%20entreprise." data-i18n-attr="aria-label:wa.float" aria-label="Écrire à Bab Digital sur WhatsApp"><svg class="ic" aria-hidden="true"><use href="#i-wa"/></svg></a>
+
+</body>
+</html>

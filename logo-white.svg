@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-1 -1 245 52" width="490" height="104" role="img" aria-labelledby="title">
+  <title id="title">Bab Digital</title>
+  <style><![CDATA[@import url("https://fonts.googleapis.com/css2?family=Sora:wght@400;700&display=block");]]></style>
+  <path d="M5.574 50V29.251A17 17 0 1 1 33.426 29.251V50" fill="none" stroke="#FFFFFF" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M13.5 50V36A6 6 0 0 1 25.5 36V50Z" fill="#FFFFFF"/>
+  <text x="52" y="38" direction="ltr" font-family="Sora, 'Avenir Next', 'Segoe UI', Arial, sans-serif" font-size="36" letter-spacing="-0.7" fill="#FFFFFF"><tspan font-weight="700">bab</tspan> <tspan font-weight="400">digital</tspan></text>
+</svg>
