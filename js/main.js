@@ -19,8 +19,8 @@ const translations = {
   /* ---------- Page d'accueil ---------- */
   "meta.title": { fr: "Bab Digital, création de sites web pour entreprises au Maroc", ar: "باب ديجيتال، إنشاء مواقع إلكترونية للشركات في المغرب" },
   "meta.description": {
-    fr: "Bab Digital crée la page web de votre entreprise en quelques jours : services, photos, horaires, Google Maps et bouton WhatsApp. 1000 DH, puis 300 DH/mois.",
-    ar: "باب ديجيتال تصمّم الصفحة الإلكترونية لمشروعك في بضعة أيام: الخدمات، الصور، أوقات العمل، خرائط غوغل وزر واتساب. 1000 درهم، ثم 300 درهم شهريًا."
+    fr: "Bab Digital crée la page web de votre entreprise en 2 à 3 jours : services, photos, horaires, Google Maps et bouton WhatsApp. Dès 1000 DH.",
+    ar: "باب ديجيتال تصمّم الصفحة الإلكترونية لمشروعك في يومين إلى ثلاثة أيام: الخدمات، الصور، أوقات العمل، خرائط غوغل وزر واتساب. ابتداءً من 1000 درهم."
   },
   "meta.og": {
     fr: "Ouvrez la porte à vos clients : une page web claire sur mobile, avec vos services, vos photos et un bouton WhatsApp.",
@@ -40,12 +40,12 @@ const translations = {
   "hero.title.hl": { fr: "la porte", ar: "الباب" },
   "hero.title.b": { fr: " à vos clients", ar: " لزبنائك" },
   "hero.sub": {
-    fr: "Nous créons la page web de votre entreprise en quelques jours : vos services, vos photos et un bouton WhatsApp pour recevoir des clients directement.",
-    ar: "نصمّم الصفحة الإلكترونية لمشروعك في بضعة أيام: خدماتك، صورك، وزر واتساب ليتواصل معك الزبناء مباشرة."
+    fr: "Nous créons la page web de votre entreprise en 2 à 3 jours : vos services, vos photos et un bouton WhatsApp pour recevoir des clients directement.",
+    ar: "نصمّم الصفحة الإلكترونية لمشروعك في يومين إلى ثلاثة أيام: خدماتك، صورك، وزر واتساب ليتواصل معك الزبناء مباشرة."
   },
   "hero.fact1": { fr: "1000 DH la création", ar: "1000 درهم للإنشاء" },
-  "hero.fact2": { fr: "puis 300 DH/mois", ar: "ثم 300 درهم شهريًا" },
-  "hero.fact3": { fr: "En ligne en quelques jours", ar: "جاهزة في بضعة أيام" },
+  "hero.fact2": { fr: "Option Sérénité : 300 DH/mois", ar: "خيار راحة البال: 300 درهم شهريًا" },
+  "hero.fact3": { fr: "En ligne en 2 à 3 jours", ar: "جاهزة في يومين إلى ثلاثة أيام" },
 
   "art.name": { fr: "Café Nakhla", ar: "مقهى نخلة" },
   "art.badge": { fr: "Exemple", ar: "نموذج" },
@@ -75,7 +75,7 @@ const translations = {
   "steps.1.time": { fr: "(5 minutes)", ar: "(5 دقائق)" },
   "steps.1.text": { fr: "Votre activité, vos services, vos horaires. Vous pouvez aussi y ajouter votre logo et vos photos.", ar: "نشاطك وخدماتك وأوقات عملك. ويمكنك أيضًا إضافة شعارك وصورك." },
   "steps.1.link": { fr: "Remplir le questionnaire", ar: "املأ الاستمارة" },
-  "steps.2.title": { fr: "Nous créons votre page en quelques jours", ar: "نصمّم صفحتك في بضعة أيام" },
+  "steps.2.title": { fr: "Nous créons votre page en 2 à 3 jours", ar: "نصمّم صفحتك في يومين إلى ثلاثة أيام" },
   "steps.2.text": { fr: "Nous écrivons les textes, mettons en valeur vos photos et préparons la version mobile.", ar: "نكتب النصوص، ونُبرز صورك، ونُجهّز نسخة الهاتف." },
   "steps.3.title": { fr: "Votre page est en ligne", ar: "صفحتك على الإنترنت" },
   "steps.3.text": { fr: "Les clients vous écrivent directement sur WhatsApp.", ar: "والزبناء يراسلونك مباشرة على واتساب." },
@@ -95,7 +95,7 @@ const translations = {
   "services.5.text": { fr: "Un titre, une description et des informations claires pour que Google comprenne votre page.", ar: "عنوان ووصف ومعلومات واضحة حتى يفهم غوغل صفحتك." },
   "services.6.title": { fr: "Hébergement", ar: "الاستضافة" },
   "services.6.text": { fr: "Votre page reste en ligne, rapide et sécurisée en HTTPS.", ar: "صفحتك تبقى على الإنترنت، سريعة ومؤمّنة بـ HTTPS." },
-  "services.7.title": { fr: "Modifications", ar: "التعديلات" },
+  "services.7.title": { fr: "2 modifications par mois (offre Sérénité)", ar: "تعديلان في الشهر (عرض راحة البال)" },
   "services.7.text": { fr: "Un prix change, un horaire bouge ? Envoyez-nous le changement sur WhatsApp.", ar: "تغيّر سعر أو موعد؟ أرسل لنا التعديل على واتساب." },
   "services.8.title": { fr: "Nom de domaine", ar: "اسم النطاق" },
   "services.8.text": { fr: "Une adresse web au nom de votre entreprise.", ar: "عنوان إلكتروني باسم مشروعك." },
@@ -126,32 +126,35 @@ const translations = {
   "work.dent.alt": { fr: "Fauteuil dentaire dans une salle de soins claire", ar: "كرسي طب الأسنان في غرفة علاج مضيئة" },
 
   "pricing.kicker": { fr: "Tarifs", ar: "الأسعار" },
-  "pricing.title": { fr: "Une offre claire, sans surprise", ar: "عرض واضح، بلا مفاجآت" },
-  "pricing.setup.label": { fr: "Création", ar: "الإنشاء" },
-  "pricing.setup.price": { fr: "1000 DH", ar: "1000 درهم" },
-  "pricing.setup.note": { fr: "une seule fois", ar: "مرة واحدة" },
-  "pricing.monthly.label": { fr: "Abonnement", ar: "الاشتراك" },
-  "pricing.monthly.price": { fr: "300 DH", ar: "300 درهم" },
-  "pricing.monthly.per": { fr: "/mois", ar: " في الشهر" },
-  "pricing.monthly.note": { fr: "hébergement, maintenance, modifications", ar: "الاستضافة والصيانة والتعديلات" },
-  "pricing.question": { fr: "Une question sur l'offre ?", ar: "سؤال حول العرض؟" },
+  "pricing.title": { fr: "Deux offres claires, sans surprise", ar: "عرضان واضحان، بلا مفاجآت" },
+  "pricing.p1.name": { fr: "Page seule", ar: "الصفحة فقط" },
+  "pricing.p1.price": { fr: "1000 DH", ar: "1000 درهم" },
+  "pricing.p1.when": { fr: "une seule fois", ar: "مرة واحدة" },
+  "pricing.p1.desc": { fr: "Votre page professionnelle livrée et remise entre vos mains.", ar: "صفحتك الاحترافية جاهزة ومسلّمة بين يديك." },
+  "pricing.badge": { fr: "Recommandé", ar: "موصى به" },
+  "pricing.p2.name": { fr: "Page + Sérénité", ar: "الصفحة + راحة البال" },
+  "pricing.p2.price": { fr: "1000 DH", ar: "1000 درهم" },
+  "pricing.p2.monthly": { fr: "+ 300 DH/mois", ar: "+ 300 درهم في الشهر" },
+  "pricing.p2.desc": { fr: "Hébergement, nom de domaine en .com (.ma sur devis), maintenance et 2 modifications par mois.", ar: "الاستضافة، اسم نطاق بامتداد com (وامتداد ma حسب عرض السعر)، الصيانة وتعديلان في الشهر." },
+  "pricing.p2.inc1": { fr: "Tout ce que comprend la Page seule", ar: "كل ما تتضمنه الصفحة فقط" },
+  "pricing.p2.inc2": { fr: "Hébergement et maintenance", ar: "الاستضافة والصيانة" },
+  "pricing.p2.inc3": { fr: "Nom de domaine en .com (.ma sur devis)", ar: "اسم نطاق بامتداد com، وامتداد ma حسب عرض السعر" },
+  "pricing.p2.inc4": { fr: "2 modifications par mois (offre Sérénité)", ar: "تعديلان في الشهر (عرض راحة البال)" },
+  "pricing.payment": { fr: "Paiement en 2 fois : 50 % au démarrage, 50 % à la livraison.", ar: "الأداء على دفعتين: 50% عند الانطلاق و50% عند التسليم." },
+  "pricing.question": { fr: "Une question sur l'offre ?", ar: "سؤال حول العرضين؟" },
   "pricing.question.link": { fr: "Écrivez-nous sur WhatsApp", ar: "راسلنا على واتساب" },
-  "pricing.included": { fr: "Tout est inclus", ar: "كل شيء مشمول" },
   "pricing.inc1": { fr: "Page professionnelle sur mobile", ar: "صفحة احترافية على الهاتف" },
   "pricing.inc2": { fr: "Bouton WhatsApp", ar: "زر واتساب" },
   "pricing.inc3": { fr: "Google Maps et horaires", ar: "خرائط غوغل وأوقات العمل" },
   "pricing.inc4": { fr: "Vos photos et votre logo", ar: "صورك وشعارك" },
   "pricing.inc5": { fr: "Référencement Google de base", ar: "ظهور أساسي في غوغل" },
-  "pricing.inc6": { fr: "Hébergement et maintenance", ar: "الاستضافة والصيانة" },
-  "pricing.inc7": { fr: "Modifications", ar: "التعديلات" },
-  "pricing.inc8": { fr: "Nom de domaine en .com (.ma sur devis)", ar: "اسم نطاق بامتداد com، وامتداد ma حسب عرض السعر" },
 
   "faq.kicker": { fr: "Questions fréquentes", ar: "أسئلة شائعة" },
   "faq.title": { fr: "Vos questions, nos réponses", ar: "أسئلتكم وأجوبتنا" },
   "faq.1.q": { fr: "Combien de temps ?", ar: "كم من الوقت يلزم؟" },
   "faq.1.a": {
-    fr: "Quelques jours en général, dès que nous avons vos informations : le questionnaire rempli, vos photos et votre logo si vous en avez un.",
-    ar: "بضعة أيام في العادة، بمجرد أن تصلنا معلوماتك: الاستمارة مملوءة، وصورك، وشعارك إن كان لديك واحد."
+    fr: "En 2 à 3 jours en général, dès que nous avons vos informations : le questionnaire rempli, vos photos et votre logo si vous en avez un.",
+    ar: "من يومين إلى ثلاثة أيام في العادة، بمجرد أن تصلنا معلوماتك: الاستمارة مملوءة، وصورك، وشعارك إن كان لديك واحد."
   },
   "faq.2.q": { fr: "Je n'ai pas de logo ?", ar: "ليس لدي شعار؟" },
   "faq.2.a": {
@@ -165,8 +168,8 @@ const translations = {
   },
   "faq.4.q": { fr: "Puis-je modifier ma page ?", ar: "هل يمكنني تعديل صفحتي؟" },
   "faq.4.a": {
-    fr: "Oui. Envoyez-nous vos changements sur WhatsApp : textes, prix, horaires ou photos. Ils sont compris dans l'abonnement mensuel. Une nouvelle section ou une refonte se fait sur devis.",
-    ar: "نعم. أرسل لنا تعديلاتك على واتساب: النصوص أو الأسعار أو الأوقات أو الصور، وهي مشمولة في الاشتراك الشهري. أما إضافة قسم جديد أو إعادة التصميم فتكون حسب عرض سعر."
+    fr: "Oui. Avec l'offre Page + Sérénité, 2 modifications par mois sont comprises : textes, prix, horaires ou photos, que vous nous envoyez sur WhatsApp. Une nouvelle section ou une refonte se fait sur devis.",
+    ar: "نعم. مع عرض الصفحة + راحة البال، يشمل الاشتراك تعديلين في الشهر: النصوص أو الأسعار أو الأوقات أو الصور، ترسلها لنا على واتساب. أما إضافة قسم جديد أو إعادة التصميم فتكون حسب عرض سعر."
   },
   "faq.5.q": { fr: "Pourquoi pas seulement Instagram ?", ar: "لماذا لا أكتفي بإنستغرام؟" },
   "faq.5.a": {
