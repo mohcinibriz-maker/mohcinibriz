@@ -435,7 +435,7 @@ const translations = {
 (function () {
   "use strict";
 
-  var WHATSAPP_NUMBER = "212720215184";
+  var WHATSAPP_NUMBER = "212702915333";
   var DEFAULT_LANG = "fr";
   var LANGS = ["fr", "ar"];
   var STORAGE_KEY = "bab-lang";
