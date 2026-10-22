@@ -13,6 +13,7 @@ const translations = {
   "a11y.home": { fr: "Bab Digital, retour en haut de la page", ar: "باب ديجيتال، العودة إلى أعلى الصفحة" },
   "lang.label": { fr: "Langue", ar: "اللغة" },
   "cta.start": { fr: "Démarrer mon projet", ar: "ابدأ مشروعي" },
+  "cta.trust": { fr: "Sans engagement • Résultat en 48h • Payez après validation", ar: "بدون التزام • النتيجة خلال 48 ساعة • الأداء بعد الموافقة" },
   "cta.whatsapp": { fr: "Écrire sur WhatsApp", ar: "راسلنا على واتساب" },
   "cta.formnote": { fr: "", ar: "الاستمارة بالفرنسية حاليًا. إن كنت تفضّل العربية، راسلنا على واتساب." },
 
@@ -140,7 +141,9 @@ const translations = {
   "pricing.p2.inc2": { fr: "Hébergement et maintenance", ar: "الاستضافة والصيانة" },
   "pricing.p2.inc3": { fr: "Nom de domaine en .com (.ma sur devis)", ar: "اسم نطاق بامتداد com، وامتداد ma حسب عرض السعر" },
   "pricing.p2.inc4": { fr: "2 modifications par mois (offre Sérénité)", ar: "تعديلان في الشهر (عرض راحة البال)" },
-  "pricing.payment": { fr: "Paiement en 2 fois : 50 % au démarrage, 50 % à la livraison.", ar: "الأداء على دفعتين: 50% عند الانطلاق و50% عند التسليم." },
+  "pricing.payment.title": { fr: "0 DH au démarrage :", ar: "0 درهم عند الانطلاق:" },
+  "pricing.payment": { fr: "Vous voyez votre page prête sur votre téléphone d'abord. Vous ne payez que si vous êtes satisfait.", ar: "تشاهد صفحتك جاهزة على هاتفك أولًا، ولا تؤدي إلا إذا كنت راضيًا." },
+  "pricing.after": { fr: "Payable uniquement après validation de votre page", ar: "لا تؤدي إلا بعد موافقتك على صفحتك" },
   "pricing.question": { fr: "Une question sur l'offre ?", ar: "سؤال حول العرضين؟" },
   "pricing.question.link": { fr: "Écrivez-nous sur WhatsApp", ar: "راسلنا على واتساب" },
   "pricing.inc1": { fr: "Page professionnelle sur mobile", ar: "صفحة احترافية على الهاتف" },
