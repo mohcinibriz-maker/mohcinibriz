@@ -13,6 +13,9 @@ const translations = {
   "a11y.home": { fr: "Bab Digital, retour en haut de la page", ar: "باب ديجيتال، العودة إلى أعلى الصفحة" },
   "lang.label": { fr: "Langue", ar: "اللغة" },
   "cta.start": { fr: "Démarrer mon projet", ar: "ابدأ مشروعي" },
+  "hero.badge1": { fr: "En ligne en 48h", ar: "أونلاين فـ 48 ساعة" },
+  "hero.badge2": { fr: "0 DH Avance", ar: "0 درهم تسبيق" },
+  "hero.badge3": { fr: "Démarrage sur WhatsApp", ar: "البداية على واتساب" },
   "cta.trust": { fr: "Sans engagement • Résultat en 48h • Payez après validation", ar: "بدون التزام • النتيجة خلال 48 ساعة • الأداء بعد الموافقة" },
   "cta.whatsapp": { fr: "Écrire sur WhatsApp", ar: "راسلنا على واتساب" },
   "cta.formnote": { fr: "", ar: "الاستمارة بالفرنسية حاليًا. إن كنت تفضّل العربية، راسلنا على واتساب." },
@@ -20,8 +23,8 @@ const translations = {
   /* ---------- Page d'accueil ---------- */
   "meta.title": { fr: "Bab Digital, création de sites web pour entreprises au Maroc", ar: "باب ديجيتال، إنشاء مواقع إلكترونية للشركات في المغرب" },
   "meta.description": {
-    fr: "Bab Digital crée la page web de votre entreprise en 2 à 3 jours : services, photos, horaires, Google Maps et bouton WhatsApp. Dès 1000 DH.",
-    ar: "باب ديجيتال تصمّم الصفحة الإلكترونية لمشروعك في يومين إلى ثلاثة أيام: الخدمات، الصور، أوقات العمل، خرائط غوغل وزر واتساب. ابتداءً من 1000 درهم."
+    fr: "Bab Digital crée la page web de votre entreprise en 48h : services, photos, horaires, Google Maps et bouton WhatsApp. 0 DH au démarrage, vous payez après validation.",
+    ar: "باب ديجيتال كتصاوب الموقع ديال مشروعك فـ 48 ساعة: الخدمات، التصاور، الأوقات، Google Maps وزر واتساب. 0 درهم تسبيق، كتخلص غير ملي كتعجبك."
   },
   "meta.og": {
     fr: "Ouvrez la porte à vos clients : une page web claire sur mobile, avec vos services, vos photos et un bouton WhatsApp.",
@@ -37,16 +40,16 @@ const translations = {
   "nav.toggle": { fr: "Ouvrir ou fermer le menu", ar: "فتح القائمة أو إغلاقها" },
 
   "hero.eyebrow": { fr: "Agence web au Maroc", ar: "وكالة رقمية في المغرب" },
-  "hero.title.a": { fr: "Ouvrez ", ar: "افتح " },
-  "hero.title.hl": { fr: "la porte", ar: "الباب" },
-  "hero.title.b": { fr: " à vos clients", ar: " لزبنائك" },
+  "hero.title.a": { fr: "Ouvrez ", ar: "موقع إلكتروني احترافي لمشروعك " },
+  "hero.title.hl": { fr: "la porte", ar: "فـ 48 ساعة" },
+  "hero.title.b": { fr: " à vos clients", ar: "" },
   "hero.sub": {
-    fr: "Nous créons la page web de votre entreprise en 2 à 3 jours : vos services, vos photos et un bouton WhatsApp pour recevoir des clients directement.",
-    ar: "نصمّم الصفحة الإلكترونية لمشروعك في يومين إلى ثلاثة أيام: خدماتك، صورك، وزر واتساب ليتواصل معك الزبناء مباشرة."
+    fr: "Nous créons la page web de votre entreprise en 48h : vos services, vos photos et un bouton WhatsApp pour recevoir des clients directement.",
+    ar: "شوف موقعك واجد فـ تلفونك عاد خلص • 0 درهم تسبيق"
   },
   "hero.fact1": { fr: "1000 DH la création", ar: "1000 درهم للإنشاء" },
   "hero.fact2": { fr: "Option Sérénité : 300 DH/mois", ar: "خيار راحة البال: 300 درهم شهريًا" },
-  "hero.fact3": { fr: "En ligne en 2 à 3 jours", ar: "جاهزة في يومين إلى ثلاثة أيام" },
+  "hero.fact3": { fr: "En ligne en 48h", ar: "أونلاين فـ 48 ساعة" },
 
   "art.name": { fr: "Café Nakhla", ar: "مقهى نخلة" },
   "art.badge": { fr: "Exemple", ar: "نموذج" },
@@ -72,14 +75,14 @@ const translations = {
 
   "steps.kicker": { fr: "Comment ça marche", ar: "كيف نعمل" },
   "steps.title": { fr: "Trois étapes, et votre porte est ouverte.", ar: "ثلاث خطوات، وبابك مفتوح." },
-  "steps.1.title": { fr: "Vous remplissez notre questionnaire", ar: "تملأ استمارتنا" },
+  "steps.1.title": { fr: "Vous remplissez notre questionnaire", ar: "عمّر الاستمارة" },
   "steps.1.time": { fr: "(5 minutes)", ar: "(5 دقائق)" },
-  "steps.1.text": { fr: "Votre activité, vos services, vos horaires. Vous pouvez aussi y ajouter votre logo et vos photos.", ar: "نشاطك وخدماتك وأوقات عملك. ويمكنك أيضًا إضافة شعارك وصورك." },
+  "steps.1.text": { fr: "Votre activité, vos services, vos horaires. Vous pouvez aussi y ajouter votre logo et vos photos.", ar: "النشاط ديالك، الخدمات، والأوقات. وتقدر تزيد اللوغو والتصاور ديالك." },
   "steps.1.link": { fr: "Remplir le questionnaire", ar: "املأ الاستمارة" },
-  "steps.2.title": { fr: "Nous créons votre page en 2 à 3 jours", ar: "نصمّم صفحتك في يومين إلى ثلاثة أيام" },
-  "steps.2.text": { fr: "Nous écrivons les textes, mettons en valeur vos photos et préparons la version mobile.", ar: "نكتب النصوص، ونُبرز صورك، ونُجهّز نسخة الهاتف." },
-  "steps.3.title": { fr: "Votre page est en ligne", ar: "صفحتك على الإنترنت" },
-  "steps.3.text": { fr: "Les clients vous écrivent directement sur WhatsApp.", ar: "والزبناء يراسلونك مباشرة على واتساب." },
+  "steps.2.title": { fr: "Nous créons votre page en 48h", ar: "نجهزوا ليك الصفحة فـ 48 ساعة" },
+  "steps.2.text": { fr: "Nous écrivons les textes, mettons en valeur vos photos et préparons la version mobile.", ar: "كنكتبو النصوص، كنبيّنو التصاور ديالك، وكنوجدو نسخة التلفون." },
+  "steps.3.title": { fr: "Vous la validez, puis elle passe en ligne", ar: "تشوفها وتخلص باش تطلق أونلاين" },
+  "steps.3.text": { fr: "Vous voyez votre page sur votre téléphone. Une fois validée et payée, elle est publiée sur votre nom de domaine.", ar: "كتشوف الصفحة فـ تلفونك. ملي كتعجبك وكتخلص، كنطلقوها على الدومين ديالك." },
 
   "services.kicker": { fr: "Services", ar: "الخدمات" },
   "services.title": { fr: "Tout ce qu'il faut pour être trouvé et contacté", ar: "كل ما تحتاجه ليجدك الزبناء ويتواصلوا معك" },
@@ -156,8 +159,13 @@ const translations = {
   "faq.title": { fr: "Vos questions, nos réponses", ar: "أسئلتكم وأجوبتنا" },
   "faq.1.q": { fr: "Combien de temps ?", ar: "كم من الوقت يلزم؟" },
   "faq.1.a": {
-    fr: "En 2 à 3 jours en général, dès que nous avons vos informations : le questionnaire rempli, vos photos et votre logo si vous en avez un.",
-    ar: "من يومين إلى ثلاثة أيام في العادة، بمجرد أن تصلنا معلوماتك: الاستمارة مملوءة، وصورك، وشعارك إن كان لديك واحد."
+    fr: "En 48h en général, dès que nous avons vos informations : le questionnaire rempli, vos photos et votre logo si vous en avez un.",
+    ar: "فـ 48 ساعة فالعادة، من نهار كتوصلنا المعلومات ديالك: الاستمارة، التصاور، واللوغو إلا كان عندك."
+  },
+  "faq.6.q": { fr: "Comment se passe le paiement ?", ar: "كيفاش كيدوز الخلاص؟" },
+  "faq.6.a": {
+    fr: "Vous ne payez rien au début. Nous créons la page complète sur un lien de démonstration. Une fois que vous la validez, vous effectuez le paiement pour activer votre nom de domaine officiel.",
+    ar: "ما كتخلص والو فالبداية. كنصاوبو ليك الصفحة كاملة على رابط تجريبي، وملي كتوافق عليها، كتخلص باش نفعّلو الدومين الرسمي ديالك."
   },
   "faq.2.q": { fr: "Je n'ai pas de logo ?", ar: "ليس لدي شعار؟" },
   "faq.2.a": {

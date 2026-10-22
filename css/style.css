@@ -508,3 +508,10 @@ html:lang(ar) .price-add { letter-spacing: 0; }
   .btn, .lang button, .faq-item, .feature, .step { border: 1px solid CanvasText; }
   .gate-arch, .work-media { forced-color-adjust: none; }
 }
+
+/* Badges de confiance sous le bouton principal */
+.badges { list-style: none; margin: 18px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; }
+.badges li { display: inline-flex; align-items: center; gap: 7px; padding: 7px 13px; border-radius: 999px; background: #fff; border: 1px solid var(--line, #E5DCCD); color: var(--ink); font-size: .875rem; font-weight: 600; line-height: 1.2; white-space: nowrap; }
+.badge-ic { font-size: 1rem; line-height: 1; }
+html:lang(ar) .badges li { font-family: var(--font-ar); font-size: .95rem; }
+@media (max-width: 379px) { .badges li { font-size: .8125rem; padding: 6px 11px; } }
