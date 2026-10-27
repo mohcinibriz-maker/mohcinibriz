@@ -1,0 +1,23 @@
+{
+  "name": "vibe coder",
+  "city": "Casablanca",
+  "status": "demo",
+  "plan": "page",
+  "style": "Monolith",
+  "created": "2026-10-23",
+  "updated": "2026-10-23",
+  "url": "https://client-vibe-coder.vercel.app",
+  "domains": [
+    { "host": "client-vibe-coder.vercel.app", "state": "demo" }
+  ],
+  "domainUntil": "",
+  "serenite": { "price": 300, "nextPayment": "", "paid": false, "modsUsed": 0, "modsMax": 2 },
+  "steps": {
+    "questionnaire": "2026-10-23",
+    "creation": "2026-10-23",
+    "demo": "2026-10-23",
+    "valide": "",
+    "enligne": "",
+    "domaine": ""
+  }
+}

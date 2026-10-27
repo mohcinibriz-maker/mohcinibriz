@@ -1,10 +1,55 @@
 {
   "redirects": [
-    { "source": "/demos/dentiste.html", "destination": "/exemples/cabinet-dentaire.html", "permanent": false },
-    { "source": "/demos/immobilier.html", "destination": "/", "permanent": false },
-    { "source": "/demos/salle-de-sport.html", "destination": "/", "permanent": false },
-    { "source": "/questionnaire", "destination": "https://babdigital-questionnaire.vercel.app/", "permanent": false },
-    { "source": "/questionnaire/", "destination": "https://babdigital-questionnaire.vercel.app/", "permanent": false },
-    { "source": "/questionnaire/:path*", "destination": "https://babdigital-questionnaire.vercel.app/", "permanent": false }
+    {
+      "source": "/demos/dentiste.html",
+      "destination": "/exemples/cabinet-dentaire.html",
+      "permanent": false
+    },
+    {
+      "source": "/demos/immobilier.html",
+      "destination": "/",
+      "permanent": false
+    },
+    {
+      "source": "/demos/salle-de-sport.html",
+      "destination": "/",
+      "permanent": false
+    },
+    {
+      "source": "/questionnaire",
+      "destination": "https://babdigital-questionnaire.vercel.app/",
+      "permanent": false
+    },
+    {
+      "source": "/questionnaire/",
+      "destination": "https://babdigital-questionnaire.vercel.app/",
+      "permanent": false
+    },
+    {
+      "source": "/questionnaire/:path*",
+      "destination": "https://babdigital-questionnaire.vercel.app/",
+      "permanent": false
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/espace/:code([a-z0-9]{8,32})",
+      "destination": "/espace/index.html"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/espace/(.*)",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "no-store"
+        }
+      ]
+    }
   ]
 }
