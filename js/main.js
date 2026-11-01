@@ -48,7 +48,7 @@ const translations = {
     ar: "شوف موقعك واجد فـ تلفونك عاد خلص • 0 درهم تسبيق"
   },
   "hero.fact1": { fr: "1000 DH la création", ar: "1000 درهم للإنشاء" },
-  "hero.fact2": { fr: "Option Sérénité : 300 DH/mois", ar: "خيار راحة البال: 300 درهم شهريًا" },
+  "hero.fact2": { fr: "Puis 300 DH/mois, tout compris", ar: "ومن بعد 300 درهم فالشهر، كلشي داخل" },
   "hero.fact3": { fr: "En ligne en 48h", ar: "أونلاين فـ 48 ساعة" },
 
   "art.name": { fr: "Café Nakhla", ar: "مقهى نخلة" },
@@ -130,7 +130,7 @@ const translations = {
   "work.dent.alt": { fr: "Fauteuil dentaire dans une salle de soins claire", ar: "كرسي طب الأسنان في غرفة علاج مضيئة" },
 
   "pricing.kicker": { fr: "Tarifs", ar: "الأسعار" },
-  "pricing.title": { fr: "Deux offres claires, sans surprise", ar: "عرضان واضحان، بلا مفاجآت" },
+  "pricing.title": { fr: "Une offre claire, sans surprise", ar: "عرض واضح، بلا مفاجآت" },
   "pricing.p1.name": { fr: "Page seule", ar: "الصفحة فقط" },
   "pricing.p1.price": { fr: "1000 DH", ar: "1000 درهم" },
   "pricing.p1.when": { fr: "une seule fois", ar: "مرة واحدة" },

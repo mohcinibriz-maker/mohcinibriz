@@ -390,7 +390,8 @@ html:lang(ar) .price { letter-spacing: 0; }
 .checks li { display: flex; align-items: flex-start; gap: 12px; }
 .checks .ic { margin-top: .22em; color: #BFE1D4; stroke-width: 2.6; }
 .plans { display: grid; gap: 28px 24px; max-width: 1000px; margin-inline: auto; }
-@media (min-width: 820px) { .plans { grid-template-columns: 1fr 1fr; } }
+@media (min-width: 820px) { .plans { grid-template-columns: 1fr 1fr; } .plans.plans-single { grid-template-columns: 1fr; } }
+.plans.plans-single { max-width: 560px; }
 .plan { position: relative; display: flex; flex-direction: column; padding: 34px 24px 28px; border: 1px solid rgba(20, 20, 26, .08); border-radius: 28px; background: #fff; box-shadow: var(--shadow); }
 @media (max-width: 399px) { .plan { padding-inline: 18px; } .plan .btn { padding-inline: 1em; } }
 @media (min-width: 600px) { .plan { padding: 40px 40px 36px; } }
