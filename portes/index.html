@@ -1,0 +1,906 @@
+<!doctype html>
+<html lang="fr" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Bab Digital — Votre page web en 48h, 0 DH d'avance</title>
+<meta name="description" content="Bab Digital crée la page web de votre commerce au Maroc en 48h. 0 DH d'avance : vous payez seulement si vous aimez.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Bab Digital — Votre page web en 48h, 0 DH d'avance">
+<meta property="og:description" content="Bab Digital crée la page web de votre commerce au Maroc en 48h. 0 DH d'avance : vous payez seulement si vous aimez.">
+<meta name="theme-color" content="#14141A">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 150 150'%3E%3Crect width='150' height='150' rx='30' fill='%2314141A'/%3E%3Cg transform='translate(15 0)'%3E%3Cpath d='M10 140V62a50 50 0 0 1 100 0v78z' fill='none' stroke='%23F6F0E6' stroke-width='8'/%3E%3Cpath d='M34 140V78a26 26 0 0 1 52 0v62z' fill='%23C8553D'/%3E%3C/g%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Sora:wght@300;700;800&family=Tajawal:wght@400;700&display=swap">
+<link rel="prefetch" href="https://babdigital-questionnaire.vercel.app">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ProfessionalService","name":"Bab Digital","url":"https://babdigital.vercel.app","telephone":"+212702915333","areaServed":"Maroc"}
+</script>
+<style>
+:root{
+  --ink:#14141A;--cream:#F6F0E6;--green:#0F5C4D;--terracotta:#C8553D;--tint:#E3ECE5;
+  --edge:clamp(18px,2vw,28px);
+  --ease-out:cubic-bezier(.22,1,.36,1);--ease-expo:cubic-bezier(.16,1,.3,1);
+  font-family:Inter,system-ui,sans-serif;font-synthesis:none;
+  -webkit-text-size-adjust:100%;text-size-adjust:100%;color-scheme:dark;
+}
+*,*::before,*::after{box-sizing:border-box}
+html,body{margin:0;height:100%;overflow:hidden;background:var(--ink);color:var(--cream)}
+body{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;-webkit-tap-highlight-color:transparent}
+html[lang="ar"]{font-family:Tajawal,system-ui,sans-serif}
+:focus-visible{outline:2px solid var(--cream);outline-offset:4px}
+.has-cursor,.has-cursor body,.has-cursor button,.has-cursor a{cursor:none}
+
+/* ---------- stage ---------- */
+.experience{position:relative;width:100%;height:100%;min-height:560px;overflow:hidden;isolation:isolate}
+.experience::after{content:"";position:absolute;inset:0;z-index:2;pointer-events:none;opacity:.04;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'%3E%3Cg fill='none' stroke='%23F6F0E6' stroke-width='1'%3E%3Cpath d='M51.8 32 46 37.8V46h-8.2L32 51.8 26.2 46H18v-8.2L12.2 32 18 26.2V18h8.2L32 12.2 37.8 18H46v8.2z'/%3E%3Cpath d='M46 46l18 18M18 46 0 64M18 18 0 0M46 18 64 0'/%3E%3C/g%3E%3C/svg%3E");
+  background-size:64px 64px}
+.backgrounds{position:fixed;inset:0;z-index:0}
+.background{position:absolute;inset:0;width:100%;height:100%;opacity:.38;filter:saturate(.8)}
+.shade{position:fixed;inset:0;z-index:1;pointer-events:none;
+  background:linear-gradient(to bottom,rgba(20,20,26,0) 50%,rgba(20,20,26,.92) 100%)}
+.portal-canvas{position:fixed;inset:0;z-index:3;pointer-events:none}
+.chrome{position:absolute;z-index:4;transition:opacity .45s ease,filter .45s ease}
+.experience.is-transitioning .chrome{opacity:0;filter:blur(8px);pointer-events:none}
+.cream-fade{position:fixed;inset:0;z-index:60;background:var(--ink);opacity:0;pointer-events:none;transition:opacity .35s ease}
+.cream-fade.is-on{opacity:1;pointer-events:auto}
+
+/* ---------- preloader ---------- */
+.preloader{position:fixed;inset:0;z-index:20;display:grid;place-items:center;background:var(--ink);
+  transition:opacity .8s ease,visibility 0s linear .8s}
+.preloader.is-done{opacity:0;visibility:hidden;pointer-events:none}
+.preloader>*{grid-area:1/1}
+#preloader-arch{position:relative;z-index:1;width:112px;height:140px;overflow:visible;
+  transition:transform .6s var(--ease-expo),opacity .5s ease}
+.preloader.is-done #preloader-arch{transform:scale(.53);opacity:0}
+.pl-line{stroke-dasharray:100;stroke-dashoffset:100;animation:pl-draw 2.4s cubic-bezier(.16,1,.3,1) .1s forwards}
+.pl-door-wrap{opacity:0;animation:pl-fade .45s ease 1.55s forwards}
+.pl-door{transform-box:fill-box;transform-origin:0 50%;animation:pl-open .5s cubic-bezier(.65,0,.35,1) 2.3s forwards}
+.pl-light{opacity:0;animation:pl-fade .4s ease 2.25s forwards}
+.preloader-shade{width:min(560px,90vw);aspect-ratio:1;border-radius:50%;opacity:0;
+  background:radial-gradient(closest-side,rgba(246,240,230,.18),rgba(200,85,61,.10) 45%,rgba(200,85,61,0));
+  animation:pl-fade 1s ease 2.35s forwards}
+@keyframes pl-draw{to{stroke-dashoffset:0}}
+@keyframes pl-fade{to{opacity:1}}
+@keyframes pl-open{to{transform:scaleX(0)}}
+
+.preloader-count{position:fixed;z-index:22;left:50%;bottom:clamp(28px,7vh,64px);transform:translateX(-50%);
+  display:flex;align-items:flex-start;direction:ltr;font-family:Sora,Inter,sans-serif;font-weight:300;line-height:1;pointer-events:none}
+#preloader-value{font-size:64px;letter-spacing:-.03em;min-width:2.1ch;text-align:end}
+.preloader-count .percent{font-size:24px;margin:6px 0 0 4px;opacity:.7}
+.preloader-count.is-leaving{animation:count-leave .75s var(--ease-expo) forwards}
+@keyframes count-leave{to{opacity:0;transform:translate(-50%,-26px);filter:blur(10px)}}
+
+.floating-logo{position:fixed;left:0;top:0;z-index:25;width:59px;pointer-events:none;opacity:0;
+  transform:translate3d(var(--x,50vw),var(--y,50vh),0);transition:opacity .5s ease}
+.floating-logo svg{display:block;width:100%;height:auto}
+.floating-logo.is-docked{opacity:1;transition:transform 2s var(--ease-expo) .1s,width 2s var(--ease-expo) .1s,opacity .5s ease}
+.floating-logo.is-settled{transition:opacity .45s ease}
+.experience.is-transitioning .floating-logo{opacity:0}
+
+/* ---------- header ---------- */
+.header{top:var(--edge);left:var(--edge);right:var(--edge);display:flex;align-items:center;justify-content:space-between;gap:16px}
+.brand-name{display:inline-flex;align-items:center;min-height:46px;padding-inline-start:48px;
+  font-family:Sora,Inter,sans-serif;font-weight:700;font-size:16px;letter-spacing:-.01em;white-space:nowrap}
+.header-actions{display:flex;align-items:center;gap:10px}
+.nav{display:flex;align-items:center;height:42px;padding:3px;border:1px solid rgba(246,240,230,.35);border-radius:999px;
+  background:rgba(246,240,230,.08);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px)}
+.nav a{position:relative;display:inline-flex;align-items:center;height:34px;padding:8px 18px;border-radius:999px;
+  color:var(--cream);text-decoration:none;font-size:14px;white-space:nowrap;transition:background-color .25s,color .25s}
+.nav a::after{content:"";position:absolute;inset:-5px 0}
+.nav a:hover{background:rgba(246,240,230,.12)}
+.nav a.active{background:var(--cream);color:var(--ink)}
+.lang{position:relative;display:grid;place-items:center;width:42px;height:42px;padding:0;border-radius:50%;
+  border:1px solid rgba(246,240,230,.7);background:transparent;color:var(--cream);font:700 19px/1 Tajawal,sans-serif;
+  transition:background-color .25s,color .25s}
+.lang:hover{background:var(--cream);color:var(--ink)}
+.lang:lang(fr){font:600 13px/1 Inter,sans-serif;letter-spacing:.04em}
+.wa-btn{position:relative;display:inline-flex;align-items:center;gap:8px;height:42px;padding:0 20px;border-radius:999px;
+  background:var(--terracotta);color:#fff;font:600 15px/1 Inter,sans-serif;text-decoration:none;white-space:nowrap;
+  transition:filter .25s}
+.wa-btn:hover{filter:brightness(1.08)}
+.wa-btn svg{width:17px;height:17px;flex:none}
+.lang::after,.wa-btn::after{content:"";position:absolute;inset:-2px}
+
+/* ---------- the door ---------- */
+.portal-wrap{left:50%;top:50%;width:min(340px,30vw);transform:translate(-50%,-50%);display:flex;flex-direction:column;align-items:center}
+.portal-heading{display:flex;justify-content:space-between;align-items:baseline;gap:16px;width:max(100%,290px);flex:none;
+  margin:0 0 14px;font-size:15px;white-space:nowrap;opacity:0}
+.portal-heading strong{font-family:Sora,Inter,sans-serif;font-weight:700;font-size:15px}
+.portal{display:block;width:100%;aspect-ratio:340/440;border-radius:50% 50% 18px 18px/38.64% 38.64% 18px 18px;
+  color:inherit;touch-action:manipulation}
+
+/* ---------- text ---------- */
+.door-content{inset-inline-start:clamp(28px,4vw,58px);inset-inline-end:clamp(28px,3vw,44px);bottom:clamp(24px,3vh,32px);
+  display:flex;justify-content:space-between;align-items:flex-end;gap:40px}
+.headline{min-width:0;margin:0;font-weight:400}
+.kicker{display:block;margin:0 0 8px;font:400 16px/1.3 Inter,sans-serif;color:rgba(246,240,230,.7);opacity:0}
+.title{display:block;width:max-content;padding-top:.06em;font-family:Sora,Inter,sans-serif;font-weight:800;
+  font-size:clamp(96px,min(17vw,27vh),250px);line-height:.82;letter-spacing:-.04em;white-space:nowrap;opacity:0}
+.door-content dl{flex:none;width:min(440px,32vw);margin:0;font-size:15px;line-height:1.4}
+.fact{display:grid;grid-template-columns:130px 1fr;gap:18px;padding:9px 0;border-bottom:1px solid rgba(246,240,230,.3);opacity:0}
+.fact dt{font-weight:600}
+.fact dd{margin:0;opacity:.85}
+
+html[lang="ar"] .brand-name,html[lang="ar"] .portal-heading strong{font-family:Tajawal,sans-serif}
+html[lang="ar"] .brand-name{font-size:18px;letter-spacing:0}
+html[lang="ar"] .title{font-family:Tajawal,sans-serif;font-weight:700;letter-spacing:0;line-height:1.1;padding-top:.14em}
+html[lang="ar"]:not(.stacked) .title{font-size:clamp(80px,min(14vw,20vh),200px)}
+html[lang="ar"] .kicker,html[lang="ar"] .fact,html[lang="ar"] .nav a,html[lang="ar"] .wa-btn,html[lang="ar"] .portal-heading{font-family:Tajawal,sans-serif}
+html[lang="ar"] .kicker{font-size:18px}
+html[lang="ar"] .portal-heading{font-size:16px}
+html[lang="ar"] .door-content dl{font-size:16px}
+html[lang="ar"] .nav a{font-size:15px}
+html[lang="ar"] .wa-btn{font-size:16px;font-weight:700}
+
+/* ---------- cursor ---------- */
+.custom-cursor{position:fixed;inset:0;z-index:40;pointer-events:none;opacity:0;transition:opacity .3s}
+.custom-cursor.is-visible{opacity:1}
+body:not(.preload-complete) .custom-cursor{opacity:0}
+.cursor-dot,.cursor-orbit,.cursor-label{position:absolute;left:0;top:0;will-change:transform}
+.cursor-dot{width:12px;height:12px;margin:-6px 0 0 -6px;border-radius:50%;background:var(--cream)}
+.cursor-orbit{width:36px;height:36px;margin:-18px 0 0 -18px;border-radius:50%;border:1px solid var(--cream);
+  background:rgba(246,240,230,.25);transition:scale .35s var(--ease-out),background-color .3s,border-color .3s}
+.custom-cursor.is-link .cursor-orbit{scale:1.3;background:rgba(246,240,230,.12)}
+.custom-cursor.is-portal .cursor-orbit{scale:1.16;background:rgba(200,85,61,.35);border-color:rgba(246,240,230,.9)}
+.cursor-label{translate:-50% 0;padding:7px 11px;border-radius:999px;background:rgba(20,20,26,.8);
+  font:600 12px/1 Inter,sans-serif;letter-spacing:.1em;text-transform:uppercase;white-space:nowrap;
+  opacity:0;transition:opacity .3s}
+html[lang="ar"] .cursor-label{font:700 14px/1 Tajawal,sans-serif;letter-spacing:0}
+.custom-cursor.is-portal .cursor-label{opacity:1}
+.experience.is-transitioning .cursor-label{opacity:0}
+@media (hover:none),(pointer:coarse){.custom-cursor{display:none}}
+
+/* ---------- entrances (blur + small travel) ---------- */
+body:not(.intro-ready) .header{opacity:0}
+.intro-ready .header{animation:reveal-down .9s var(--ease-out) .1s backwards}
+.content-revealing .kicker{animation:fact-rise .7s var(--ease-out) .1s both}
+.content-revealing .title{animation:title-rise 1.05s var(--ease-expo) both}
+.content-revealing .fact{animation:fact-rise .72s var(--ease-out) both}
+.content-revealing .fact:nth-child(1){animation-delay:.52s}
+.content-revealing .fact:nth-child(2){animation-delay:.68s}
+.content-revealing .fact:nth-child(3){animation-delay:.84s}
+.content-revealing .fact:nth-child(4){animation-delay:1s}
+.mask-revealing .portal-heading{animation:portal-caption .85s var(--ease-out) .2s both}
+@keyframes reveal-down{from{opacity:0;transform:translateY(-16px);filter:blur(8px)}to{opacity:1;transform:none;filter:blur(0)}}
+@keyframes title-rise{from{opacity:0;transform:translateY(42px);filter:blur(12px)}to{opacity:1;transform:none;filter:blur(0)}}
+@keyframes fact-rise{from{opacity:0;transform:translateY(16px);filter:blur(8px)}to{opacity:1;transform:none;filter:blur(0)}}
+@keyframes portal-caption{from{opacity:0;transform:translateY(10px);filter:blur(8px)}to{opacity:1;transform:none;filter:blur(0)}}
+
+/* ---------- responsive ---------- */
+@media (max-width:900px){
+  .nav{display:none}
+  .title{font-size:clamp(84px,min(20vw,26vh),170px)}
+  .door-content dl{width:43vw}
+}
+html.stacked{height:auto;overflow-x:hidden;overflow-y:auto}
+.stacked body{height:auto;overflow:visible}
+.stacked .experience{height:auto;min-height:100vh;min-height:100svh;overflow:visible;padding:98px 18px 32px}
+.stacked .header{position:fixed;top:0;left:0;right:0;gap:8px;padding:var(--edge) 18px 12px;
+  background:linear-gradient(rgba(20,20,26,.94) 70%,rgba(20,20,26,0))}
+.stacked .header-actions{gap:8px}
+.stacked .portal-wrap{position:relative;left:auto;top:auto;transform:none;width:min(240px,62vw);margin:0 auto 36px}
+.stacked .portal-heading{width:max(100%,280px);margin-bottom:10px;font-size:13px}
+.stacked .portal-heading strong{font-size:14px}
+.stacked .door-content{position:relative;inset:auto;display:block;max-width:560px;margin:0 auto}
+.stacked .kicker{font-size:15px}
+.stacked .title{font-size:clamp(72px,24vw,130px);margin-bottom:16px}
+.stacked .door-content dl{width:100%;font-size:13px}
+html.stacked[lang="ar"] .door-content dl{font-size:14px}
+.stacked .fact{grid-template-columns:92px 1fr;gap:12px;padding:6px 0}
+.mob-links{display:none}
+.stacked .mob-links{display:flex;justify-content:center;gap:10px;margin:22px auto 0;max-width:560px}
+.mob-links a{flex:1;display:inline-flex;justify-content:center;align-items:center;min-height:46px;border-radius:999px;
+  border:1px solid rgba(246,240,230,.4);color:var(--cream);text-decoration:none;font-weight:600;font-size:14px}
+@media (max-width:380px){
+  .wa-btn{padding:0 13px;font-size:14px}
+  .brand-name{font-size:15px}
+}
+
+/* ---------- reduced motion ---------- */
+.reduce-motion *,.reduce-motion *::before,.reduce-motion *::after{animation-duration:1ms!important;animation-delay:0s!important}
+.reduce-motion .chrome{transition:opacity .3s ease}
+.reduce-motion .experience.is-transitioning .chrome{filter:none}
+.reduce-motion .floating-logo,.reduce-motion .preloader{transition:none}
+.reduce-motion .cream-fade{transition-duration:.2s}
+
+/* ---------- no JavaScript ---------- */
+.noscript{position:fixed;inset:0;z-index:100;overflow:auto;padding:32px 20px 48px;background:var(--ink);line-height:1.5}
+.noscript>div{max-width:640px;margin:0 auto}
+.noscript h1{font:800 44px/1.05 Sora,sans-serif;margin:0 0 20px}
+.noscript dl{margin:0}
+.noscript dt{font-weight:600;margin-top:8px}
+.noscript dd{margin:0;opacity:.85}
+.noscript a{display:inline-block;margin:28px 12px 0 0;padding:12px 22px;border-radius:999px;background:var(--terracotta);color:#fff;font-weight:600;text-decoration:none}
+.noscript a+a{background:transparent;border:1px solid var(--cream)}
+</style>
+</head>
+<body>
+<main class="experience" id="portes">
+  <div class="backgrounds" aria-hidden="true">
+    <canvas id="bg-canvas" class="background is-visible"></canvas>
+  </div>
+
+  <div class="preloader" id="preloader" aria-label="Chargement">
+    <svg id="preloader-arch" viewBox="0 0 120 150" aria-hidden="true">
+      <defs>
+        <radialGradient id="pl-glow" cx="50%" cy="72%" r="75%">
+          <stop offset="0" stop-color="#FFF9EF"/><stop offset=".55" stop-color="#F6F0E6"/><stop offset="1" stop-color="#E8B49C"/>
+        </radialGradient>
+      </defs>
+      <path class="pl-light" d="M34 146V76a26 26 0 0 1 52 0v70z" fill="url(#pl-glow)"/>
+      <g class="pl-door-wrap"><path class="pl-door" d="M34 146V76a26 26 0 0 1 52 0v70z" fill="#C8553D"/></g>
+      <path class="pl-line" pathLength="100" d="M10 146V60a50 50 0 0 1 100 0v86z" fill="none" stroke="#F6F0E6" stroke-width="2" stroke-linejoin="round"/>
+    </svg>
+    <div class="preloader-shade"></div>
+  </div>
+
+  <div class="floating-logo" id="floating-logo" role="img" aria-label="Bab Digital">
+    <svg viewBox="0 0 120 150" aria-hidden="true">
+      <path d="M10 146V60a50 50 0 0 1 100 0v86z" fill="none" stroke="#F6F0E6" stroke-width="2" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
+      <path d="M34 146V76a26 26 0 0 1 52 0v70z" fill="#C8553D"/>
+    </svg>
+  </div>
+
+  <div class="preloader-count" id="preloader-count" aria-live="polite">
+    <span id="preloader-value">0</span><span class="percent">%</span>
+  </div>
+
+  <div class="shade" aria-hidden="true"></div>
+
+  <header class="header chrome">
+    <span class="brand-name">Bab Digital</span>
+    <div class="header-actions">
+      <nav class="nav" aria-label="Navigation">
+        <a class="active" href="#portes">Portes</a>
+        <a href="tarifs/">Tarifs</a>
+        <a href="https://babdigital-questionnaire.vercel.app">Questionnaire</a>
+      </nav>
+      <button class="lang" type="button" id="lang-btn" lang="ar" aria-label="النسخة العربية">ع</button>
+      <a class="wa-btn" id="wa-header" href="https://wa.me/212702915333?text=SITE" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.2a8.8 8.8 0 0 0-7.6 13.2L3.2 20.8l4.5-1.2A8.8 8.8 0 1 0 12 3.2Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+        <span class="wa-label">WhatsApp</span>
+      </a>
+    </div>
+  </header>
+
+  <canvas id="portal-canvas" class="portal-canvas" aria-hidden="true"></canvas>
+
+  <section class="portal-wrap chrome" aria-label="Questionnaire">
+    <div class="portal-heading">
+      <span id="door-hint">Ouvrez la porte</span>
+      <strong id="door-meta">Questionnaire · 5 min</strong>
+    </div>
+    <a class="portal" id="portal" href="https://babdigital-questionnaire.vercel.app" aria-label="Ouvrir la porte : questionnaire de 5 minutes"></a>
+  </section>
+
+  <section class="door-content chrome">
+    <h1 class="headline">
+      <span class="kicker" id="door-kicker">Votre page web prête en</span>
+      <span class="title" id="door-title">48H</span>
+    </h1>
+    <dl id="facts"></dl>
+    <div class="mob-links"><a href="tarifs/" id="mob-tarifs">Tarifs</a><a href="https://babdigital-questionnaire.vercel.app" id="mob-q">Questionnaire</a></div>
+  </section>
+
+  <div class="custom-cursor" aria-hidden="true">
+    <span class="cursor-orbit"></span><span class="cursor-dot"></span><span class="cursor-label">Ouvrir</span>
+  </div>
+  <div class="cream-fade" aria-hidden="true"></div>
+</main>
+
+<noscript>
+  <div class="noscript"><div>
+    <h1>Votre page web prête en 48H</h1>
+    <dl>
+      <dt>Étape 1 :</dt><dd>Ouvrez la porte : questionnaire de 5 minutes.</dd>
+      <dt>Étape 2 :</dt><dd>Votre page sur votre téléphone en 48h.</dd>
+      <dt>Paiement :</dt><dd>0 DH d'avance — vous payez seulement si vous aimez.</dd>
+      <dt>Prix :</dt><dd>1000 DH + 300 DH/mois, tout compris.</dd>
+    </dl>
+    <a href="https://babdigital-questionnaire.vercel.app">Ouvrir le questionnaire</a>
+    <a href="tarifs/">Tarifs</a>
+  </div></div>
+</noscript>
+
+<script>
+(() => {
+'use strict';
+
+const WA_URL = 'https://wa.me/212702915333?text=SITE';
+const INK = '#14141A', CREAM = '#F6F0E6', GREEN = '#0F5C4D', TERRA = '#C8553D', TINT = '#E3ECE5';
+
+/* TEXT — every visible string, FR + AR */
+const L = s => '⁨' + s + '⁩'; // keeps a Latin word in place inside Arabic text
+
+const t = {
+  fr: {
+    docTitle: 'Bab Digital — Votre page web en 48h, 0 DH d\'avance',
+    brand: 'Bab Digital',
+    nav: ['Portes', 'Tarifs', 'Questionnaire'], navLabel: 'Navigation',
+    lang: 'ع', langLabel: 'النسخة العربية', langAttr: 'ar',
+    wa: 'WhatsApp',
+    preloader: 'Chargement',
+    portalSection: 'Questionnaire',
+    hint: 'Ouvrez la porte', meta: 'Questionnaire · 5 min',
+    doorLabel: 'Ouvrir la porte : questionnaire de 5 minutes',
+    cursor: 'Ouvrir',
+    kicker: 'Votre page web prête en', title: '48H',
+    facts: [['Étape 1 :', 'Ouvrez la porte : questionnaire de 5 minutes.'],
+            ['Étape 2 :', 'Votre page sur votre téléphone en 48h.'],
+            ['Paiement :', '0 DH d\'avance — vous payez seulement si vous aimez.'],
+            ['Prix :', '1000 DH + 300 DH/mois, tout compris.']],
+    whatsapp: 'WhatsApp'
+  },
+  /* AR — à faire relire */
+  ar: {
+    docTitle: 'باب ديجيتال — صفحتك على الإنترنت في 48 ساعة، 0 درهم مسبقًا',
+    brand: 'باب ديجيتال',
+    nav: ['الأبواب', 'الأسعار', 'الاستبيان'], navLabel: 'التنقل',
+    lang: 'FR', langLabel: 'Version française', langAttr: 'fr',
+    wa: 'واتساب',
+    preloader: 'جارٍ التحميل',
+    portalSection: 'الاستبيان',
+    hint: 'افتح الباب', meta: 'الاستبيان · 5 دقائق',
+    doorLabel: 'افتح الباب: استبيان في 5 دقائق',
+    cursor: 'افتح',
+    kicker: 'صفحتك على الإنترنت جاهزة في', title: '48 ساعة',
+    facts: [['الخطوة 1:', 'افتح الباب: استبيان في 5 دقائق.'],
+            ['الخطوة 2:', 'صفحتك على هاتفك خلال 48 ساعة.'],
+            ['الدفع:', '0 درهم مسبقًا — تدفع فقط إذا أعجبتك.'],
+            ['السعر:', `1000 درهم ${L('+ 300')} درهم في الشهر، كل شيء مشمول.`]],
+    whatsapp: 'واتساب'
+  }
+};
+
+/* French spacing: no line break before « : ? ! » or between a number and its unit. */
+const frType = s => s.replace(/ ([:;?!»])/g, ' $1').replace(/« /g, '« ')
+  .replace(/(\d) (DH|min)/g, '$1 $2').replace(/\+ (\d)/g, '+ $1');
+
+/* DOM */
+const $ = id => document.getElementById(id);
+const html = document.documentElement, body = document.body;
+const exp = document.querySelector('.experience');
+const header = document.querySelector('.header');
+const brandName = document.querySelector('.brand-name');
+const nav = document.querySelector('.nav');
+const navLinks = [...nav.querySelectorAll('a')];
+const langBtn = $('lang-btn'), waHeader = $('wa-header');
+const portalWrap = document.querySelector('.portal-wrap');
+const portalHeading = portalWrap.querySelector('.portal-heading');
+const portalEl = $('portal');
+const doorContent = document.querySelector('.door-content');
+const headline = document.querySelector('.headline');
+const kickerEl = $('door-kicker'), titleEl = $('door-title'), factsEl = $('facts');
+const preloader = $('preloader'), countEl = $('preloader-count'), countValue = $('preloader-value');
+const logo = $('floating-logo');
+const creamEl = document.querySelector('.cream-fade');
+const cursor = document.querySelector('.custom-cursor');
+const cursorDot = cursor.querySelector('.cursor-dot'), cursorOrbit = cursor.querySelector('.cursor-orbit'), cursorLabel = cursor.querySelector('.cursor-label');
+
+const bgCanvas = $('bg-canvas'), portalCanvas = $('portal-canvas');
+const bctx = bgCanvas.getContext('2d', { alpha: false });
+const pctx = portalCanvas.getContext('2d');
+
+const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const finePointer = matchMedia('(hover: hover) and (pointer: fine)').matches;
+if (reduced) html.classList.add('reduce-motion');
+if (finePointer) html.classList.add('has-cursor');
+
+/* STATE */
+let lang = 'fr';
+let W = innerWidth, H = innerHeight, dpr = 1;
+let rotX = 0, rotY = 0, targetX = 0, targetY = 0, lastMove = 0;
+let expansion = 0, maskScale = 0, hover = 0, hovering = false;
+let opening = false;
+let lastFrame = 0, lastTilt = 'none';
+let mx = -100, my = -100, ox = -100, oy = -100, pointerMoved = false;
+
+const lerp = (a, b, p) => a + (b - a) * p;
+const clamp = (v, a, b) => Math.min(b, Math.max(a, v));
+const seg = (v, a, b) => clamp((v - a) / (b - a), 0, 1);
+const easeInOutCubic = p => p < .5 ? 4 * p * p * p : 1 - Math.pow(-2 * p + 2, 3) / 2;
+const easeOutCubic = p => 1 - Math.pow(1 - p, 3);
+const easeOutBack = p => p <= 0 ? 0 : 1 + 2.70158 * Math.pow(p - 1, 3) + 1.70158 * Math.pow(p - 1, 2);
+const wait = ms => new Promise(r => setTimeout(r, ms));
+
+function animateValue(set, duration, ease = easeInOutCubic) {
+  return new Promise(resolve => {
+    const t0 = performance.now();
+    const step = now => {
+      const p = clamp((now - t0) / duration, 0, 1);
+      set(ease(p), p);
+      p < 1 ? requestAnimationFrame(step) : resolve();
+    };
+    requestAnimationFrame(step);
+  });
+}
+function restartClass(el, cls) { el.classList.remove(cls); void el.offsetWidth; el.classList.add(cls); }
+
+/* DRAWING HELPERS */
+function rr(c, x, y, w, h, r) {
+  r = Math.min(r, w / 2, h / 2);
+  c.beginPath();
+  c.moveTo(x + r, y);
+  c.arcTo(x + w, y, x + w, y + h, r); c.arcTo(x + w, y + h, x, y + h, r);
+  c.arcTo(x, y + h, x, y, r); c.arcTo(x, y, x + w, y, r);
+  c.closePath();
+}
+function box(c, x, y, w, h, r, fill) { if (w <= 0 || h <= 0) return; rr(c, x, y, w, h, r); c.fillStyle = fill; c.fill(); }
+function dot(c, x, y, r, fill) { c.beginPath(); c.arc(x, y, r, 0, Math.PI * 2); c.fillStyle = fill; c.fill(); }
+const ink = a => `rgba(20,20,26,${a})`;
+const sceneFont = px => lang === 'ar' ? `700 ${px + 1}px Tajawal, sans-serif` : `600 ${px}px Inter, sans-serif`;
+
+/* The door outline: semicircle top (r = w/2), straight sides, flat bottom, small bottom corners. */
+function archPath(c, cx, cy, w, h, r, rb) {
+  const Lx = cx - w / 2, Rx = cx + w / 2, T = cy - h / 2, B = cy + h / 2;
+  rb = clamp(rb, 0, w / 2);
+  r = clamp(r, 0, Math.min(w / 2, h - rb));
+  c.beginPath();
+  c.moveTo(Lx, B - rb);
+  c.lineTo(Lx, T + r);
+  c.arc(Lx + r, T + r, r, Math.PI, Math.PI * 1.5);
+  c.lineTo(Rx - r, T);
+  c.arc(Rx - r, T + r, r, Math.PI * 1.5, Math.PI * 2);
+  c.lineTo(Rx, B - rb);
+  c.arc(Rx - rb, B - rb, rb, 0, Math.PI / 2);
+  c.lineTo(Lx + rb, B);
+  c.arc(Lx + rb, B - rb, rb, Math.PI / 2, Math.PI);
+  c.closePath();
+}
+
+const STAR = 'M51.8 32 46 37.8V46h-8.2L32 51.8 26.2 46H18v-8.2L12.2 32 18 26.2V18h8.2L32 12.2 37.8 18H46v8.2z';
+const LATTICE = 'M46 46l18 18M18 46 0 64M18 18 0 0M46 18 64 0';
+function makeZellige(ctx) {
+  const tile = document.createElement('canvas');
+  tile.width = tile.height = 128;
+  const c = tile.getContext('2d');
+  c.scale(2, 2); c.strokeStyle = CREAM; c.lineWidth = 1.2;
+  c.stroke(new Path2D(STAR)); c.stroke(new Path2D(LATTICE));
+  const pat = ctx.createPattern(tile, 'repeat');
+  if (pat.setTransform && window.DOMMatrix) pat.setTransform(new DOMMatrix([.5, 0, 0, .5, 0, 0]));
+  return pat;
+}
+const zellige = makeZellige(pctx);
+
+/* THE SCENE INSIDE THE DOOR (door coordinates: 340 × 440) */
+const DW = 340, DH = 440, PW = 154, PH = 308, PX = (DW - PW) / 2, PY = 88, LOOP = 6;
+
+function iconChat(c, x, y, color) {
+  c.save(); c.strokeStyle = color; c.lineWidth = 2; c.lineJoin = 'round';
+  c.beginPath(); c.arc(x, y, 7, Math.PI * .75, Math.PI * .65 + Math.PI * 2 - .2); c.lineTo(x - 8, y + 8); c.closePath(); c.stroke(); c.restore();
+}
+function pin(c, x, y, color) {
+  c.beginPath(); c.moveTo(x, y + 8); c.lineTo(x - 7.5, y - 6); c.arc(x, y - 10, 9, Math.PI * .85, Math.PI * .15); c.closePath();
+  c.fillStyle = color; c.fill(); dot(c, x, y - 10, 3.5, CREAM);
+}
+function field(c, y, p, typedW, T) {
+  box(c, 16, y, 64, 6, 3, ink(.45));
+  rr(c, 16, y + 14, 208, 40, 12);
+  c.fillStyle = '#FFFDF8'; c.fill();
+  c.strokeStyle = p > 0 && p < 1 ? GREEN : ink(.14); c.lineWidth = p > 0 && p < 1 ? 2 : 1.5; c.stroke();
+  const w = Math.floor(p * typedW / 9) * 9;
+  box(c, 30, y + 30, w, 8, 4, ink(.78));
+  if (p > 0 && p < 1 && Math.floor(T * 5) % 2 === 0) { c.fillStyle = TERRA; c.fillRect(32 + w, y + 25, 2, 18); }
+}
+function photoTile(c, x, y, p, a, b) {
+  const s = 62;
+  if (p <= 0) { rr(c, x, y, s, s, 12); c.setLineDash([4, 4]); c.strokeStyle = ink(.2); c.lineWidth = 1.5; c.stroke(); c.setLineDash([]); return; }
+  const k = easeOutBack(p);
+  c.save(); c.translate(x + s / 2, y + s / 2); c.scale(k, k); c.translate(-s / 2, -s / 2);
+  rr(c, 0, 0, s, s, 12); c.save(); c.clip();
+  c.fillStyle = a; c.fillRect(0, 0, s, s);
+  c.fillStyle = b; c.beginPath(); c.moveTo(0, s); c.lineTo(s * .45, s * .42); c.lineTo(s * .7, s * .66); c.lineTo(s, s * .36); c.lineTo(s, s); c.closePath(); c.fill();
+  dot(c, s * .74, s * .26, 6, 'rgba(246,240,230,.85)');
+  c.restore(); c.restore();
+}
+
+function drawForm(c, T) {
+  const reset = T > 5.4;
+  const f1 = reset ? 0 : seg(T, .35, 1.1), f2 = reset ? 0 : seg(T, 1.15, 1.7);
+  const tiles = [1.8, 2.0, 2.2].map(s => reset ? 0 : seg(T, s, s + .4));
+  const done = reset ? 0 : seg(T, 2.55, 3.0);
+  c.fillStyle = CREAM; c.fillRect(0, 0, 240, 500);
+  rr(c, 16, 34, 16, 20, 8); c.fillStyle = TERRA; c.fill();
+  box(c, 42, 41, 182, 6, 3, TINT);
+  box(c, 42, 41, Math.max(6, 182 * (f1 + f2 + tiles[2] + done) / 4), 6, 3, GREEN);
+  box(c, 16, 72, 150, 12, 6, ink(.85)); box(c, 16, 92, 104, 6, 3, ink(.35));
+  field(c, 118, f1, 126, T);
+  field(c, 188, f2, 99, T);
+  box(c, 16, 260, 76, 6, 3, ink(.45));
+  photoTile(c, 16, 276, tiles[0], GREEN, '#5E9C8E');
+  photoTile(c, 89, 276, tiles[1], TERRA, '#E6A08A');
+  photoTile(c, 162, 276, tiles[2], '#B9A88F', '#EFE5D3');
+  const by = 404;
+  c.fillStyle = done > 0 ? GREEN : INK;
+  rr(c, 16, by, 208, 46, 23); c.fill();
+  if (done <= 0) box(c, 84, by + 19, 72, 8, 4, 'rgba(246,240,230,.85)');
+  else {
+    const pts = [[104, by + 23], [116, by + 34], [138, by + 12]];
+    const L1 = Math.hypot(12, 11), L2 = Math.hypot(22, 22), len = (L1 + L2) * easeOutCubic(done);
+    c.strokeStyle = CREAM; c.lineWidth = 5; c.lineCap = 'round'; c.lineJoin = 'round';
+    c.beginPath(); c.moveTo(...pts[0]);
+    if (len <= L1) c.lineTo(lerp(pts[0][0], pts[1][0], len / L1), lerp(pts[0][1], pts[1][1], len / L1));
+    else { c.lineTo(...pts[1]); const q = (len - L1) / L2; c.lineTo(lerp(pts[1][0], pts[2][0], q), lerp(pts[1][1], pts[2][1], q)); }
+    c.stroke();
+  }
+}
+
+function drawSite(c, T) {
+  const slide = easeOutCubic(seg(T, 3.2, 3.85)), fade = 1 - seg(T, 5.4, 6);
+  if (slide <= 0 || fade <= 0) return;
+  c.fillStyle = ink(.3 * slide * fade); c.fillRect(0, 0, 240, 500);
+  c.save();
+  c.globalAlpha = fade;
+  c.translate(0, 500 * (1 - slide));
+  c.fillStyle = CREAM; c.fillRect(0, 0, 240, 520);
+  dot(c, 26, 42, 10, TERRA); box(c, 44, 38, 62, 8, 4, ink(.8));
+  for (let i = 0; i < 3; i++) box(c, 200, 36 + i * 6, 22, 2.5, 1.25, ink(.7));
+  box(c, 10, 62, 220, 142, 18, TERRA);
+  dot(c, 196, 98, 40, 'rgba(246,240,230,.14)');
+  box(c, 24, 86, 130, 13, 6.5, CREAM); box(c, 24, 106, 94, 13, 6.5, CREAM);
+  box(c, 24, 132, 150, 5, 2.5, 'rgba(246,240,230,.65)'); box(c, 24, 142, 116, 5, 2.5, 'rgba(246,240,230,.65)');
+  box(c, 24, 160, 88, 28, 14, CREAM); box(c, 40, 171, 56, 6, 3, TERRA);
+  const names = [92, 70, 104];
+  for (let i = 0; i < 3; i++) {
+    const y = 218 + i * 38;
+    dot(c, 28, y + 15, 11, TINT);
+    box(c, 48, y + 7, names[i], 7, 3.5, ink(.75)); box(c, 48, y + 19, 50, 4, 2, ink(.3));
+    box(c, 168, y + 5, 56, 20, 10, TINT); box(c, 182, y + 12, 28, 6, 3, GREEN);
+  }
+  const my = 334;
+  c.save(); rr(c, 10, my, 220, 92, 16); c.clip();
+  c.fillStyle = TINT; c.fillRect(10, my, 220, 92);
+  c.strokeStyle = 'rgba(15,92,77,.14)'; c.lineWidth = 1;
+  for (let x = -30; x < 240; x += 22) { c.beginPath(); c.moveTo(x, my); c.lineTo(x + 34, my + 92); c.stroke(); }
+  c.strokeStyle = CREAM; c.lineWidth = 7; c.beginPath(); c.moveTo(10, my + 64); c.bezierCurveTo(80, my + 44, 140, my + 80, 230, my + 36); c.stroke();
+  c.restore();
+  pin(c, 118, my + 52, TERRA);
+  box(c, 20, 442, 200, 42, 21, GREEN);
+  c.font = sceneFont(15); c.textAlign = 'center'; c.textBaseline = 'middle'; c.fillStyle = CREAM;
+  const label = t[lang].whatsapp, tw = c.measureText(label).width, x0 = 120 - (tw + 24) / 2;
+  iconChat(c, x0 + 8, 463, CREAM);
+  c.fillText(label, x0 + 24 + tw / 2, 464);
+  c.restore();
+}
+
+function drawDoorScene(c, time) {
+  const T = reduced ? 4.5 : time % LOOP;
+  const fl = c.createRadialGradient(170, PY + PH + 4, 2, 170, PY + PH + 4, 100);
+  fl.addColorStop(0, 'rgba(0,0,0,.4)'); fl.addColorStop(1, 'rgba(0,0,0,0)');
+  c.fillStyle = fl; c.fillRect(50, PY + PH - 30, 240, 70);
+  box(c, PX, PY, PW, PH, 26, CREAM);
+  box(c, PX + 6, PY + 6, PW - 12, PH - 12, 20, INK);
+  c.save();
+  rr(c, PX + 6, PY + 6, PW - 12, PH - 12, 20); c.clip();
+  c.translate(PX + 6, PY + 6);
+  const k = (PW - 12) / 240; c.scale(k, k);
+  drawForm(c, T);
+  drawSite(c, T);
+  c.restore();
+  box(c, 170 - 18, PY + 12, 36, 9, 4.5, INK);
+}
+
+/* CANVAS */
+function resizeCanvas() {
+  W = innerWidth; H = innerHeight; dpr = Math.min(devicePixelRatio || 1, 2);
+  portalCanvas.width = Math.round(W * dpr); portalCanvas.height = Math.round(H * dpr);
+  portalCanvas.style.width = W + 'px'; portalCanvas.style.height = H + 'px';
+  pctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  bgCanvas.width = W; bgCanvas.height = H;
+  bgCanvas.style.width = W + 'px'; bgCanvas.style.height = H + 'px';
+  const g = bctx.createRadialGradient(W / 2, H * .42, 0, W / 2, H * .42, Math.hypot(W, H) * .62);
+  g.addColorStop(0, '#17735F'); g.addColorStop(.45, GREEN); g.addColorStop(1, '#06231D');
+  bctx.fillStyle = g; bctx.fillRect(0, 0, W, H);
+}
+
+function draw(now) {
+  requestAnimationFrame(draw);
+  const dt = Math.min(40, lastFrame ? now - lastFrame : 16); lastFrame = now;
+  if (now - lastMove > 450 || opening) targetX = targetY = 0;
+  const k = Math.min(1, dt * .009);
+  rotX += (targetX - rotX) * k; rotY += (targetY - rotY) * k;
+  if (Math.abs(rotX) < .02) rotX = 0;
+  if (Math.abs(rotY) < .02) rotY = 0;
+  hover += ((hovering && !opening ? 1 : 0) - hover) * Math.min(1, dt * .008);
+
+  pctx.clearRect(0, 0, W, H);
+  const e = expansion, scale = e ? 1 : maskScale;
+  if (scale <= 0) return;
+  const rect = portalEl.getBoundingClientRect();
+  if (!rect.width || (!e && (rect.bottom < -60 || rect.top > H + 60))) return;
+
+  const cx = lerp(rect.left + rect.width / 2, W / 2, e), cy = lerp(rect.top + rect.height / 2, H / 2, e);
+  const w = lerp(rect.width, W, e) * scale, h = lerp(rect.height, H, e) * scale;
+  if (w <= 1 || h <= 1) return;
+  const r = (w / 2) * (1 - e), rb = Math.min(18, w * .06) * (1 - e);
+  const rx = rotX * (1 - e), ry = rotY * (1 - e), fade = 1 - e;
+
+  const tilt = rx || ry ? `perspective(1100px) rotateX(${rx.toFixed(2)}deg) rotateY(${ry.toFixed(2)}deg)` : 'none';
+  if (tilt !== lastTilt) {
+    portalCanvas.style.transformOrigin = `${cx.toFixed(1)}px ${cy.toFixed(1)}px`;
+    portalCanvas.style.transform = tilt;
+    lastTilt = tilt;
+  }
+
+  if (fade > 0) {
+    const gr = Math.max(w, h) * .62, g = pctx.createRadialGradient(cx, cy + h * .04, 0, cx, cy, gr);
+    g.addColorStop(0, `rgba(200,85,61,${.2 + hover * .1})`); g.addColorStop(.55, 'rgba(200,85,61,.07)'); g.addColorStop(1, 'rgba(200,85,61,0)');
+    pctx.globalAlpha = fade; pctx.fillStyle = g; pctx.fillRect(cx - gr, cy - gr, gr * 2, gr * 2); pctx.globalAlpha = 1;
+  }
+
+  pctx.save();
+  archPath(pctx, cx, cy, w, h, r, rb);
+  pctx.clip();
+  const ig = pctx.createRadialGradient(cx, cy - h * .18, 0, cx, cy, Math.max(w, h) * .8);
+  ig.addColorStop(0, '#1C7E69'); ig.addColorStop(.5, GREEN); ig.addColorStop(1, '#08302A');
+  pctx.fillStyle = ig; pctx.fillRect(cx - w, cy - h, w * 2, h * 2);
+  const s = (h / DH) * (1 + e * .55);
+  pctx.save();
+  pctx.translate(cx, cy); if (!reduced) pctx.rotate(now / 1000 * .02); pctx.scale(s, s);
+  pctx.globalAlpha = .07; pctx.fillStyle = zellige; pctx.fillRect(-700, -700, 1400, 1400);
+  pctx.restore();
+  pctx.save();
+  pctx.translate(cx - (DW / 2) * s - ry * 1.4, cy - (DH / 2) * s + rx * 1.4);
+  pctx.scale(s, s);
+  drawDoorScene(pctx, now / 1000);
+  pctx.restore();
+  if (e > 0) { pctx.fillStyle = `rgba(20,20,26,${e * e * .7})`; pctx.fillRect(cx - w, cy - h, w * 2, h * 2); }
+  pctx.restore();
+
+  if (fade > 0) {
+    pctx.globalAlpha = fade;
+    archPath(pctx, cx, cy, w, h, r, rb);
+    pctx.lineWidth = 1.5; pctx.strokeStyle = `rgba(246,240,230,${.55 + hover * .3})`; pctx.stroke();
+    if (w > 40 && h > 40) {
+      archPath(pctx, cx, cy, w - 12, h - 12, r - 6, rb - 6);
+      pctx.lineWidth = 1; pctx.strokeStyle = TERRA; pctx.stroke();
+    }
+    pctx.globalAlpha = 1;
+  }
+}
+
+/* TEXT + LAYOUT */
+const tx = s => lang === 'fr' ? frType(s) : s;
+
+function applyText() {
+  const s = t[lang];
+  document.title = s.docTitle;
+  brandName.textContent = s.brand;
+  logo.setAttribute('aria-label', s.brand);
+  navLinks.forEach((a, i) => { a.textContent = s.nav[i]; });
+  $('mob-tarifs').textContent = s.nav[1]; $('mob-q').textContent = s.nav[2];
+  nav.setAttribute('aria-label', s.navLabel);
+  langBtn.textContent = s.lang; langBtn.lang = s.langAttr; langBtn.setAttribute('aria-label', s.langLabel);
+  waHeader.querySelector('.wa-label').textContent = s.wa;
+  waHeader.href = WA_URL;
+  preloader.setAttribute('aria-label', s.preloader);
+  portalWrap.setAttribute('aria-label', s.portalSection);
+  $('door-hint').textContent = s.hint;
+  $('door-meta').textContent = tx(s.meta);
+  portalEl.setAttribute('aria-label', tx(s.doorLabel));
+  cursorLabel.textContent = s.cursor;
+  kickerEl.textContent = tx(s.kicker);
+  titleEl.textContent = s.title;
+  factsEl.replaceChildren(...s.facts.map(([k, v]) => {
+    const row = document.createElement('div'), dt = document.createElement('dt'), dd = document.createElement('dd');
+    row.className = 'fact'; dt.textContent = tx(k); dd.textContent = tx(v);
+    row.append(dt, dd);
+    return row;
+  }));
+}
+
+function fitTitle() {
+  titleEl.style.fontSize = '';
+  const block = getComputedStyle(doorContent).display === 'block';
+  const gap = parseFloat(getComputedStyle(doorContent).columnGap) || 40;
+  const avail = doorContent.clientWidth - (block ? 0 : factsEl.offsetWidth + gap);
+  const natural = titleEl.offsetWidth;
+  if (avail > 0 && natural > avail) {
+    titleEl.style.fontSize = Math.floor(parseFloat(getComputedStyle(titleEl).fontSize) * avail / natural) + 'px';
+  }
+}
+function placeDoor() {
+  const vw = exp.clientWidth;
+  const top = header.offsetTop + header.offsetHeight + 18;
+  const contentTop = doorContent.offsetTop + Math.min(headline.offsetTop, factsEl.offsetTop);
+  const limit = contentTop - 48;
+  const pref = Math.min(340, vw * .30), ratio = DH / DW;
+  const headH = () => portalHeading.offsetHeight + parseFloat(getComputedStyle(portalHeading).marginBottom);
+  portalWrap.style.width = pref + 'px';
+  const w = Math.min(pref, (limit - top - headH()) / ratio);
+  if (w < 190) return false;
+  portalWrap.style.width = w + 'px';
+  const total = headH() + w * ratio;
+  let y = top + (contentTop - top - total) / 2;
+  y = Math.max(top, Math.min(y, limit - total));
+  portalWrap.style.top = y + 'px';
+  portalWrap.style.transform = 'translateX(-50%)';
+  return true;
+}
+function layout() {
+  html.classList.toggle('stacked', innerWidth <= 640);
+  fitTitle();
+  if (!html.classList.contains('stacked') && !placeDoor()) { html.classList.add('stacked'); fitTitle(); }
+  if (html.classList.contains('stacked')) portalWrap.style.width = portalWrap.style.top = portalWrap.style.transform = '';
+}
+function placeLogo(docked) {
+  const lw = docked ? 36 : 59, lh = lw * 1.25;
+  let x, y;
+  if (docked) {
+    const r = brandName.getBoundingClientRect();
+    x = html.dir === 'rtl' ? r.right - lw : r.left;
+    y = r.top + r.height / 2 - lh / 2;
+  } else {
+    x = W / 2 - lw / 2; y = H / 2 - lh / 2;
+  }
+  logo.style.setProperty('--x', x + 'px');
+  logo.style.setProperty('--y', y + 'px');
+  logo.style.width = lw + 'px';
+}
+function refreshLayout() {
+  layout();
+  placeLogo(logo.classList.contains('is-docked'));
+}
+
+function revealContent() { restartClass(exp, 'content-revealing'); }
+function revealMask() {
+  restartClass(exp, 'mask-revealing');
+  maskScale = 0;
+  return animateValue(v => { maskScale = v; }, reduced ? 1 : 1000);
+}
+
+/* OPEN THE DOOR → QUESTIONNAIRE */
+async function openDoor() {
+  if (opening) return;
+  opening = true;
+  const url = portalEl.href;
+  let gone = false;
+  const go = () => { if (!gone) { gone = true; location.href = url; } };
+  setTimeout(go, 1800);
+  cursor.classList.remove('is-portal');
+  if (reduced) { creamEl.classList.add('is-on'); await wait(220); go(); return; }
+  exp.classList.add('is-transitioning');
+  await animateValue(v => { expansion = v; }, 1100);
+  creamEl.classList.add('is-on');
+  await wait(360);
+  go();
+}
+function resetDoor() {
+  creamEl.style.transition = 'none';
+  creamEl.classList.remove('is-on');
+  void creamEl.offsetWidth;
+  creamEl.style.transition = '';
+  exp.classList.remove('is-transitioning');
+  expansion = 0; opening = false;
+  revealMask();
+}
+portalEl.addEventListener('click', e => {
+  if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+  e.preventDefault();
+  openDoor();
+});
+addEventListener('pageshow', e => { if (e.persisted) resetDoor(); });
+
+/* PRELOADER + START (short version when coming back from another Bab page) */
+let finished = false;
+let seen = false;
+try { seen = sessionStorage.getItem('bab-intro') === '1'; sessionStorage.setItem('bab-intro', '1'); } catch (err) { /* storage blocked */ }
+function runPreloader() {
+  if (reduced || seen) { skipPreloader(); return; }
+  const t0 = performance.now(), D = 3000;
+  let last = -1;
+  const tick = now => {
+    const p = clamp((now - t0) / D, 0, 1);
+    const v = Math.floor((1 - Math.pow(1 - p, 1.7)) * 100);
+    if (v !== last) { last = v; countValue.textContent = v; }
+    p < 1 ? requestAnimationFrame(tick) : finish();
+  };
+  requestAnimationFrame(tick);
+}
+function finish() {
+  if (finished) return;
+  finished = true;
+  countValue.textContent = '100';
+  countEl.classList.add('is-leaving');
+  logo.classList.add('is-docked');
+  placeLogo(true);
+  preloader.classList.add('is-done');
+  body.classList.add('preload-complete');
+  startExperience();
+  setTimeout(() => countEl.remove(), 750);
+  setTimeout(() => logo.classList.add('is-settled'), 2100);
+}
+function skipPreloader() {
+  finished = true;
+  preloader.classList.add('is-done');
+  countEl.remove();
+  logo.classList.add('is-docked', 'is-settled');
+  placeLogo(true);
+  body.classList.add('preload-complete');
+  startExperience();
+}
+function startExperience() {
+  revealMask();
+  body.classList.add('intro-ready');
+  setTimeout(revealContent, reduced ? 0 : (seen ? 300 : 850));
+}
+
+/* LANGUAGE */
+function loadLanguage() {
+  const q = new URLSearchParams(location.search).get('lang');
+  let l = q === 'ar' || q === 'fr' ? q : null;
+  if (!l) { try { const saved = localStorage.getItem('bab-lang'); if (saved === 'ar' || saved === 'fr') l = saved; } catch (err) { /* storage blocked */ } }
+  setLanguage(l || 'fr');
+}
+function setLanguage(l) {
+  lang = l;
+  html.lang = l; html.dir = l === 'ar' ? 'rtl' : 'ltr';
+  try { localStorage.setItem('bab-lang', l); } catch (err) { /* storage blocked */ }
+  applyText();
+}
+langBtn.addEventListener('click', () => {
+  if (opening) return;
+  setLanguage(lang === 'fr' ? 'ar' : 'fr');
+  const url = new URL(location.href);
+  if (url.searchParams.has('lang')) { url.searchParams.set('lang', lang); history.replaceState(null, '', url); }
+  refreshLayout();
+  revealContent(); restartClass(exp, 'mask-revealing');
+});
+
+/* POINTER + CURSOR */
+addEventListener('pointermove', e => {
+  if (e.pointerType !== 'mouse' && e.pointerType !== 'pen') return;
+  mx = e.clientX; my = e.clientY;
+  if (!pointerMoved) { pointerMoved = true; ox = mx; oy = my; }
+  if (!opening && !reduced) {
+    targetY = clamp((mx / innerWidth - .5) * 20, -10, 10);
+    targetX = clamp((my / innerHeight - .5) * -14, -7, 7);
+    lastMove = performance.now();
+  }
+  cursor.classList.toggle('is-visible', finePointer);
+}, { passive: true });
+html.addEventListener('pointerleave', () => {
+  targetX = targetY = 0;
+  cursor.classList.remove('is-visible');
+});
+document.addEventListener('pointerover', e => {
+  const el = e.target.closest && e.target.closest('a,button');
+  hovering = el === portalEl;
+  cursor.classList.toggle('is-portal', hovering && !opening);
+  cursor.classList.toggle('is-link', !!el && el !== portalEl);
+});
+
+function cursorLoop() {
+  requestAnimationFrame(cursorLoop);
+  if (!pointerMoved) return;
+  ox += (mx - ox) * .2; oy += (my - oy) * .2;
+  cursorDot.style.transform = `translate3d(${mx}px,${my}px,0)`;
+  cursorOrbit.style.transform = `translate3d(${ox}px,${oy}px,0)`;
+  cursorLabel.style.transform = `translate3d(${ox}px,${oy + 34}px,0)`;
+}
+
+let resizeQueued = false;
+addEventListener('resize', () => {
+  if (resizeQueued) return;
+  resizeQueued = true;
+  requestAnimationFrame(() => { resizeQueued = false; resizeCanvas(); refreshLayout(); });
+});
+if (document.fonts) {
+  document.fonts.ready.then(refreshLayout);
+  document.fonts.addEventListener && document.fonts.addEventListener('loadingdone', refreshLayout);
+}
+
+/* BOOT */
+loadLanguage();
+resizeCanvas();
+refreshLayout();
+requestAnimationFrame(draw);
+requestAnimationFrame(cursorLoop);
+runPreloader();
+})();
+</script>
+</body>
+</html>

@@ -29,6 +29,16 @@
       "source": "/questionnaire/:path*",
       "destination": "https://babdigital-questionnaire.vercel.app/",
       "permanent": false
+    },
+    {
+      "source": "/portes",
+      "destination": "/portes/",
+      "permanent": false
+    },
+    {
+      "source": "/portes/tarifs",
+      "destination": "/portes/tarifs/",
+      "permanent": false
     }
   ],
   "rewrites": [
