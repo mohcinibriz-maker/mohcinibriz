@@ -11,7 +11,7 @@
     { "host": "client-vibe-coder.vercel.app", "state": "demo" }
   ],
   "domainUntil": "",
-  "serenite": { "price": 300, "nextPayment": "", "paid": false, "modsUsed": 0, "modsMax": 2 },
+  "serenite": { "price": 500, "nextPayment": "", "paid": false, "modsUsed": 0, "modsMax": 5 },
   "steps": {
     "questionnaire": "2026-10-23",
     "creation": "2026-10-23",

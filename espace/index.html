@@ -130,7 +130,7 @@ a{color:inherit}
       d_active:"🔒 SSL actif", d_pending:"⏳ En connexion", d_demo:"Lien démo",
       subTitle:"Abonnement Sérénité", paid:"✓ Payé", unpaid:"⏳ En attente", month:"/ mois", next:"Prochain paiement :",
       mods:"Modifications ce mois", used:"utilisées",
-      upTitle:"Option Sérénité", upText:"Domaine .com, hébergement, maintenance et 2 modifications par mois.", upBtn:"Ça m'intéresse",
+      upTitle:"Option Sérénité", upText:"Domaine .com, hébergement, maintenance et 5 modifications par mois.", upBtn:"Ça m'intéresse",
       share:"Partager ma page", shareText:"Imprimez ce QR code pour votre comptoir, ou envoyez le lien à vos clients.",
       copy:"Copier le lien", send:"Envoyer sur WhatsApp", copied:"Lien copié ✓", progress:"Avancement",
       s_questionnaire:"Questionnaire reçu", s_creation:"Page en création", s_demo:"Démo prête", s_valide:"Validée par vous",
@@ -142,7 +142,7 @@ a{color:inherit}
       msgModif:function(n){return "Bonjour Bab Digital, je voudrais une modification sur ma page ("+n+") : "},
       msgHello:function(n){return "Bonjour Bab Digital, c'est "+n+". J'ai une question sur ma page."},
       msgVal:function(n){return "Bonjour Bab Digital, c'est "+n+". Je valide ma page ✅ et je suis prêt à passer au paiement."},
-      msgSer:function(n){return "Bonjour Bab Digital, c'est "+n+". L'option Sérénité (300 DH/mois) m'intéresse."},
+      msgSer:function(n){return "Bonjour Bab Digital, c'est "+n+". L'option Sérénité (500 DH/mois) m'intéresse."},
       msgShare:function(n,u){return "Découvrez "+n+" : "+u}, locale:"fr-FR", other:"عربي" },
     ar: { space:"· فضاء الزبون", foot:"عندك سؤال؟ راسلنا فواتساب على 07 02 91 53 33.", your:"الصفحة ديالك",
       modif:"طلب تعديل", wa:"واتساب Bab Digital", visit:"زور الصفحة ديالي", status:"الحالة", style:"الستايل",
@@ -163,7 +163,7 @@ a{color:inherit}
       msgModif:function(n){return "السلام Bab Digital، بغيت تعديل فالصفحة ديالي ("+n+"): "},
       msgHello:function(n){return "السلام Bab Digital، أنا "+n+". عندي سؤال على الصفحة ديالي."},
       msgVal:function(n){return "السلام Bab Digital، أنا "+n+". موافق على الصفحة ✅ ومستعد للخلاص."},
-      msgSer:function(n){return "السلام Bab Digital، أنا "+n+". خيار Sérénité (300 درهم فالشهر) كيهمني."},
+      msgSer:function(n){return "السلام Bab Digital، أنا "+n+". خيار Sérénité (500 درهم فالشهر) كيهمني."},
       msgShare:function(n,u){return "اكتشف "+n+": "+u}, locale:"ar-MA", other:"FR" }
   };
   var STEPS = ["questionnaire","creation","demo","valide","enligne","domaine"];
@@ -240,7 +240,7 @@ a{color:inherit}
 
     html += '<div class="side">';
     if (ser) {
-      var max = s.modsMax || 2, used = Math.min(max, s.modsUsed || 0);
+      var max = s.modsMax || 5, used = Math.min(max, s.modsUsed || 0);
       html += '<section class="card box reveal"><h3 class="h">' + t("subTitle") + '<span class="pill ' + (s.paid ? "s-active" : "s-pending") + '">' + t(s.paid ? "paid" : "unpaid") + '</span></h3><div class="price">' + (s.price || 300) + ' DH <small>' + t("month") + '</small></div>' +
         (s.nextPayment ? '<div class="muted" style="margin-top:4px">' + t("next") + ' ' + fmt(s.nextPayment) + '</div>' : "") +
         '<div class="lab" style="margin-top:14px">' + t("mods") + '</div><div class="meter"><i style="width:' + (used / max * 100) + '%"></i></div><div class="val">' + used + ' / ' + max + ' ' + t("used") + '</div></section>';
