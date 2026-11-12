@@ -315,7 +315,7 @@ body.ex-pizza {
   --head: "Playfair Display", Georgia, "Times New Roman", serif; --head-weight: 800; --head-tracking: -.015em;
   --radius: 18px;
 }
-.ex-pizza .ex-header { border-top: 5px solid; border-image: linear-gradient(90deg, #1E7A46 0 33.34%, #FFFFFF 33.34% 66.67%, #C2261D 66.67%) 1; }
+.ex-pizza .ex-header::before { content: ""; display: block; height: 5px; background: linear-gradient(90deg, #1E7A46 0 33.34%, #FFFFFF 33.34% 66.67%, #C2261D 66.67%); }
 .ex-pizza .ex-frame { aspect-ratio: 1; border-radius: 50%; box-shadow: 0 0 0 10px var(--surface), 0 0 0 12px var(--accent), 0 30px 60px -30px rgba(33, 26, 22, .5); }
 .ex-pizza .ex-hero-media { width: min(88%, 480px); }
 .ex-pizza .ex-hero h1 { font-style: italic; }
