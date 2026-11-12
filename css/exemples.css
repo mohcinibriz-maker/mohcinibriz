@@ -306,4 +306,24 @@ body.ex-dent {
 }
 .ex-dent .ex-frame { aspect-ratio: 5 / 6; }
 
+/* Forno Pronto : crème, rouge tomate, vert basilic ; assiette ronde et liseré tricolore */
+body.ex-pizza {
+  --bg: #FFF8EE; --surface: #FFFFFF; --surface-2: #F7EBD9;
+  --ink: #211A16; --ink-soft: #4E423B; --muted: #655850;
+  --accent: #C2261D; --on-accent: #FFFFFF; --accent-2: #1E7A46; --accent-soft: #E3F1E7; --accent-deep: #1B5A36;
+  --line: rgba(33, 26, 22, .13);
+  --head: "Playfair Display", Georgia, "Times New Roman", serif; --head-weight: 800; --head-tracking: -.015em;
+  --radius: 18px;
+}
+.ex-pizza .ex-header { border-top: 5px solid; border-image: linear-gradient(90deg, #1E7A46 0 33.34%, #FFFFFF 33.34% 66.67%, #C2261D 66.67%) 1; }
+.ex-pizza .ex-frame { aspect-ratio: 1; border-radius: 50%; box-shadow: 0 0 0 10px var(--surface), 0 0 0 12px var(--accent), 0 30px 60px -30px rgba(33, 26, 22, .5); }
+.ex-pizza .ex-hero-media { width: min(88%, 480px); }
+.ex-pizza .ex-hero h1 { font-style: italic; }
+html:lang(ar) .ex-pizza .ex-hero h1 { font-style: normal; }
+.ex-pizza .ex-section.alt { background-image: linear-gradient(rgba(194, 38, 29, .045) 50%, transparent 50%), linear-gradient(90deg, rgba(194, 38, 29, .045) 50%, transparent 50%); background-size: 36px 36px; }
+.ex-pizza .ex-card h3 { color: var(--accent); font-style: italic; }
+html:lang(ar) .ex-pizza .ex-card h3 { font-style: normal; }
+.ex-pizza .ex-items .price { color: var(--accent-2); }
+.ex-pizza .ex-cta-box .ex-btn { color: var(--accent-deep); }
+
 .ex-gap { height: 20px; }

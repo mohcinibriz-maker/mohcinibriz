@@ -111,7 +111,8 @@ html[lang="ar"] .cta{font-family:Tajawal,sans-serif;font-size:19px}
 #exemples{scroll-margin-top:72px}
 .ex-note{margin:-18px 0 30px;max-width:56ch;color:var(--soft)}
 .ex-grid{display:grid;gap:16px;grid-template-columns:repeat(2,minmax(0,1fr))}
-@media(min-width:900px){.ex-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:20px}}
+@media(min-width:900px){.ex-grid{grid-template-columns:repeat(5,minmax(0,1fr));gap:16px}}
+@media(max-width:899px){.ex:first-child{grid-column:1/-1}.ex:first-child img{aspect-ratio:16/10}}
 .ex{position:relative;display:block;overflow:hidden;border-radius:18px;border:1px solid var(--line);background:rgba(246,240,230,.06);text-decoration:none;transition:transform .4s var(--ease-out),border-color .3s}
 .ex:hover{transform:translateY(-4px);border-color:rgba(246,240,230,.6)}
 .ex img{display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;background:var(--cream)}
@@ -299,7 +300,7 @@ const t = {
     inc: ['Page professionnelle sur mobile', 'Bouton WhatsApp', 'Google Maps et horaires', 'Vos photos et votre logo', 'Référencement Google de base', 'Hébergement et maintenance', 'Nom de domaine en .com', '5 modifications par mois'],
     cta: 'Démarrer mon projet', trust: 'Sans engagement • Résultat en 48h • Payez après validation',
     exTitle: 'Exemples de pages', exNote: 'Entreprises imaginaires, créées par Bab Digital pour montrer son travail.', exPill: 'Exemple',
-    ex: [['Café Nakhla', 'Café · Marrakech'], ['Salon Safran', 'Salon de beauté · Rabat'], ['Auto-école Virage', 'Auto-école · Agadir'], ['Cabinet Dentaire Nacre', 'Cabinet dentaire · Casablanca']],
+    ex: [['Forno Pronto', 'Fast-food italien · Casablanca'], ['Café Nakhla', 'Café · Marrakech'], ['Salon Safran', 'Salon de beauté · Rabat'], ['Auto-école Virage', 'Auto-école · Agadir'], ['Cabinet Dentaire Nacre', 'Cabinet dentaire · Casablanca']],
     ctaAd: 'Écrivez-nous sur WhatsApp', altQ: 'ou remplir le questionnaire (10 min)',
     howTitle: 'Comment ça se passe',
     steps: [['Vous ouvrez la porte', 'Un questionnaire de 10 minutes : votre activité, vos photos, vos couleurs.'], ['On crée votre page', 'En 48h, vous recevez votre page sur votre téléphone, avec un espace pour la suivre.'], ['Vous validez, puis vous payez', 'Vous demandez vos changements. Elle vous plaît ? Elle passe en ligne avec votre domaine.']],
@@ -319,7 +320,7 @@ const t = {
     inc: ['صفحة مهنية على الهاتف', 'زر واتساب', 'خرائط Google وأوقات العمل', 'صورك وشعارك', 'ظهور أساسي في Google', 'الاستضافة والصيانة', `دومين ${L('.com')}`, '5 تعديلات في الشهر'],
     cta: 'ابدأ مشروعي', trust: 'بلا التزام • النتيجة في 48 ساعة • تدفع بعد الموافقة',
     exTitle: 'أمثلة من الصفحات', exNote: 'شركات خيالية، صممتها باب ديجيتال لتُريك عملها.', exPill: 'مثال',
-    ex: [['Café Nakhla', 'مقهى · مراكش'], ['Salon Safran', 'صالون تجميل · الرباط'], ['Auto-école Virage', 'مدرسة تعليم السياقة · أكادير'], ['Cabinet Dentaire Nacre', 'عيادة أسنان · الدار البيضاء']],
+    ex: [['Forno Pronto', 'وجبات سريعة إيطالية · الدار البيضاء'], ['Café Nakhla', 'مقهى · مراكش'], ['Salon Safran', 'صالون تجميل · الرباط'], ['Auto-école Virage', 'مدرسة تعليم السياقة · أكادير'], ['Cabinet Dentaire Nacre', 'عيادة أسنان · الدار البيضاء']],
     ctaAd: 'راسلنا على واتساب', altQ: 'أو املأ الاستبيان (10 دقائق)',
     howTitle: 'كيف تسير الأمور',
     steps: [['تفتح الباب', 'استبيان في 10 دقائق: نشاطك، صورك، ألوانك.'], ['نصمم صفحتك', 'في 48 ساعة تصلك صفحتك على هاتفك، مع فضاء لمتابعتها.'], ['توافق ثم تدفع', 'تطلب التعديلات. أعجبتك؟ تُنشر بدومينك.']],
@@ -339,7 +340,7 @@ try {
   if (['fbclid', 'ttclid', 'gclid', 'utm_source'].some(k => q0.has(k)) || q0.get('src') === 'ad') sessionStorage.setItem('bab-ad', '1');
   isAd = sessionStorage.getItem('bab-ad') === '1';
 } catch (err) { /* storage blocked */ }
-const EX = [['cafe.html', 'https://images.unsplash.com/photo-1591299089616-c9604047b1a6?w=600&h=750&fit=crop&q=75&auto=format'], ['salon-de-beaute.html', 'https://images.unsplash.com/photo-1676536162793-faa565d976d4?w=600&h=750&fit=crop&q=75&auto=format'], ['auto-ecole.html', 'https://images.unsplash.com/photo-1630406144797-821be1f35d75?w=600&h=750&fit=crop&q=75&auto=format'], ['cabinet-dentaire.html', '../exemples/img/dentiste-hero-800.webp']];
+const EX = [['fast-food.html', 'https://images.unsplash.com/photo-1627626775846-122b778965ae?w=900&h=900&fit=crop&q=75&auto=format'], ['cafe.html', 'https://images.unsplash.com/photo-1591299089616-c9604047b1a6?w=600&h=750&fit=crop&q=75&auto=format'], ['salon-de-beaute.html', 'https://images.unsplash.com/photo-1676536162793-faa565d976d4?w=600&h=750&fit=crop&q=75&auto=format'], ['auto-ecole.html', 'https://images.unsplash.com/photo-1630406144797-821be1f35d75?w=600&h=750&fit=crop&q=75&auto=format'], ['cabinet-dentaire.html', '../exemples/img/dentiste-hero-800.webp']];
 
 const tx = s => lang === 'fr' ? frType(s) : s;
 const $ = id => document.getElementById(id);
