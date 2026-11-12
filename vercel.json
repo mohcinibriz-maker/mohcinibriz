@@ -50,6 +50,22 @@
     {
       "source": "/espace/:code([a-z0-9]{8,32})",
       "destination": "/espace/index.html"
+    },
+    {
+      "source": "/portes/exemples/:path*",
+      "destination": "/exemples/:path*"
+    },
+    {
+      "source": "/portes/css/:path*",
+      "destination": "/css/:path*"
+    },
+    {
+      "source": "/portes/js/:path*",
+      "destination": "/js/:path*"
+    },
+    {
+      "source": "/portes/logo-icon.svg",
+      "destination": "/logo-icon.svg"
     }
   ],
   "headers": [

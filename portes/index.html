@@ -199,6 +199,9 @@ html.stacked{height:auto;overflow-x:hidden;overflow-y:auto}
 .stacked .door-content dl{width:100%;font-size:13px}
 html.stacked[lang="ar"] .door-content dl{font-size:14px}
 .stacked .fact{grid-template-columns:92px 1fr;gap:12px;padding:6px 0}
+.ad-wa{display:none}
+.stacked .ad-wa:not([hidden]){display:flex;justify-content:center;align-items:center;min-height:52px;margin:22px auto 0;max-width:560px;border-radius:999px;background:var(--terracotta);color:#fff;font-weight:700;font-size:16px;text-decoration:none}
+.stacked .ad-wa:not([hidden])+.mob-links{margin-top:10px}
 .mob-links{display:none}
 .stacked .mob-links{display:flex;justify-content:center;gap:10px;margin:22px auto 0;max-width:560px}
 .mob-links a{flex:1;display:inline-flex;justify-content:center;align-items:center;min-height:46px;border-radius:999px;
@@ -291,6 +294,7 @@ html.stacked[lang="ar"] .door-content dl{font-size:14px}
       <span class="title" id="door-title">48H</span>
     </h1>
     <dl id="facts"></dl>
+    <a class="ad-wa" id="ad-wa" hidden target="_blank" rel="noopener"></a>
     <div class="mob-links"><a href="tarifs/" id="mob-tarifs">Tarifs</a><a href="https://www.bab-digital.com/questionnaire/" id="mob-q">Questionnaire</a></div>
   </section>
 
@@ -318,7 +322,14 @@ html.stacked[lang="ar"] .door-content dl{font-size:14px}
 (() => {
 'use strict';
 
-const WA_URL = 'https://wa.me/212702915333?text=SITE';
+const AD_MSG = 'Bonjour Bab Digital, j\'ai vu votre publicité. Je veux ma page web.';
+let isAd = false;
+try {
+  const q0 = new URLSearchParams(location.search);
+  if (['fbclid', 'ttclid', 'gclid', 'utm_source'].some(k => q0.has(k)) || q0.get('src') === 'ad') sessionStorage.setItem('bab-ad', '1');
+  isAd = sessionStorage.getItem('bab-ad') === '1';
+} catch (err) { /* storage blocked */ }
+const WA_URL = 'https://wa.me/212702915333?text=' + (isAd ? encodeURIComponent(AD_MSG) : 'SITE');
 const INK = '#14141A', CREAM = '#F6F0E6', GREEN = '#0F5C4D', TERRA = '#C8553D', TINT = '#E3ECE5';
 
 /* TEXT — every visible string, FR + AR */
@@ -341,7 +352,7 @@ const t = {
             ['Étape 2 :', 'Votre page sur votre téléphone en 48h.'],
             ['Paiement :', '0 DH d\'avance — vous payez seulement si vous aimez.'],
             ['Prix :', '1500 DH + 500 DH/mois, tout compris.']],
-    whatsapp: 'WhatsApp'
+    whatsapp: 'WhatsApp', adWa: 'Écrivez-nous sur WhatsApp'
   },
   /* AR — à faire relire */
   ar: {
@@ -360,7 +371,7 @@ const t = {
             ['الخطوة 2:', 'صفحتك على هاتفك خلال 48 ساعة.'],
             ['الدفع:', '0 درهم مسبقًا — تدفع فقط إذا أعجبتك.'],
             ['السعر:', `1500 درهم ${L('+ 500')} درهم في الشهر، كل شيء مشمول.`]],
-    whatsapp: 'واتساب'
+    whatsapp: 'واتساب', adWa: 'راسلنا على واتساب'
   }
 };
 
@@ -685,6 +696,7 @@ function applyText() {
   langBtn.textContent = s.lang; langBtn.lang = s.langAttr; langBtn.setAttribute('aria-label', s.langLabel);
   waHeader.querySelector('.wa-label').textContent = s.wa;
   waHeader.href = WA_URL;
+  if (isAd) { const a = $('ad-wa'); a.hidden = false; a.href = WA_URL; a.textContent = s.adWa; }
   preloader.setAttribute('aria-label', s.preloader);
   portalWrap.setAttribute('aria-label', s.portalSection);
   $('door-hint').textContent = s.hint;
@@ -797,6 +809,7 @@ addEventListener('pageshow', e => { if (e.persisted) resetDoor(); });
 let finished = false;
 let seen = false;
 try { seen = sessionStorage.getItem('bab-intro') === '1'; sessionStorage.setItem('bab-intro', '1'); } catch (err) { /* storage blocked */ }
+if (isAd) seen = true; // visitors from an ad: no 3-second intro
 function runPreloader() {
   if (reduced || seen) { skipPreloader(); return; }
   const t0 = performance.now(), D = 3000;
