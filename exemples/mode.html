@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+  <!-- Exemple de design : Atelier Tarz n'existe pas (adresse et prix inventés pour l'exemple).
+       Photo : Unsplash (licence libre), chargée depuis images.unsplash.com.
+       Page créée par Bab Digital pour montrer son travail. Textes français et arabes : ../js/main.js. -->
+  <title data-i18n="mode.meta.title">Atelier Tarz, Casablanca (exemple de design) | Bab Digital</title>
+  <meta name="description" data-i18n-attr="content:mode.meta.description" content="Exemple de page web pour une marque de vêtements, créé par Bab Digital : la collection, les prix, la livraison et la commande sur WhatsApp.">
+  <meta name="robots" content="noindex, follow">
+  <meta name="theme-color" content="#F6F3EE">
+  <meta property="og:type" content="website">
+  <meta property="og:title" data-i18n-attr="content:mode.meta.title" content="Atelier Tarz, Casablanca (exemple de design) | Bab Digital">
+  <meta property="og:description" data-i18n-attr="content:mode.meta.description" content="Exemple de page web pour une marque de vêtements, créé par Bab Digital : la collection, les prix, la livraison et la commande sur WhatsApp.">
+  <meta property="og:image" content="https://babdigital.vercel.app/og-image.png"><!-- ADRESSE -->
+  <link rel="icon" href="../logo-icon.svg" type="image/svg+xml">
+
+  <link rel="preconnect" href="https://images.unsplash.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,500;6..96,600&family=Inter:wght@400;500;600;700&family=Tajawal:wght@400;500;700;800&display=swap">
+  <link rel="stylesheet" href="../css/exemples.css">
+  <script>
+    (function () {
+      var d = document.documentElement;
+      d.classList.add("js");
+      try {
+        var l = new URLSearchParams(location.search).get("lang") || localStorage.getItem("bab-lang");
+        if (l === "ar") { d.lang = "ar"; d.dir = "rtl"; d.classList.add("i18n-wait"); setTimeout(function () { d.classList.remove("i18n-wait"); }, 1500); }
+      } catch (e) {}
+    })();
+  </script>
+  <script src="../js/main.js" defer></script>
+</head>
+<body class="ex ex-mode">
+
+  <a class="skip-link" href="#contenu" data-i18n="a11y.skip">Aller au contenu</a>
+
+  <svg class="sprite" aria-hidden="true" focusable="false">
+    <symbol id="i-wa" viewBox="0 0 24 24"><path fill="currentColor" stroke="none" fill-rule="evenodd" d="M12 2.6a9.4 9.4 0 0 0-8.1 14.2L2.6 21.4l4.7-1.3A9.4 9.4 0 1 0 12 2.6Zm0 1.7a7.7 7.7 0 1 1-3.9 14.3l-.3-.2-2.8.8.8-2.7-.2-.3A7.7 7.7 0 0 1 12 4.3Z"/><path fill="currentColor" stroke="none" d="M9.1 7.6c-.2-.4-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.3.3-.9.9-.9 2.2s.9 2.5 1 2.7c.1.2 1.8 2.9 4.5 3.9 2.2.9 2.7.7 3.1.7.5 0 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.2-.2-.5-.3l-1.7-.8c-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1-.3-.1-1.1-.4-2-1.3-.8-.7-1.3-1.5-1.4-1.8-.1-.3 0-.4.1-.5l.4-.4.3-.4c.1-.2 0-.3 0-.5l-.8-1.9Z"/></symbol>
+    <symbol id="i-back" viewBox="0 0 24 24"><path d="M19 12H5M11 18l-6-6 6-6"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11Z"/><circle cx="12" cy="10" r="2.3"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.2 4.2L19 7"/></symbol>
+    <symbol id="i-arch" viewBox="0 0 24 24"><path d="M7.085 21V13.441A6 6 0 1 1 16.915 13.441V21"/></symbol>
+    <symbol id="i-slice" viewBox="0 0 24 24"><path d="M12 3.5 20 19.5c-5 2-11 2-16 0Z"/><circle cx="12" cy="11" r="1" fill="currentColor"/><circle cx="10" cy="16" r="1" fill="currentColor"/><circle cx="14.5" cy="15.5" r="1" fill="currentColor"/></symbol>
+    <symbol id="i-fire" viewBox="0 0 24 24"><path d="M12 21a6 6 0 0 1-6-6c0-3 2-4.5 3-7 .5 2 1.5 3 2.5 3.5C11 8 12 5 14.5 3c0 3 3.5 5.5 3.5 11a6 6 0 0 1-6 7Z"/></symbol>
+    <symbol id="i-hanger" viewBox="0 0 24 24"><path d="M12 8.5V7.6a2.2 2.2 0 1 0-2.2-2.2"/><path d="M12 8.5 21 16a1.5 1.5 0 0 1-1 2.6H4A1.5 1.5 0 0 1 3 16l9-7.5Z"/></symbol>
+    <symbol id="i-truck" viewBox="0 0 24 24"><path d="M3 6.5h10.5v9.5H3zM13.5 10h4l3 3v3h-7"/><circle cx="7" cy="17.5" r="1.8"/><circle cx="17" cy="17.5" r="1.8"/></symbol>
+    <symbol id="i-palm" viewBox="0 0 24 24"><path d="M12 21v-8"/><path d="M12 13c-1.5-3-4.5-4.5-8-4 2.5 1 4 2.5 5 5M12 13c1.5-3 4.5-4.5 8-4-2.5 1-4 2.5-5 5M12 13c-.5-3.5-2.5-6-6-7 2 1.5 3 3.5 3.5 6M12 13c.5-3.5 2.5-6 6-7-2 1.5-3 3.5-3.5 6"/></symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 3v2M12 19v2M3 12h2M19 12h2M5.6 5.6 7 7M17 17l1.4 1.4M5.6 18.4 7 17M17 7l1.4-1.4"/></symbol>
+    <symbol id="i-cup" viewBox="0 0 24 24"><path d="M5 9h11v5a5 5 0 0 1-5 5h-1a5 5 0 0 1-5-5V9Z"/><path d="M16 10h1.5a2.5 2.5 0 0 1 0 5H16M8.5 3.5c0 1.5 1 1.5 1 3M12 3.5c0 1.5 1 1.5 1 3"/></symbol>
+    <symbol id="i-wifi" viewBox="0 0 24 24"><path d="M4.5 9.5a11 11 0 0 1 15 0M7.5 12.8a6.5 6.5 0 0 1 9 0M10.5 16a2 2 0 0 1 3 0"/><circle cx="12" cy="19" r=".8" fill="currentColor"/></symbol>
+    <symbol id="i-bag" viewBox="0 0 24 24"><path d="M6 8h12l-1 12H7L6 8Z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/></symbol>
+  </svg>
+
+  <!-- Bandeau Bab Digital : rappelle que c'est un exemple -->
+  <div class="ex-bar">
+    <div class="wrap ex-bar-in">
+      <a class="ex-back" href="https://www.bab-digital.com/tarifs/#exemples"><svg class="ic ic-dir" aria-hidden="true"><use href="#i-back"/></svg><span data-i18n="ex.bar.back">Retour à Bab Digital</span></a>
+      <span class="ex-pill" data-i18n="ex.bar.pill">Exemple de design</span>
+      <span class="ex-bar-text" data-i18n="ex.bar.text">Entreprise imaginaire, créée par Bab Digital pour montrer son travail.</span>
+      <div class="lang" role="group" data-i18n-attr="aria-label:lang.label" aria-label="Langue">
+        <button type="button" data-lang="fr" lang="fr" aria-pressed="true">FR</button>
+        <button type="button" data-lang="ar" lang="ar" aria-pressed="false">عربي</button>
+      </div>
+    </div>
+  </div>
+
+  <header class="ex-header">
+    <div class="wrap ex-header-in">
+      <a class="ex-logo" href="#contenu"><span class="ex-logo-mark"><svg class="ic" aria-hidden="true"><use href="#i-hanger"/></svg></span><span data-i18n="mode.name">Atelier Tarz</span></a>
+      <nav class="ex-nav" data-i18n-attr="aria-label:ex.nav.label" aria-label="Sur cette page">
+        <a href="#collection" data-i18n="mode.nav.1">La collection</a>
+        <a href="#lieu" data-i18n="mode.nav.2">La marque</a>
+        <a href="#horaires" data-i18n="mode.nav.3">Showroom</a>
+      </nav>
+      <a class="ex-btn ex-btn-sm" data-wa="mode.wa" href="https://wa.me/212702915333?text=Bonjour%20Bab%20Digital%2C%20j%27ai%20vu%20l%27exemple%20Atelier%20Tarz%20et%20je%20veux%20une%20page%20pour%20mon%20entreprise."><svg class="ic" aria-hidden="true"><use href="#i-wa"/></svg><span data-i18n="mode.header.cta">Commander</span></a>
+    </div>
+  </header>
+
+  <main id="contenu">
+    <section class="ex-hero" aria-labelledby="hero-title">
+      <div class="wrap ex-hero-grid">
+        <div class="ex-hero-copy">
+          <p class="ex-kicker"><svg class="ic" aria-hidden="true"><use href="#i-pin"/></svg><span data-i18n="mode.kicker">Marque de vêtements, Casablanca</span></p>
+          <h1 id="hero-title" data-i18n="mode.title">Des pièces simples, faites pour durer.</h1>
+          <p class="ex-sub" data-i18n="mode.sub">Vêtements pour femme et homme, en petites séries. Commande sur WhatsApp, livraison partout au Maroc.</p>
+          <div class="ex-actions">
+            <a class="ex-btn" data-wa="mode.wa" href="https://wa.me/212702915333?text=Bonjour%20Bab%20Digital%2C%20j%27ai%20vu%20l%27exemple%20Atelier%20Tarz%20et%20je%20veux%20une%20page%20pour%20mon%20entreprise."><svg class="ic" aria-hidden="true"><use href="#i-wa"/></svg><span data-i18n="mode.cta">Commander sur WhatsApp</span></a>
+            <a class="ex-btn ex-btn-line" href="#collection" data-i18n="mode.cta2">Voir la collection</a>
+          </div>
+          <ul class="ex-chips">
+            <li class="ex-chip"><svg class="ic" aria-hidden="true"><use href="#i-truck"/></svg><span data-i18n="mode.chip1">Livraison partout au Maroc</span></li>
+            <li class="ex-chip"><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg><span data-i18n="mode.chip2">Paiement à la livraison</span></li>
+          </ul>
+        </div>
+        <div class="ex-hero-media">
+          <div class="ex-frame">
+            <img src="https://images.unsplash.com/photo-1767968037382-8eb9c564339f?w=800&amp;h=1000&amp;fit=crop&amp;q=80&amp;auto=format" srcset="https://images.unsplash.com/photo-1767968037382-8eb9c564339f?w=800&amp;h=1000&amp;fit=crop&amp;q=80&amp;auto=format 800w, https://images.unsplash.com/photo-1767968037382-8eb9c564339f?w=1400&amp;h=1750&amp;fit=crop&amp;q=80&amp;auto=format 1400w" sizes="(min-width: 900px) 520px, 92vw" width="800" height="1000" fetchpriority="high" decoding="async" data-i18n-attr="alt:mode.img.hero" alt="Portant de vêtements aux tons naturels dans une boutique claire">
+          </div>
+          <p class="ex-float ex-float-a" aria-hidden="true"><span class="dot"><svg class="ic"><use href="#i-hanger"/></svg></span><span data-i18n="mode.float1">Chemise en lin, 349 DH</span></p>
+          <p class="ex-float ex-float-b" aria-hidden="true"><span class="dot"><svg class="ic"><use href="#i-check"/></svg></span><span data-i18n="mode.float2">Échange possible sous 7 jours</span></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="ex-section alt" id="collection" aria-labelledby="carte-title">
+      <div class="wrap">
+        <div class="ex-head reveal">
+          <h2 id="carte-title" data-i18n="mode.menu.title">La collection</h2>
+          <p data-i18n="mode.menu.sub">Nouvelle saison. Tailles du S au XL.</p>
+        </div>
+        <div class="ex-menu">
+          <div class="ex-card reveal">
+            <h3 data-i18n="mode.cat1">Hauts</h3>
+            <ul class="ex-items">
+              <li><span class="name"><span data-i18n="mode.i1">T-shirt brodé</span><small data-i18n="mode.i1.note">Coton épais, broderie faite main</small></span><span class="price" data-i18n="mode.p1">199 DH</span></li>
+              <li><span class="name" data-i18n="mode.i2">Chemise en lin</span><span class="price" data-i18n="mode.p2">349 DH</span></li>
+              <li><span class="name" data-i18n="mode.i3">Sweat à capuche</span><span class="price" data-i18n="mode.p3">399 DH</span></li>
+            </ul>
+          </div>
+          <div class="ex-card reveal" style="--d:1">
+            <h3 data-i18n="mode.cat2">Bas et vestes</h3>
+            <ul class="ex-items">
+              <li><span class="name" data-i18n="mode.i4">Pantalon large</span><span class="price" data-i18n="mode.p4">379 DH</span></li>
+              <li><span class="name" data-i18n="mode.i5">Jean droit</span><span class="price" data-i18n="mode.p5">429 DH</span></li>
+              <li><span class="name"><span data-i18n="mode.i6">Veste légère</span><small data-i18n="mode.i6.note">Coupe droite, deux poches</small></span><span class="price" data-i18n="mode.p6">549 DH</span></li>
+            </ul>
+          </div>
+          <div class="ex-card reveal" style="--d:2">
+            <h3 data-i18n="mode.cat3">Accessoires</h3>
+            <ul class="ex-items">
+              <li><span class="name"><span data-i18n="mode.i7">Tote bag</span><small data-i18n="mode.i7.note">Toile de coton, anses longues</small></span><span class="price" data-i18n="mode.p7">129 DH</span></li>
+              <li><span class="name" data-i18n="mode.i8">Casquette</span><span class="price" data-i18n="mode.p8">149 DH</span></li>
+              <li><span class="name" data-i18n="mode.i9">Écharpe en laine</span><span class="price" data-i18n="mode.p9">179 DH</span></li>
+            </ul>
+          </div>
+        </div>
+        <p class="ex-note" data-i18n="ex.prices.note">Prix d'exemple : cette page est un exemple de design.</p>
+      </div>
+    </section>
+
+    <section class="ex-section" id="lieu" aria-labelledby="lieu-title">
+      <div class="wrap">
+        <div class="ex-head reveal">
+          <h2 id="lieu-title" data-i18n="mode.place.title">Une marque née à Casablanca</h2>
+          <p data-i18n="mode.place.sub">Des coupes simples, de belles matières, des prix clairs.</p>
+        </div>
+        <div class="ex-gallery reveal">
+          <figure><img src="https://images.unsplash.com/photo-1729487151777-b4be9098ecbb?w=1400&amp;h=875&amp;fit=crop&amp;q=80&amp;auto=format" width="1400" height="875" loading="lazy" decoding="async" data-i18n-attr="alt:mode.img.1" alt="Vestes et chemises suspendues sur des portants, devant un mur en béton"></figure>
+          <figure><img src="https://images.unsplash.com/photo-1760013529817-f50db943ffe2?w=900&amp;h=675&amp;fit=crop&amp;q=80&amp;auto=format" width="900" height="675" loading="lazy" decoding="async" data-i18n-attr="alt:mode.img.2" alt="Pile de pulls pliés sur un tabouret en bois"></figure>
+          <figure><img src="https://images.unsplash.com/photo-1604176354204-9268737828e4?w=900&amp;h=675&amp;fit=crop&amp;q=80&amp;auto=format" width="900" height="675" loading="lazy" decoding="async" data-i18n-attr="alt:mode.img.3" alt="Pile de jeans tenue dans les bras"></figure>
+        </div>
+        <div class="ex-gap"></div>
+        <ul class="ex-points">
+          <li class="ex-point reveal">
+            <span class="ex-point-ic"><svg class="ic" aria-hidden="true"><use href="#i-truck"/></svg></span>
+            <h3 data-i18n="mode.pt1.title">Livraison partout au Maroc</h3>
+            <p data-i18n="mode.pt1.text">Votre colis chez vous en 2 à 4 jours.</p>
+          </li>
+          <li class="ex-point reveal" style="--d:1">
+            <span class="ex-point-ic"><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg></span>
+            <h3 data-i18n="mode.pt2.title">Paiement à la livraison</h3>
+            <p data-i18n="mode.pt2.text">Vous payez quand le colis arrive.</p>
+          </li>
+          <li class="ex-point reveal" style="--d:2">
+            <span class="ex-point-ic"><svg class="ic" aria-hidden="true"><use href="#i-bag"/></svg></span>
+            <h3 data-i18n="mode.pt3.title">Échange sous 7 jours</h3>
+            <p data-i18n="mode.pt3.text">La taille ne va pas ? On l'échange.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="ex-section alt" id="horaires" aria-labelledby="horaires-title">
+      <div class="wrap">
+        <div class="ex-head reveal">
+          <h2 id="horaires-title" data-i18n="ex.info.title">Horaires et accès</h2>
+        </div>
+        <div class="ex-info">
+          <div class="ex-panel reveal">
+            <h3><svg class="ic" aria-hidden="true"><use href="#i-clock"/></svg><span data-i18n="ex.hours.title">Horaires</span></h3>
+            <table class="ex-hours">
+              <tr data-days="1,2,3,4,5,6"><th scope="row" data-i18n="mode.h1.days">Lundi - Samedi</th><td dir="ltr">10:00 - 20:00</td></tr>
+              <tr data-days="0"><th scope="row" data-i18n="mode.h2.days">Dimanche</th><td dir="ltr">14:00 - 19:00</td></tr>
+            </table>
+            <div class="ex-address">
+              <h3><svg class="ic" aria-hidden="true"><use href="#i-pin"/></svg><span data-i18n="ex.address.title">Adresse</span></h3>
+              <p data-i18n="mode.address">22, rue de l'Exemple, Gauthier, Casablanca</p>
+            </div>
+          </div>
+          <div class="ex-map reveal" style="--d:1" role="img" data-i18n-attr="aria-label:ex.map.label" aria-label="Plan d&#x27;accès (exemple)">
+            <span class="ex-pin"><svg class="ic" aria-hidden="true"><use href="#i-hanger"/></svg></span>
+            <p class="ex-map-note"><b data-i18n="mode.name">Atelier Tarz</b><span data-i18n="ex.map.note">Sur votre page : votre emplacement Google Maps.</span></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="ex-cta" aria-labelledby="cta-title">
+      <div class="wrap">
+        <div class="ex-cta-box reveal">
+          <h2 id="cta-title" data-i18n="mode.cta.title">Une pièce vous plaît ? Écrivez-nous.</h2>
+          <p data-i18n="mode.cta.text">Envoyez le nom de la pièce et votre taille sur WhatsApp. On confirme la commande tout de suite.</p>
+          <div class="ex-actions">
+            <a class="ex-btn" data-wa="mode.wa" href="https://wa.me/212702915333?text=Bonjour%20Bab%20Digital%2C%20j%27ai%20vu%20l%27exemple%20Atelier%20Tarz%20et%20je%20veux%20une%20page%20pour%20mon%20entreprise."><svg class="ic" aria-hidden="true"><use href="#i-wa"/></svg><span data-i18n="mode.cta">Commander sur WhatsApp</span></a>
+          </div>
+          <p class="ex-hint" data-i18n="ex.cta.hint">Sur votre page, ce bouton ouvre votre WhatsApp. Ici, il écrit à Bab Digital.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="ex-footer">
+    <div class="wrap ex-footer-in">
+      <div>
+        <p class="ex-footer-name" data-i18n="mode.name">Atelier Tarz</p>
+        <p data-i18n="mode.address">22, rue de l'Exemple, Gauthier, Casablanca</p>
+        <p class="ex-demo-note"><span data-i18n="ex.footer.demo">Exemple de design : cette entreprise n'existe pas.</span> <span data-i18n="ex.footer.photos">Photos : Unsplash.</span></p>
+      </div>
+      <p class="ex-credit"><a data-wa="wa.default" href="https://wa.me/212702915333?text=Bonjour%20Bab%20Digital%2C%20je%20veux%20une%20page%20pour%20mon%20entreprise."><svg class="ic bab-mark" aria-hidden="true"><use href="#i-arch"/></svg><span data-i18n="ex.footer.credit">Site créé par Bab Digital</span></a></p>
+    </div>
+  </footer>
+
+  <a class="wa-float" data-wa="mode.wa" href="https://wa.me/212702915333?text=Bonjour%20Bab%20Digital%2C%20j%27ai%20vu%20l%27exemple%20Atelier%20Tarz%20et%20je%20veux%20une%20page%20pour%20mon%20entreprise." data-i18n-attr="aria-label:mode.float.label" aria-label="Commander sur WhatsApp"><svg class="ic" aria-hidden="true"><use href="#i-wa"/></svg></a>
+
+</body>
+</html>
