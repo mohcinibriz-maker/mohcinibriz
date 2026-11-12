@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
 <title>Espace client · Bab Digital</title>
-<link rel="icon" href="/logo-icon.svg" type="image/svg+xml">
+<link rel="icon" href="/espace/logo-icon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Sora:wght@500;600;700&family=Tajawal:wght@400;500;700&display=swap">
@@ -111,7 +111,7 @@ a{color:inherit}
 </head>
 <body>
 <header class="top">
-  <a class="brand h" href="/"><img src="/logo-icon.svg" alt="" width="26" height="30">Bab Digital <span data-t="space">· Espace client</span></a>
+  <a class="brand h" href="/"><img src="/espace/logo-icon.svg" alt="" width="26" height="30">Bab Digital <span data-t="space">· Espace client</span></a>
   <div class="who"><button class="lang" id="lang" type="button">عربي</button><span class="nm" id="whoName"></span><div class="av" id="av" aria-hidden="true"></div></div>
 </header>
 <main class="wrap" id="app" aria-live="polite"></main>
@@ -151,7 +151,7 @@ a{color:inherit}
       d_active:"🔒 SSL مفعّل", d_pending:"⏳ كيتربط", d_demo:"رابط الديمو",
       subTitle:"اشتراك Sérénité", paid:"✓ مخلّص", unpaid:"⏳ في الانتظار", month:"/ الشهر", next:"الخلاص الجاي:",
       mods:"التعديلات هاد الشهر", used:"مستعملة",
-      upTitle:"خيار Sérénité", upText:"دومين .com، الاستضافة، الصيانة و 2 تعديلات فالشهر.", upBtn:"كيهمني",
+      upTitle:"خيار Sérénité", upText:"دومين .com، الاستضافة، الصيانة و 5 تعديلات فالشهر.", upBtn:"كيهمني",
       share:"شارك الصفحة ديالي", shareText:"طبع هاد QR فالمحل، ولا صيفط الرابط للزبناء ديالك.",
       copy:"نسخ الرابط", send:"صيفط فواتساب", copied:"تنسخ الرابط ✓", progress:"المراحل",
       s_questionnaire:"توصلنا بالاستمارة", s_creation:"الصفحة كتصاوب", s_demo:"الديمو واجد", s_valide:"وافقتي عليها",
@@ -200,7 +200,7 @@ a{color:inherit}
   document.getElementById("lang").addEventListener("click", function () { lang = lang === "fr" ? "ar" : "fr"; applyLang(); render(); });
 
   function notFound() {
-    app.innerHTML = '<div class="empty reveal"><img src="/logo-icon.svg" alt=""><h1 class="h">' + t("notFound") + '</h1><p class="muted">' + t("notFoundText") + '</p><p style="margin-top:20px"><a class="b wa" href="' + wa("Bonjour Bab Digital, je cherche le lien de mon espace client.") + '" target="_blank" rel="noopener">' + I.chat + t("wa") + '</a></p></div>';
+    app.innerHTML = '<div class="empty reveal"><img src="/espace/logo-icon.svg" alt=""><h1 class="h">' + t("notFound") + '</h1><p class="muted">' + t("notFoundText") + '</p><p style="margin-top:20px"><a class="b wa" href="' + wa("Bonjour Bab Digital, je cherche le lien de mon espace client.") + '" target="_blank" rel="noopener">' + I.chat + t("wa") + '</a></p></div>';
   }
 
   function render() {
@@ -210,7 +210,7 @@ a{color:inherit}
     document.getElementById("whoName").textContent = name;
     document.getElementById("av").textContent = name.split(/\s+/).map(function (w) { return w[0] || ""; }).join("").slice(0, 2);
     var st = { online:["", "st_online"], demo:["demo","st_demo"], build:["build","st_build"] }[d.status] || ["build","st_build"];
-    var ser = d.plan === "serenite", s = d.serenite || {};
+    var s = d.serenite || {}, ser = d.plan === "serenite" || !!d.serenite;
     var doneIdx = -1; STEPS.forEach(function (k, i) { if (d.steps && d.steps[k]) doneIdx = i; });
 
     var domains = (d.domains || []).map(function (x) {
@@ -241,11 +241,11 @@ a{color:inherit}
     html += '<div class="side">';
     if (ser) {
       var max = s.modsMax || 5, used = Math.min(max, s.modsUsed || 0);
-      html += '<section class="card box reveal"><h3 class="h">' + t("subTitle") + '<span class="pill ' + (s.paid ? "s-active" : "s-pending") + '">' + t(s.paid ? "paid" : "unpaid") + '</span></h3><div class="price">' + (s.price || 300) + ' DH <small>' + t("month") + '</small></div>' +
+      html += '<section class="card box reveal"><h3 class="h">' + t("subTitle") + '<span class="pill ' + (s.paid ? "s-active" : "s-pending") + '">' + t(s.paid ? "paid" : "unpaid") + '</span></h3><div class="price">' + (s.price || 500) + ' DH <small>' + t("month") + '</small></div>' +
         (s.nextPayment ? '<div class="muted" style="margin-top:4px">' + t("next") + ' ' + fmt(s.nextPayment) + '</div>' : "") +
         '<div class="lab" style="margin-top:14px">' + t("mods") + '</div><div class="meter"><i style="width:' + (used / max * 100) + '%"></i></div><div class="val">' + used + ' / ' + max + ' ' + t("used") + '</div></section>';
     } else {
-      html += '<section class="card box reveal"><h3 class="h">' + t("upTitle") + '<span class="pill s-demo">300 DH ' + t("month") + '</span></h3><p class="muted">' + t("upText") + '</p><p style="margin-top:12px"><a class="b" href="' + wa(t("msgSer")(name)) + '" target="_blank" rel="noopener">' + t("upBtn") + '</a></p></section>';
+      html += '<section class="card box reveal"><h3 class="h">' + t("upTitle") + '<span class="pill s-demo">500 DH ' + t("month") + '</span></h3><p class="muted">' + t("upText") + '</p><p style="margin-top:12px"><a class="b" href="' + wa(t("msgSer")(name)) + '" target="_blank" rel="noopener">' + t("upBtn") + '</a></p></section>';
     }
     if (url) html += '<section class="card box reveal"><h3 class="h">' + t("share") + '</h3><div class="qr"><div class="qrc" id="qr" aria-label="QR code"></div><div class="muted">' + t("shareText") +
       '<div class="links"><button type="button" id="copy">' + t("copy") + '</button><a href="https://wa.me/?text=' + encodeURIComponent(t("msgShare")(name, url)) + '" target="_blank" rel="noopener">' + t("send") + '</a></div></div></div></section>';

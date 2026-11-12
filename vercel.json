@@ -1,6 +1,11 @@
 {
   "redirects": [
     {
+      "source": "/",
+      "destination": "https://www.bab-digital.com/",
+      "permanent": false
+    },
+    {
       "source": "/demos/dentiste.html",
       "destination": "/exemples/cabinet-dentaire.html",
       "permanent": false
@@ -17,17 +22,17 @@
     },
     {
       "source": "/questionnaire",
-      "destination": "https://babdigital-questionnaire.vercel.app/",
+      "destination": "https://www.bab-digital.com/questionnaire/",
       "permanent": false
     },
     {
       "source": "/questionnaire/",
-      "destination": "https://babdigital-questionnaire.vercel.app/",
+      "destination": "https://www.bab-digital.com/questionnaire/",
       "permanent": false
     },
     {
       "source": "/questionnaire/:path*",
-      "destination": "https://babdigital-questionnaire.vercel.app/",
+      "destination": "https://www.bab-digital.com/questionnaire/",
       "permanent": false
     },
     {
