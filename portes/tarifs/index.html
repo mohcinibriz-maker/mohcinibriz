@@ -339,7 +339,7 @@ try {
   if (['fbclid', 'ttclid', 'gclid', 'utm_source'].some(k => q0.has(k)) || q0.get('src') === 'ad') sessionStorage.setItem('bab-ad', '1');
   isAd = sessionStorage.getItem('bab-ad') === '1';
 } catch (err) { /* storage blocked */ }
-const EX = [['cafe.html', 'cafe.svg'], ['salon-de-beaute.html', 'salon.svg'], ['auto-ecole.html', 'auto-ecole.svg'], ['cabinet-dentaire.html', 'dentiste-hero-800.webp']];
+const EX = [['cafe.html', 'https://images.unsplash.com/photo-1591299089616-c9604047b1a6?w=600&h=750&fit=crop&q=75&auto=format'], ['salon-de-beaute.html', 'https://images.unsplash.com/photo-1676536162793-faa565d976d4?w=600&h=750&fit=crop&q=75&auto=format'], ['auto-ecole.html', 'https://images.unsplash.com/photo-1630406144797-821be1f35d75?w=600&h=750&fit=crop&q=75&auto=format'], ['cabinet-dentaire.html', '../exemples/img/dentiste-hero-800.webp']];
 
 const tx = s => lang === 'fr' ? frType(s) : s;
 const $ = id => document.getElementById(id);
@@ -355,7 +355,7 @@ function apply() {
   $('inc').innerHTML = s.inc.map(v => `<li>${CHECK}<span>${esc(tx(v))}</span></li>`).join('');
   $('steps').innerHTML = s.steps.map(([a, b], i) => `<div class="step rv" style="--d:${i * .12}s"><i class="door" aria-hidden="true"></i><b>${esc(tx(a))}</b><p>${esc(tx(b))}</p></div>`).join('');
   $('faq').innerHTML = s.faq.map(([q, a], i) => `<details class="rv" style="--d:${i * .08}s"${i === 0 ? ' open' : ''}><summary>${esc(tx(q))}<i aria-hidden="true"></i></summary><p>${esc(tx(a))}</p></details>`).join('');
-  $('ex').innerHTML = s.ex.map(([n, k], i) => `<a class="ex rv" style="--d:${i * .08}s" href="../exemples/${EX[i][0]}"><img src="../exemples/img/${EX[i][1]}" alt="" width="800" height="1000" loading="lazy" decoding="async"><span class="pill">${esc(s.exPill)}</span><span class="tx"><b dir="ltr">${esc(n)}</b><small>${esc(k)}</small></span></a>`).join('');
+  $('ex').innerHTML = s.ex.map(([n, k], i) => `<a class="ex rv" style="--d:${i * .08}s" href="../exemples/${EX[i][0]}"><img src="${EX[i][1]}" alt="" width="800" height="1000" loading="lazy" decoding="async"><span class="pill">${esc(s.exPill)}</span><span class="tx"><b dir="ltr">${esc(n)}</b><small>${esc(k)}</small></span></a>`).join('');
   if (isAd) {
     const c = document.querySelector('.cta');
     c.classList.remove('door-link'); c.href = 'https://wa.me/212702915333?text=' + encodeURIComponent(AD_MSG); c.target = '_blank'; c.rel = 'noopener';
