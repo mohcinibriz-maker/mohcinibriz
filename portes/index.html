@@ -270,6 +270,7 @@ html.stacked[lang="ar"] .door-content dl{font-size:14px}
     <div class="header-actions">
       <nav class="nav" aria-label="Navigation">
         <a class="active" href="#portes">Portes</a>
+        <a href="exemples/">Exemples</a>
         <a href="tarifs/">Tarifs</a>
         <a href="https://www.bab-digital.com/questionnaire/">Questionnaire</a>
       </nav>
@@ -298,7 +299,7 @@ html.stacked[lang="ar"] .door-content dl{font-size:14px}
     </h1>
     <dl id="facts"></dl>
     <a class="ad-wa" id="ad-wa" hidden target="_blank" rel="noopener"></a>
-    <div class="mob-links"><a href="tarifs/" id="mob-tarifs">Tarifs</a><a href="https://www.bab-digital.com/questionnaire/" id="mob-q">Questionnaire</a></div>
+    <div class="mob-links"><a href="exemples/" id="mob-ex">Exemples</a><a href="tarifs/" id="mob-tarifs">Tarifs</a><a href="https://www.bab-digital.com/questionnaire/" id="mob-q">Questionnaire</a></div>
   </section>
 
   <div class="custom-cursor" aria-hidden="true">
@@ -317,6 +318,7 @@ html.stacked[lang="ar"] .door-content dl{font-size:14px}
       <dt>Prix :</dt><dd>1500 DH + 500 DH/mois, tout compris.</dd>
     </dl>
     <a href="https://www.bab-digital.com/questionnaire/">Ouvrir le questionnaire</a>
+    <a href="exemples/">Exemples</a>
     <a href="tarifs/">Tarifs</a>
   </div></div>
 </noscript>
@@ -342,7 +344,7 @@ const t = {
   fr: {
     docTitle: 'Bab Digital — Votre page web en 48h, 0 DH d\'avance',
     brand: 'Bab Digital',
-    nav: ['Portes', 'Tarifs', 'Questionnaire'], navLabel: 'Navigation',
+    nav: ['Portes', 'Exemples', 'Tarifs', 'Questionnaire'], navLabel: 'Navigation',
     lang: 'ع', langLabel: 'النسخة العربية', langAttr: 'ar',
     wa: 'WhatsApp',
     preloader: 'Chargement',
@@ -361,7 +363,7 @@ const t = {
   ar: {
     docTitle: 'باب ديجيتال — صفحتك على الإنترنت في 48 ساعة، 0 درهم مسبقًا',
     brand: 'باب ديجيتال',
-    nav: ['الأبواب', 'الأسعار', 'الاستبيان'], navLabel: 'التنقل',
+    nav: ['الأبواب', 'أمثلة', 'الأسعار', 'الاستبيان'], navLabel: 'التنقل',
     lang: 'FR', langLabel: 'Version française', langAttr: 'fr',
     wa: 'واتساب',
     preloader: 'جارٍ التحميل',
@@ -694,7 +696,7 @@ function applyText() {
   brandName.textContent = s.brand;
   logo.setAttribute('aria-label', s.brand);
   navLinks.forEach((a, i) => { a.textContent = s.nav[i]; });
-  $('mob-tarifs').textContent = s.nav[1]; $('mob-q').textContent = s.nav[2];
+  $('mob-ex').textContent = s.nav[1]; $('mob-tarifs').textContent = s.nav[2]; $('mob-q').textContent = s.nav[3];
   nav.setAttribute('aria-label', s.navLabel);
   langBtn.textContent = s.lang; langBtn.lang = s.langAttr; langBtn.setAttribute('aria-label', s.langLabel);
   waHeader.querySelector('.wa-label').textContent = s.wa;
