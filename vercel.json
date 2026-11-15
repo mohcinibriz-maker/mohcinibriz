@@ -48,6 +48,14 @@
   ],
   "rewrites": [
     {
+      "source": "/portes/exemples",
+      "destination": "/exemples/index.html"
+    },
+    {
+      "source": "/portes/exemples/",
+      "destination": "/exemples/index.html"
+    },
+    {
       "source": "/espace/:code([a-z0-9]{8,32})",
       "destination": "/espace/index.html"
     },
