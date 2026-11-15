@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /espace/
+Disallow: /questionnaire/
+
+Sitemap: https://www.bab-digital.com/sitemap.xml
