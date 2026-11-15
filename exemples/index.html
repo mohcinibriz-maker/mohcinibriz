@@ -245,7 +245,7 @@ html[lang="ar"] .client h3,html[lang="ar"] .client .go{font-family:Tajawal,sans-
   <div class="header-actions">
     <nav class="nav" aria-label="Navigation">
       <a href="https://www.bab-digital.com/" data-t="nav0">Portes</a>
-      <a class="active" href="./" aria-current="page" data-t="navEx">Exemples</a>
+      <a class="active" href="https://www.bab-digital.com/exemples/" aria-current="page" data-t="navEx">Exemples</a>
       <a href="https://www.bab-digital.com/tarifs/" data-t="nav1">Tarifs</a>
       <a href="https://www.bab-digital.com/questionnaire/" data-t="nav2">Questionnaire</a>
     </nav>
@@ -345,7 +345,7 @@ const t = {
     agency: `${L('Mohcin Ibriz')}، الدار البيضاء · وكالة ويب في المغرب`, cursor: 'افتح'
   }
 };
-const EX = [['fast-food.html', 'https://images.unsplash.com/photo-1627626775846-122b778965ae?w=600&h=750&fit=crop&q=75&auto=format'], ['mode.html', 'https://images.unsplash.com/photo-1767968037382-8eb9c564339f?w=600&h=750&fit=crop&q=75&auto=format'], ['cafe.html', 'https://images.unsplash.com/photo-1591299089616-c9604047b1a6?w=600&h=750&fit=crop&q=75&auto=format'], ['salon-de-beaute.html', 'https://images.unsplash.com/photo-1676536162793-faa565d976d4?w=600&h=750&fit=crop&q=75&auto=format'], ['auto-ecole.html', 'https://images.unsplash.com/photo-1630406144797-821be1f35d75?w=600&h=750&fit=crop&q=75&auto=format'], ['cabinet-dentaire.html', 'img/dentiste-hero-800.webp']];
+const EX = [['fast-food.html', 'https://images.unsplash.com/photo-1627626775846-122b778965ae?w=600&h=750&fit=crop&q=75&auto=format'], ['mode.html', 'https://images.unsplash.com/photo-1767968037382-8eb9c564339f?w=600&h=750&fit=crop&q=75&auto=format'], ['cafe.html', 'https://images.unsplash.com/photo-1591299089616-c9604047b1a6?w=600&h=750&fit=crop&q=75&auto=format'], ['salon-de-beaute.html', 'https://images.unsplash.com/photo-1676536162793-faa565d976d4?w=600&h=750&fit=crop&q=75&auto=format'], ['auto-ecole.html', 'https://images.unsplash.com/photo-1630406144797-821be1f35d75?w=600&h=750&fit=crop&q=75&auto=format'], ['cabinet-dentaire.html', 'https://www.bab-digital.com/exemples/img/dentiste-hero-800.webp']];
 const frType = s => s.replace(/ ([:;?!»])/g, '\u202f$1').replace(/(\d) (DH|min)/g, '$1\u00a0$2');
 const html = document.documentElement;
 let lang = 'fr';
@@ -359,7 +359,7 @@ function apply() {
   document.querySelectorAll('[data-t]').forEach(el => { const v = s[el.dataset.t]; if (typeof v === 'string') el.textContent = tx(v); });
   const lb = $('lang-btn'); lb.textContent = s.lang; lb.lang = s.langAttr; lb.setAttribute('aria-label', s.langLabel);
   document.querySelector('.mini-door').setAttribute('aria-label', s.doorLabel);
-  $('ex').innerHTML = s.ex.map(([n, k], i) => `<a class="ex rv" style="--d:${i * .08}s" href="${EX[i][0]}"><img src="${EX[i][1]}" alt="" width="800" height="1000" loading="lazy" decoding="async"><span class="pill">${esc(s.exPill)}</span><span class="tx"><b dir="ltr">${esc(n)}</b><small>${esc(k)}</small></span></a>`).join('');
+  $('ex').innerHTML = s.ex.map(([n, k], i) => `<a class="ex rv" style="--d:${i * .08}s" href="https://www.bab-digital.com/exemples/${EX[i][0]}"><img src="${EX[i][1]}" alt="" width="800" height="1000" loading="lazy" decoding="async"><span class="pill">${esc(s.exPill)}</span><span class="tx"><b dir="ltr">${esc(n)}</b><small>${esc(k)}</small></span></a>`).join('');
   observe();
 }
 function setLang(l) {
